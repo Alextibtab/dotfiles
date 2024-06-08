@@ -28,5 +28,5 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-eval "$(oh-my-posh init bash --config ~/themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.json)"
 . "$HOME/.cargo/env"
