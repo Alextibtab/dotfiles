@@ -126,3 +126,6 @@ export NVM_DIR="$HOME/.config/nvm"
 
 export DENO_INSTALL="/home/tibtab/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Created by `pipx` on 2024-06-09 11:59:26
+export PATH="$PATH:/home/tibtab/.local/bin"
