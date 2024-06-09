@@ -1,0 +1,94 @@
+ls
+ls -la
+cd .config/
+ls
+neofetch
+cd nushell/
+ls
+ls -la
+nvim env.nu
+ls
+nvim env.nu
+echo $nu.env-path
+nvim env.nu
+exit
+ls
+exit
+ls
+cd ~
+ls
+git clone git@github.com:nushell/nupm.git 
+ls
+cd nupm/
+cd ..
+use nupm/
+ls
+cd nupm/
+use nupm/
+nupm install --force --path .
+nupm install --path --force nu_scripts
+user nupm
+use nupm
+nupm install --path --force nu_scripts
+cd ..
+ls
+git clone
+git clone https://github.com/nushell/nu_scripts.git
+cd nu_scripts/
+ls
+nupm install --path --force nu_scripts
+cd ..
+nupm install --path --force nu_scripts
+ls
+nupm install --path --force nu_scripts/
+ls nu_scripts/
+cd nu_scripts/
+nupm install --path --force themes/
+cd ~/.config/nushell/
+ls
+nvim config.nu
+exit
+nupm 
+use nupm
+cd _
+cd ~
+ls
+nvim .config/nushell/config.nu
+nvim .config/nushell/env.nu
+exit
+cd ~/nupm/
+ls
+nupm test
+use nupm
+nupm install --force --path .
+cd ..
+ls
+rm -rf nupm
+nvim .config/nushell/env.nu
+cd .config/nushell/
+ls
+rm -rf nupm/
+ls
+cd ..
+exit
+ls
+nvim .config/nushell/config.nu
+ls
+nvim config.nu
+exit
+ls
+ls -l
+ls -la
+git status
+cd ..
+ls
+cd ..
+ls
+cd personal/pcap-analyzer/
+ls
+git status
+git diff
+ls
+cd ~/dotfiles/
+ls
+cp ~/.config/nushell/ .
