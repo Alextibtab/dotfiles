@@ -4,6 +4,7 @@ require('lazy').setup({
 
   require 'plugins.colorscheme',
   require 'plugins.lsp-config',
+  require 'plugins.dap-config',
   require 'plugins.treesitter',
   require 'plugins.coding',
   require 'plugins.ui',

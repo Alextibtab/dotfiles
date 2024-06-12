@@ -88,7 +88,7 @@ return {
   },
   {
     "folke/which-key.nvim", opts = {}
-  }, 
+  },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
