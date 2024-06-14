@@ -54,7 +54,7 @@ return {
     },
     opts = {
       stages = "static",
-      timeout = 10000,
+      timeout = 8000,
       max_height = function()
         return math.floor(vim.o.lines * 0.75)
       end,

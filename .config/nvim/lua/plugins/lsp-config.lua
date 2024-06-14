@@ -77,7 +77,11 @@ return {
       pyright = {},
       gopls = {},
       rust_analyzer = {},
-
+      prettier = {},
+      cpptools = {},
+      cssls = {},
+      denols = {},
+      tailwindcss = {},
       lua_ls = {
         settings = {
           Lua = {
