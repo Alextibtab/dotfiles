@@ -1,5 +1,5 @@
 require('lazy').setup({
-  'tpope/vim-sleuth', 
+  'tpope/vim-sleuth',
   { 'numToStr/Comment.nvim', opts = {} },
 
   require 'plugins.colorscheme',
@@ -29,4 +29,3 @@ require('lazy').setup({
     },
   },
 })
-

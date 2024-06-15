@@ -1,26 +1,26 @@
 return {
   {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
       lsp = {
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
       },
       routes = {
         {
           filter = {
-            event = "msg_show",
+            event = 'msg_show',
             any = {
-              { find = "%d+L, %d+B" },
-              { find = "; after #%d+" },
-              { find = "; before #%d+" },
+              { find = '%d+L, %d+B' },
+              { find = '; after #%d+' },
+              { find = '; before #%d+' },
             },
           },
-          view = "mini",
+          view = 'mini',
         },
       },
       presets = {
@@ -42,18 +42,18 @@ return {
     },
   },
   {
-    "rcarriga/nvim-notify",
+    'rcarriga/nvim-notify',
     keys = {
       {
-        "<leader>un",
+        '<leader>un',
         function()
-          require("notify").dismiss({ silent = true, pending = true })
+          require('notify').dismiss { silent = true, pending = true }
         end,
-        desc = "Dismiss All Notifications",
+        desc = 'Dismiss All Notifications',
       },
     },
     opts = {
-      stages = "static",
+      stages = 'static',
       timeout = 8000,
       max_height = function()
         return math.floor(vim.o.lines * 0.75)
@@ -66,74 +66,75 @@ return {
       end,
     },
     init = function()
-      vim.notify = require("notify")
+      vim.notify = require 'notify'
     end,
   },
-  { "MunifTanjim/nui.nvim", lazy = true }, 
+  { 'MunifTanjim/nui.nvim', lazy = true },
   {
-    "stevearc/dressing.nvim",
+    'stevearc/dressing.nvim',
     lazy = true,
     init = function()
       ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
+        require('lazy').load { plugins = { 'dressing.nvim' } }
         return vim.ui.select(...)
       end
       ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.input = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
+        require('lazy').load { plugins = { 'dressing.nvim' } }
         return vim.ui.input(...)
       end
     end,
   },
   {
-    "folke/which-key.nvim", opts = {}
+    'folke/which-key.nvim',
+    opts = {},
   },
   {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
-        theme = "catppuccin",
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
+        theme = 'catppuccin',
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
       },
       sections = {
-        lualine_a = { { "mode", icon = "" } },
-        lualine_b = { "branch" },
+        lualine_a = { { 'mode', icon = '' } },
+        lualine_b = { 'branch' },
         lualine_c = {
           {
-            "filename",
+            'filename',
             path = 1,
             symbols = {
-              modified = "●",
-              readonly = "",
-              unnamed = "󰘓",
-              newfile = "",
+              modified = '●',
+              readonly = '',
+              unnamed = '󰘓',
+              newfile = '',
             },
           },
           {
-            "diagnostics",
+            'diagnostics',
             symbols = {
-              error = " ",
-              warn = " ",
-              info = " ",
-              hint = " ",
+              error = ' ',
+              warn = ' ',
+              info = ' ',
+              hint = ' ',
             },
           },
         },
         lualine_x = {
           {
-            "diff",
+            'diff',
             symbols = {
-              added = " ",
-              modified = " ",
-              removed = " ",
+              added = ' ',
+              modified = ' ',
+              removed = ' ',
             },
           },
         },
-        lualine_y = { "filetype" },
-        lualine_z = { "location", "progress" },
+        lualine_y = { 'filetype' },
+        lualine_z = { 'location', 'progress' },
       },
       extensions = {
         'lazy',
@@ -142,54 +143,54 @@ return {
       },
     },
   },
-  { "nvim-tree/nvim-web-devicons", lazy = true },
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
   {
-    "lukas-reineke/indent-blankline.nvim",
+    'lukas-reineke/indent-blankline.nvim',
     opts = {
       indent = {
-        char = "│",
-        tab_char = "│",
+        char = '│',
+        tab_char = '│',
       },
       scope = { enabled = false },
       exclude = {
         filetypes = {
-          "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
-          "trouble",
-          "lazy",
-          "mason",
-          "notify",
-          "toggleterm",
-          "lazyterm",
+          'help',
+          'alpha',
+          'dashboard',
+          'neo-tree',
+          'Trouble',
+          'trouble',
+          'lazy',
+          'mason',
+          'notify',
+          'toggleterm',
+          'lazyterm',
         },
       },
     },
-    main = "ibl",
+    main = 'ibl',
   },
   {
-    "echasnovski/mini.indentscope",
+    'echasnovski/mini.indentscope',
     version = false,
     opts = {
-      symbol = "│",
+      symbol = '│',
       options = { try_as_border = true },
     },
     init = function()
-      vim.api.nvim_create_autocmd("FileType", {
+      vim.api.nvim_create_autocmd('FileType', {
         pattern = {
-          "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
-          "trouble",
-          "lazy",
-          "mason",
-          "notify",
-          "toggleterm",
-          "lazyterm",
+          'help',
+          'alpha',
+          'dashboard',
+          'neo-tree',
+          'Trouble',
+          'trouble',
+          'lazy',
+          'mason',
+          'notify',
+          'toggleterm',
+          'lazyterm',
         },
         callback = function()
           vim.b.miniindentscope_disable = true
@@ -198,7 +199,7 @@ return {
     end,
   },
   {
-    "nvimdev/dashboard-nvim",
+    'nvimdev/dashboard-nvim',
     lazy = false,
     opts = function()
       local logo = [[
@@ -210,17 +211,17 @@ return {
    ╚═╝   ╚═╝╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═════╝ 
       ]]
 
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
+      logo = string.rep('\n', 8) .. logo .. '\n\n'
 
       local opts = {
-        theme = "doom",
+        theme = 'doom',
         hide = {
           -- this is taken care of by lualine
           -- enabling this messes up the actual laststatus setting after loading a file
           statusline = false,
         },
         config = {
-          header = vim.split(logo, "\n"),
+          header = vim.split(logo, '\n'),
           -- stylua: ignore
           center = {
             { action = "Telescope find_files",                                     desc = " Find File",       icon = " ", key = "f" },
@@ -233,25 +234,25 @@ return {
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
           },
           footer = function()
-            local stats = require("lazy").stats()
+            local stats = require('lazy').stats()
             local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-            return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+            return { '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms' }
           end,
         },
       }
 
       for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
-        button.key_format = "  %s"
+        button.desc = button.desc .. string.rep(' ', 43 - #button.desc)
+        button.key_format = '  %s'
       end
 
       -- close Lazy and re-open when the dashboard is ready
-      if vim.o.filetype == "lazy" then
+      if vim.o.filetype == 'lazy' then
         vim.cmd.close()
-        vim.api.nvim_create_autocmd("User", {
-          pattern = "DashboardLoaded",
+        vim.api.nvim_create_autocmd('User', {
+          pattern = 'DashboardLoaded',
           callback = function()
-            require("lazy").show()
+            require('lazy').show()
           end,
         })
       end
@@ -260,20 +261,20 @@ return {
     end,
   },
   {
-    "christoomey/vim-tmux-navigator",
+    'christoomey/vim-tmux-navigator',
     cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
     },
     keys = {
-     { "<M-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<M-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<M-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<M-l>", "<cmd><C-U>TmuxNavigateRight<cr>" }, 
-      { "<M-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+      { '<M-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<M-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<M-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<M-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<M-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
-  }
+  },
 }
