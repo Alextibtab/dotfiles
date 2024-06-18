@@ -100,6 +100,8 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua',
       'clang-format',
+      'isort',
+      'black',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

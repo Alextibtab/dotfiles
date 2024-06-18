@@ -7,6 +7,7 @@ require('lazy').setup({
   require 'plugins.dap-config',
   require 'plugins.treesitter',
   require 'plugins.coding',
+  require 'plugins.toggleterm',
   require 'plugins.ui',
   require 'plugins.editor',
   require 'plugins.util',
