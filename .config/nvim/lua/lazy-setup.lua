@@ -3,14 +3,14 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   require 'plugins.colorscheme',
+  require 'plugins.ui',
+  require 'plugins.editor',
+  require 'plugins.util',
   require 'plugins.lsp-config',
   require 'plugins.dap-config',
   require 'plugins.treesitter',
   require 'plugins.coding',
   require 'plugins.toggleterm',
-  require 'plugins.ui',
-  require 'plugins.editor',
-  require 'plugins.util',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

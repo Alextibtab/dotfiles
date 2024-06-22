@@ -1,13 +1,11 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
-    cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
     ---@type TSConfig
     ---@diagnostic disable-next-line: missing-fields
     opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
       ensure_installed = {
         'bash',
         'c',
@@ -26,6 +24,7 @@ return {
         'python',
         'query',
         'regex',
+        'glsl',
         'toml',
         'tsx',
         'typescript',
@@ -34,6 +33,9 @@ return {
         'xml',
         'yaml',
       },
+      auto_install = true,
+      highlight = { enable = true },
+      indent = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -45,6 +47,7 @@ return {
       },
     },
     config = function(opts)
+      require('nvim-treesitter.install').prefer_git = true
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
