@@ -83,6 +83,7 @@ return {
       cssls = {},
       denols = {},
       tailwindcss = {},
+      glsl_analyzer = {},
       lua_ls = {
         settings = {
           Lua = {
