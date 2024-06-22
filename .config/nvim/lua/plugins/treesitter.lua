@@ -1,10 +1,7 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
     build = ':TSUpdate',
-    ---@type TSConfig
-    ---@diagnostic disable-next-line: missing-fields
     opts = {
       ensure_installed = {
         'bash',
@@ -46,8 +43,9 @@ return {
         },
       },
     },
-    config = function(opts)
+    config = function(_, opts)
       require('nvim-treesitter.install').prefer_git = true
+      --@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
