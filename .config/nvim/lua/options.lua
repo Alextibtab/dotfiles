@@ -35,7 +35,7 @@ if vim.fn.has 'win32' == 1 then
     vim.opt[option] = value
   end
 else
-  vim.opt.shell = 'bash -l'
+  vim.opt.shell = 'bash'
 end
 
 vim.opt.scrolloff = 10

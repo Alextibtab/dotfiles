@@ -129,3 +129,5 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2024-06-09 11:59:26
 export PATH="$PATH:/home/tibtab/.local/bin"
+
+eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.json)"

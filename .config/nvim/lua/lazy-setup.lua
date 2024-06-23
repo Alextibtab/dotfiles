@@ -11,6 +11,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.coding',
   require 'plugins.toggleterm',
+  require 'plugins.wakatime',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

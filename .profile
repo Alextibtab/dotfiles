@@ -28,7 +28,6 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.json)"
 . "$HOME/.cargo/env"
 
 # Created by `pipx` on 2024-06-09 11:59:26
