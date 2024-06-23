@@ -84,6 +84,8 @@ return {
       denols = {},
       tailwindcss = {},
       glsl_analyzer = {},
+      wgsl_analyzer = {},
+      markdown_oxide = {},
       lua_ls = {
         settings = {
           Lua = {
