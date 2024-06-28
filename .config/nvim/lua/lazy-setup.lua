@@ -2,16 +2,41 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   { 'numToStr/Comment.nvim', opts = {} },
 
-  require 'plugins.colorscheme',
-  require 'plugins.ui',
-  require 'plugins.editor',
-  require 'plugins.util',
-  require 'plugins.lsp-config',
-  require 'plugins.dap-config',
-  require 'plugins.treesitter',
-  require 'plugins.coding',
-  require 'plugins.toggleterm',
-  require 'plugins.wakatime',
+  -- colourscheme
+  require 'plugins.other.colorscheme',
+
+  -- ui plugins
+  require 'plugins.ui.noice',
+  require 'plugins.ui.nvim-notify',
+  require 'plugins.ui.nui',
+  require 'plugins.ui.dressing',
+  require 'plugins.ui.telescope',
+  require 'plugins.ui.nvim-web-devicons',
+  require 'plugins.ui.lualine',
+  require 'plugins.ui.toggleterm',
+  require 'plugins.ui.which-key',
+  require 'plugins.ui.dashboard',
+
+  -- lsp configuration
+  require 'plugins.lsp.nvim-lspconfig',
+
+  -- debugging configuration
+  require 'plugins.dap.nvim-dap',
+
+  -- coding plugins
+  require 'plugins.coding.nvim-cmp',
+  require 'plugins.coding.treesitter',
+  require 'plugins.coding.mini',
+  require 'plugins.coding.indent-blankline',
+  require 'plugins.coding.nvim-ts-context-commentstring',
+  require 'plugins.coding.todo-comments',
+  require 'plugins.coding.conform',
+
+  -- utility plugins
+  require 'plugins.util.vim-tmux-navigator',
+
+  -- other plugins
+  require 'plugins.other.wakatime',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

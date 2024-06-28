@@ -1,5 +1,6 @@
 return {
   {
+    -- Enable with :TransparentEnable or TransparentToggle
     'xiyaowong/transparent.nvim',
     opts = {
       extra_groups = {
@@ -42,6 +43,10 @@ return {
     },
   },
   {
+    -- Default colour theme
+    -- TODO: look into telescope colour theme switching
+    -- and if I can hook into the function to also change
+    -- the status bar simultaneously.
     'catppuccin/nvim',
     lazy = true,
     priority = 1000,

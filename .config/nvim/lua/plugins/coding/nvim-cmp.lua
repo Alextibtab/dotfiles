@@ -1,22 +1,4 @@
 return {
-  {
-    'stevearc/conform.nvim',
-    lazy = false,
-    opts = {
-      notify_on_error = false,
-      format_on_save = function(bufnr)
-        return {
-          timeout_ms = 1000,
-          lsp_fallback = vim.bo[bufnr].filetype,
-        }
-      end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'isort', 'black' },
-        cpp = { 'clang-format' },
-      },
-    },
-  },
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -102,48 +84,5 @@ return {
         },
       }
     end,
-  },
-  -- auto pairs
-  {
-    'echasnovski/mini.pairs',
-    event = 'VeryLazy',
-    opts = {
-      mappings = {
-        ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '[^\\`].', register = { cr = false } },
-      },
-    },
-    keys = {
-      {
-        '<leader>up',
-        function()
-          vim.g.minipairs_disable = not vim.g.minipairs_disable
-          if vim.g.minipairs_disable then
-            vim.notify('Disabled auto pairs', 'WARN')
-          else
-            vim.notify('Enabled auto pairs', 'INFO')
-          end
-        end,
-        desc = 'Toggle Auto Pairs',
-      },
-    },
-  },
-  -- comments
-  {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    lazy = true,
-    opts = {
-      enable_autocmd = false,
-    },
-  },
-  {
-    'echasnovski/mini.comment',
-    event = 'VeryLazy',
-    opts = {
-      options = {
-        custom_commentstring = function()
-          return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
-        end,
-      },
-    },
   },
 }
