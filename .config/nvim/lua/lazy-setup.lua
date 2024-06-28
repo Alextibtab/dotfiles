@@ -38,6 +38,7 @@ require('lazy').setup({
 
   -- other plugins
   require 'plugins.other.wakatime',
+  require 'plugins.other.obsidian',
   require 'plugins.other.gitsigns',
 }, {
   ui = {

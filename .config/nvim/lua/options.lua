@@ -20,6 +20,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'both'
 
 if vim.fn.has 'win32' == 1 then
   local powershell_options = {
