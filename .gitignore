@@ -1,2 +1,3 @@
 .config/tmux/plugins
 .config/nushell/history.txt
+.config/nvim/lazy-lock.json

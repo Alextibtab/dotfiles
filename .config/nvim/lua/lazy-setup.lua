@@ -5,6 +5,12 @@ require('lazy').setup({
   -- colourscheme
   require 'plugins.other.colorscheme',
 
+  -- lsp configuration
+  require 'plugins.lsp.nvim-lspconfig',
+
+  -- debugging configuration
+  require 'plugins.dap.nvim-dap',
+
   -- ui plugins
   require 'plugins.ui.noice',
   require 'plugins.ui.nvim-notify',
@@ -12,16 +18,11 @@ require('lazy').setup({
   require 'plugins.ui.dressing',
   require 'plugins.ui.telescope',
   require 'plugins.ui.nvim-web-devicons',
+  require 'plugins.ui.neo-tree',
   require 'plugins.ui.lualine',
   require 'plugins.ui.toggleterm',
   require 'plugins.ui.which-key',
   require 'plugins.ui.dashboard',
-
-  -- lsp configuration
-  require 'plugins.lsp.nvim-lspconfig',
-
-  -- debugging configuration
-  require 'plugins.dap.nvim-dap',
 
   -- coding plugins
   require 'plugins.coding.nvim-cmp',
@@ -37,6 +38,7 @@ require('lazy').setup({
 
   -- other plugins
   require 'plugins.other.wakatime',
+  require 'plugins.other.gitsigns',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
