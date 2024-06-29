@@ -42,6 +42,7 @@ require('lazy').setup({
   require 'plugins.other.gitsigns',
 }, {
   ui = {
+    border = 'rounded',
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
       config = '🛠',

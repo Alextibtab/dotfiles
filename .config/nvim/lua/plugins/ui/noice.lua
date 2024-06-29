@@ -30,6 +30,13 @@ return {
         inc_rename = true,
         lsp_doc_border = true,
       },
+      views = {
+        mini = {
+          win_options = {
+            winblend = 0,
+          },
+        },
+      },
     },
     -- stylua: ignore
     keys = { -- TODO: see if I can use telescope for some of these.
