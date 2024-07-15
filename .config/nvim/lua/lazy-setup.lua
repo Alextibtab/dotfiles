@@ -40,6 +40,7 @@ require('lazy').setup({
   require 'plugins.other.wakatime',
   require 'plugins.other.obsidian',
   require 'plugins.other.gitsigns',
+  require 'plugins.other.screenkey',
 }, {
   ui = {
     border = 'rounded',

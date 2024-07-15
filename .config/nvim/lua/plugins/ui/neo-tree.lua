@@ -70,6 +70,10 @@ return {
           expander_highlight = 'NeoTreeExpander',
         },
       },
+      window = {
+        position = 'float',
+        height = 80,
+      },
     },
     config = function(_, opts)
       local events = require 'neo-tree.events'
