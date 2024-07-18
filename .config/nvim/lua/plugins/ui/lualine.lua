@@ -1,7 +1,10 @@
 return {
+  { 'AndreM222/copilot-lualine' },
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
     opts = {
       options = {
         theme = 'catppuccin',
@@ -41,6 +44,7 @@ return {
               removed = ' ',
             },
           },
+          { 'copilot', show_colors = true },
         },
         lualine_y = { 'filetype' },
         lualine_z = { 'location', 'progress' },
