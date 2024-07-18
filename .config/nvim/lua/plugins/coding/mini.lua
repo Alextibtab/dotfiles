@@ -9,7 +9,7 @@ return {
     },
     keys = {
       {
-        '<leader>up',
+        '<leader>tp',
         function()
           vim.g.minipairs_disable = not vim.g.minipairs_disable
           if vim.g.minipairs_disable then
@@ -18,7 +18,7 @@ return {
             vim.notify('Enabled auto pairs', 'INFO')
           end
         end,
-        desc = 'Toggle Auto Pairs',
+        desc = '[T]oggle auto [P]airs',
       },
     },
   },

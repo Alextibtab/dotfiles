@@ -32,6 +32,7 @@ require('lazy').setup({
   require 'plugins.coding.nvim-ts-context-commentstring',
   require 'plugins.coding.todo-comments',
   require 'plugins.coding.conform',
+  require 'plugins.coding.copilot',
 
   -- utility plugins
   require 'plugins.util.vim-tmux-navigator',

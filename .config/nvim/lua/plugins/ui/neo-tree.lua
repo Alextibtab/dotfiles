@@ -9,21 +9,7 @@ return {
         function()
           require('neo-tree.command').execute { toggle = true, dir = vim.uv.cwd() }
         end,
-        desc = 'Explorer NeoTree (Root Dir)',
-      },
-      {
-        '<leader>ge',
-        function()
-          require('neo-tree.command').execute { source = 'git_status', toggle = true }
-        end,
-        desc = 'Git Explorer',
-      },
-      {
-        '<leader>be',
-        function()
-          require('neo-tree.command').execute { source = 'buffers', toggle = true }
-        end,
-        desc = 'Buffer Explorer',
+        desc = 'File Explorer (Root Dir)',
       },
     },
     deactivate = function()
@@ -61,6 +47,11 @@ return {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignore = true,
+        },
       },
       default_component_configs = {
         indent = {
