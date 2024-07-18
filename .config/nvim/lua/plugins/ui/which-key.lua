@@ -1,5 +1,7 @@
 return {
   {
+    -- FIX:
+    -- TODO: update mappings to new specification
     'folke/which-key.nvim',
     event = 'VeryLazy',
     opts = {

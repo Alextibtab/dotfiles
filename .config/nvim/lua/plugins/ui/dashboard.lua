@@ -1,5 +1,8 @@
 return {
   {
+    -- TODO: update dashboard to show recent projects
+    -- research any good plugins for session management/tmux
+    -- add obsidian shortcut
     'nvimdev/dashboard-nvim',
     lazy = false,
     opts = function()
@@ -30,7 +33,6 @@ return {
             { action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find Text",       icon = " ", key = "g" },
             { action = "Telescope find_files cwd=~/.config/nvim",                  desc = " Config",          icon = " ", key = "c" },
-            { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
           },
