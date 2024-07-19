@@ -15,7 +15,23 @@ return {
    ╚═╝   ╚═╝╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═════╝ 
       ]]
 
-      logo = string.rep('\n', 8) .. logo .. '\n\n'
+      local function ordinal_numbers(n)
+        local ordinal, digit = { 'st', 'nd', 'rd' }, string.sub(n, -1)
+        if tonumber(digit) > 0 and tonumber(digit) <= 3 and string.sub(n, -2) ~= 11 and string.sub(n, -2) ~= 12 and string.sub(n, -2) ~= 13 then
+          return n .. ordinal[tonumber(digit)]
+        else
+          return n .. 'th'
+        end
+      end
+
+      local time = os.time()
+      logo = string.rep('\n', 8)
+        .. logo
+        .. '\n '
+        .. os.date('%A ', time)
+        .. ordinal_numbers(tonumber(os.date('%d', time)))
+        .. os.date(' %B %Y - %X', time)
+        .. '\n\n'
 
       local opts = {
         theme = 'doom',
@@ -33,6 +49,7 @@ return {
             { action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find Text",       icon = " ", key = "g" },
             { action = "Telescope find_files cwd=~/.config/nvim",                  desc = " Config",          icon = " ", key = "c" },
+            { action = "Mason",                                                    desc = " Mason",           icon = " ", key = "m" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
           },
