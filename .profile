@@ -32,3 +32,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Created by `pipx` on 2024-06-09 11:59:26
 export PATH="$PATH:/home/tibtab/.local/bin"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

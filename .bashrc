@@ -131,3 +131,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$PATH:/home/tibtab/.local/bin"
 
 eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.json)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export PATH="$PATH:/home/tibtab/go/bin" 
