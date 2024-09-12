@@ -32,7 +32,7 @@ require('lazy').setup({
   require 'plugins.coding.nvim-ts-context-commentstring',
   require 'plugins.coding.todo-comments',
   require 'plugins.coding.conform',
-  require 'plugins.coding.copilot',
+  require 'plugins.coding.avante',
 
   -- utility plugins
   require 'plugins.util.vim-tmux-navigator',
@@ -40,6 +40,7 @@ require('lazy').setup({
   -- other plugins
   require 'plugins.other.wakatime',
   require 'plugins.other.obsidian',
+  require 'plugins.other.leetcode',
   require 'plugins.other.gitsigns',
   require 'plugins.other.screenkey',
 }, {

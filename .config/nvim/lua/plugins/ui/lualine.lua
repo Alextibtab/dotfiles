@@ -1,5 +1,4 @@
 return {
-  { 'AndreM222/copilot-lualine' },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -44,7 +43,6 @@ return {
               removed = ' ',
             },
           },
-          { 'copilot', show_colors = true },
         },
         lualine_y = { 'filetype' },
         lualine_z = { 'location', 'progress' },
