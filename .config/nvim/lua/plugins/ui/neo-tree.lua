@@ -9,7 +9,7 @@ return {
         function()
           require('neo-tree.command').execute { toggle = true, dir = vim.uv.cwd() }
         end,
-        desc = 'File Explorer (Root Dir)',
+        desc = 'neo-tree: file explorer',
       },
     },
     deactivate = function()

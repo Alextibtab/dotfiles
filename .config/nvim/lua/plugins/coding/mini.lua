@@ -18,7 +18,7 @@ return {
             vim.notify('Enabled auto pairs', 'INFO')
           end
         end,
-        desc = '[T]oggle auto [P]airs',
+        desc = 'mini.pairs: toggle auto pairs',
       },
     },
   },

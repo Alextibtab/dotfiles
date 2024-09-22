@@ -49,15 +49,15 @@ return {
       dap.configurations.c = dap.configurations.cpp
       dap.configurations.rust = dap.configurations.cpp
 
-      vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
-      vim.keymap.set('n', '<leader>gb', dap.run_to_cursor)
+      vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'dap: toggle breakpoint' })
+      vim.keymap.set('n', '<leader>dgb', dap.run_to_cursor, { desc = 'dap: run to breakpoint' })
 
-      vim.keymap.set('n', '<F1>', dap.continue)
-      vim.keymap.set('n', '<F2>', dap.step_into)
-      vim.keymap.set('n', '<F3>', dap.step_over)
-      vim.keymap.set('n', '<F4>', dap.step_out)
-      vim.keymap.set('n', '<F5>', dap.step_back)
-      vim.keymap.set('n', '<F6>', dap.restart)
+      vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'dap: continue' })
+      vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'dap: step into' })
+      vim.keymap.set('n', '<leader>do', dap.step_over, { desc = 'dap: step over' })
+      vim.keymap.set('n', '<leader>dso', dap.step_out, { desc = 'dap: step out' })
+      vim.keymap.set('n', '<leader>dsb', dap.step_back, { desc = 'dap: step back' })
+      vim.keymap.set('n', '<leader>dx', dap.restart, { desc = 'dap: restart' })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()

@@ -6,11 +6,11 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       -- find
-      { '<leader>fc', '<cmd>Telescope find_files cwd=~/.config/nvim<cr>', desc = 'Find Config File' },
-      { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files (Root Dir)' },
-      { '<leader>fg', '<cmd>Telescope git_files<cr>', desc = 'Find Files (git-files)' },
-      { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent' },
-      { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = 'Search Help' },
+      { '<leader>fc', '<cmd>Telescope find_files cwd=~/.config/nvim<cr>', desc = 'telescope: find config files' },
+      { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'telescope: find files' },
+      { '<leader>fg', '<cmd>Telescope git_files<cr>', desc = 'telescope: find git files' },
+      { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'telescope: recent files' },
+      { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'telescope: find help' },
     },
   },
 }

@@ -12,8 +12,8 @@ return {
         end
 
         -- toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git [b]lame' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git [D]eleted' })
+        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'gitsigns: toggle git blame' })
+        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = 'gitsigns: toggle git deleted' })
       end,
     },
   },

@@ -7,12 +7,12 @@ return {
         function()
           require('notify').dismiss { silent = true, pending = true }
         end,
-        desc = 'Dismiss All Notifications',
+        desc = 'notify: dismiss all notifications',
       },
     },
     opts = {
       stages = 'static',
-      timeout = 8000,
+      timeout = 2500,
       max_height = function()
         return math.floor(vim.o.lines * 0.75)
       end,
