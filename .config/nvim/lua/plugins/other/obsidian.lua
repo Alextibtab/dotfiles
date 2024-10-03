@@ -1,7 +1,7 @@
 local vault_directory
 
 if vim.fn.has 'win32' == 1 then
-  vault_directory = ''
+  vault_directory = 'C:\\Users\\14ale\\vault\\obsidian-vault'
 else
   vault_directory = '~/personal/obsidian-vault/'
 end
