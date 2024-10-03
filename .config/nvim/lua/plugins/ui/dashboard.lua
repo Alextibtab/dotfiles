@@ -39,6 +39,8 @@ return {
           center = {
             { action = "Telescope find_files",                                     desc = " Find File",       icon = " ", key = "f" },
             { action = "ene | startinsert",                                        desc = " New File",        icon = " ", key = "n" },
+            { action = "Leet",                                                     desc = " Leetcode",        icon = " ", key = "x"},
+            { action = "ObsidianQuickSwitch",                                      desc = " Obsidian",        icon = " ", key = "o"},
             { action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find Text",       icon = " ", key = "g" },
             { action = "Telescope find_files cwd=~/.config/nvim",                  desc = " Config",          icon = " ", key = "c" },

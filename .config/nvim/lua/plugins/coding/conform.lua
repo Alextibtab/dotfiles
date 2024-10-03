@@ -14,6 +14,7 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         cpp = { 'clang-format' },
+        cs = { 'csharpier' },
         rust = { 'rustfmt' },
       },
     },

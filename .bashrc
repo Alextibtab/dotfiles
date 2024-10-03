@@ -136,3 +136,4 @@ eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.js
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 export PATH="$PATH:/home/tibtab/go/bin" 
+export EDITOR="/usr/bin/nvim"

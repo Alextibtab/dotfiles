@@ -8,12 +8,14 @@ return {
     config = function(_, opts)
       local wk = require 'which-key'
       wk.add {
-        { '<leader>a', group = 'avante' },
+        { '<leader>a', group = 'avante', icon = '󰭹' },
         { '<leader><tab>', group = 'tabs' },
         { '<leader>c', group = 'code' },
-        { '<leader>d', group = 'dap' },
+        { '<leader>d', group = 'dap', icon = '' },
         { '<leader>f', group = 'file/find' },
         { '<leader>g', group = 'git' },
+        { '<leader>l', group = 'lsp', icon = '' },
+        { '<leader>o', group = 'obsidian', icon = '' },
         { '<leader>t', group = 'toggle' },
         { '<leader>gh', group = 'hunks' },
         { '<leader>q', group = 'quit/session' },
