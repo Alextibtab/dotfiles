@@ -137,3 +137,6 @@ eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/catppuccin_mocha.omp.js
 
 export PATH="$PATH:/home/tibtab/go/bin" 
 export EDITOR="/usr/bin/nvim"
+export VCPKG_ROOT=~/personal/c++/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
+export PATH="/home/tibtab/.local/bin/":$PATH

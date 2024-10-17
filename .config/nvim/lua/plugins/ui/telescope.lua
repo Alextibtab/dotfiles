@@ -14,6 +14,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       -- find
+      -- TODO: this still doesn't work for viewing config files on windows
       { '<leader>fc', '<cmd>Telescope find_files cwd=' .. telescope_find_config .. '<cr>', desc = 'telescope: find config files' },
       { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'telescope: find files' },
       { '<leader>fg', '<cmd>Telescope git_files<cr>', desc = 'telescope: find git files' },

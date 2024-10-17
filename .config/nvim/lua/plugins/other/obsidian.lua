@@ -10,6 +10,7 @@ return {
   'epwalsh/obsidian.nvim',
   version = '*',
   lazy = false,
+  -- FIX: this breaks nvim on windows
   event = {
     'BufReadPre ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
     'BufNewFile ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
