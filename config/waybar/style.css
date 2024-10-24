@@ -1,0 +1,127 @@
+@import "mocha.css";
+
+* {
+  font-family: SpaceMono Nerd Font;
+  font-weight: 600;
+  font-size: 18px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @peach;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border: .1rem solid @peach;
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @crust;
+  margin-left: 1rem;
+  margin-right: .5rem;
+}
+
+#workspaces button {
+  color: @peach;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @peach;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @crust;
+  border-color: @crust;
+  background: @peach;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#custom-music,
+#window,
+#tray,
+#clock,
+#wireplumber,
+#custom-lock,
+#network,
+#custom-power {
+  border-top: .1rem solid;
+  border-bottom: .1rem solid;
+  border-color: @peach;
+  background-color: @crust;
+  padding: 0.5rem 1em;
+  margin: 5px 0;
+  transition-duration: 500ms;
+}
+
+#custom-music:hover,
+#window:hover,
+#tray:hover,
+#clock:hover,
+#wireplumber:hover,
+#custom-lock:hover,
+#custom-power:hover,
+#network:hover {
+  color: @crust;
+  background: @peach;
+  border-color: @crust;
+}
+
+
+#clock {
+  color: @peach;
+  border-right: .1rem solid;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: .5rem;
+}
+
+#wireplumber {
+  border-left: .1rem solid;
+  color: @peach;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#network {
+  padding: 0 .55rem 0 0;
+  color: @peach;
+  margin: 5px 0;
+}
+
+#custom-music {
+  border-left: .1rem solid;
+  border-right: .1rem solid;
+  color: @peach;
+  border-radius: 1rem;
+}
+
+#window {
+  border-left: .1rem solid;
+  border-right: .1rem solid;
+  color: @peach;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-left: .1rem solid;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @peach;
+}
+
+#custom-power {
+    border-right: .1rem solid;
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @peach;
+}
+
+#tray {
+  border-left: .1rem solid;
+  border-right: .1rem solid;
+  margin-right: .5rem;
+  border-radius: 1rem;
+}
+

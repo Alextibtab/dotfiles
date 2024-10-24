@@ -1,0 +1,49 @@
+[global]
+    monitor = 1
+
+    width = 300
+    height = 300
+    origin = top-right
+    offset = 10x50
+    scale = 2
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    transparency = 100
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 8
+
+    frame_width = 3
+    frame_color = "#fab387"
+
+    separator_color = frame
+    sort = yes
+
+    font = "SpaceMono Nerd Font" 16
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n"
+    alignment = left
+    vertical_alignment = center
+
+    show_age_threshold = 60
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 10
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = open_url, close_current
+    mouse_right_click = close_all

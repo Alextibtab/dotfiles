@@ -1,0 +1,1982 @@
+ls
+exit
+cd
+$nu.env-pathy
+$nu.env-path
+cd .config/nushell/
+nvim env.nu
+exit
+cd .cache/starship/
+ls
+cd ../../
+cd .config/nushell/
+ls
+nvim env.nu
+nu --version
+nu --help
+nvim config.nu
+nvim env.nu
+nvim config.nu
+nvim
+cd .config/nushell/
+nvim
+cd .config/alacritty/
+nvim
+font
+fonts
+cd /usr/share/fonts/
+ls
+cd ttf
+ls
+cd TTF
+ls
+ls | grep "space"
+ls | grep space
+ls -h
+ls *space*
+ls *Space*
+curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+ls
+nvim
+cd ../nushell/
+ls
+cd themes/
+ls
+cd ..
+ls
+cd ..
+ls
+nvim starship.toml
+ls
+ls -la
+cd .config/waybar/
+ls
+touch mocha.css
+nvim mocha.css
+nvim style.css
+cd ..
+ls
+cd gtk-3.0/ls
+cd gtk-3.0/
+ls
+nvim settings.ini
+cd ..
+cd waybar/
+ls
+nvim
+cd ..
+cd hypr/
+ls
+nvimn
+nvim
+cd ../waybar/
+ls
+nvim
+ls
+ls -hj
+ls -h
+neofetch 
+cava
+cava -h
+cava
+nvim
+wlogou -h
+wlogout -h
+sudo pacman -S wlogout
+yay wlogout
+ls
+nvim 
+playerctl 
+nvim
+swww 
+systemctl status dunst.service
+systemctl status dunst
+ps aux | grep dunst
+ps -aux 
+ps -
+ps
+ps | grep dunst
+nvim .config/hypr/hyprland.conf
+waybar
+nvim .config/waybar/
+cd .config/waybar/
+ls
+waybar
+sudo pacman -S wireplumber
+waybar
+waybar 
+nvim
+sudo pacman -S wlogout
+wlogout -h
+nvim
+sudo pacman -S hyprlock
+cd .con
+cd .config/hypr
+ls
+cd ../../.config/hypr
+ls
+touch hyprlock.conf
+nvim
+hyprlock 
+cd .config/hypr/
+nvim
+hyprlock
+cd ../way
+cd ../waybar/
+ls
+waybar
+nvim
+cd ../hypr/
+ls
+cd Dow
+cd Downloads/
+ls
+unzip
+ls
+unzip *.zip
+ls
+unzip 
+gunzip
+unzip
+unzip ls
+ls
+cd ..
+ls
+cd Documents
+mkdir wallpapers
+cp ../Downloads/*.gif .
+ls
+mv *.gif wallpapers/
+ls
+cd ..
+ls
+cd Downloads
+ls
+unzip * 
+ls
+unzip * 
+rm *.gif
+ls
+unzip * 
+ls
+unzip * 
+unzip
+unzip \*.zip
+unzip "*.zip"
+ls
+ls -la
+ls
+rm *.zip
+ls
+cd extra/
+ls
+cd ..
+cp extra/* .
+ls
+cd extra/
+ls
+cd ..
+ls
+rm -rf extra/
+rm -rf __MACOSX/
+ls
+mv * ../Documents/wallpapers/
+ls
+cd ..
+ls
+cd Documents/
+ls
+cd wallpapers/
+sl
+ls
+swww img Documents/wallpapers/Horizon_Pt-1_waneella.gif
+swww img --help
+swww-daemon -h
+waybar
+nvim .config/hypr/
+hyprpm add https://github.com/Duckonaut/split-monitor-workspaces
+sudo pacman -S cmake meson cpio
+hyprpm add https://github.com/Duckonaut/split-monitor-workspaces
+hyprpm update
+hyprpm update --no-shallow
+hyprpm add https://github.com/Duckonaut/split-monitor-workspaces
+hyprpm enable split-monitor-workspace
+hyprpm enable split-monitor-workspaces
+hyprpm reload
+nvim .config/hypr/
+ls
+cd .config/waybar/
+ls
+hyprctl monitors
+nvim
+waybar
+nvim
+waybar
+nvim
+cd .config/waybar/
+nvim
+cd .config/hypr
+cd
+cd .config/hypr
+nvim
+cd ..
+cd waybar/
+nvim
+waybar
+nvim .config/hypr/
+exit
+reboot
+pacman -h
+sudo pacman -R kitty
+nvim
+nvim .config/hypr/
+cd .config/hypr/
+ls
+nvim
+cd .config/hypr/
+nvim
+cd ../nvim
+ls
+cd lua/
+ls
+cd plugins/
+ls
+cd coding/
+ls
+cd ../ui/
+ls
+nvim telescope.lua
+ls
+cd ..
+ls
+cd ..
+ls
+mkdir scripts
+cd scripts/
+touch telescope_preview_fts.lua
+nvim telescope_preview_fts.lua
+nvim
+cd ../plugins/ui/
+nvim telescope.lua
+nvim
+cd ..
+ls
+nvim lazy-setup.lua
+nvm
+nvim
+yay -S waypaper
+waypaper 
+cd
+cd .config/hypr/
+nvim
+cd ../alacritty/
+ls
+nvim
+cd ..
+cd waypaper/
+ls
+nvim
+cd ..
+ls
+cd hypr/
+waypaper
+cd .config/hypr/
+yay  sddm-theme-corners
+cd 
+ls
+cd .config/
+ls
+cp -r alacritty/ ../dotfiles/.config/
+cp -r hypr/ ../dotfiles/.config/
+cp -r nushell/ ../dotfiles/.config/
+cp -r nvim/ ../dotfiles/.config/
+cp -r starship.toml ../dotfiles/.config/
+cp -r waybar/ ../dotfiles/.config/
+cp -r waypaper/ ../dotfiles/.config/
+cd /etc/
+ls
+mkdir /etc/sddm.conf.d
+sudo mkdir /etc/sddm.conf.d
+cd /etc/sddm.conf.d/
+ls
+nvim .conf
+sudo nvim .conf
+cd /usr/share/sddm/
+ls
+cd themes/
+ls
+cd corners/
+ls
+nvim theme.conf
+chmod +rw theme.conf
+sudo chmod +rw theme.conf
+nvim theme.conf
+sudo pacman -S obsidian
+ls
+obsidian 
+cd 
+ls
+mkdir vaults
+cd vaults/
+ls
+git clone https://github.com/Alextibtab/obsidian-vault.git
+cd 
+ls
+ls -la
+mkdir .ssh
+ls
+ssh-keygen -t ed25519 -C "14alexcockburn@gmail.com"
+sudo pacman -S ssh-keygen
+sudo pacman -S openssh
+ssh-keygen -t ed25519 -C "14alexcockburn@gmail.com"
+val "$(ssh-agent -s)"
+eval "$(ssh-agent -s)"
+ssh-agent -s
+ls
+mkdir github* .ssh/
+ls
+cd .ssh/
+ls
+cd ..
+ls
+mv github* .ssh/
+ls
+ssh-add ~/.ssh/github
+ls
+cd .ssh
+ls
+rmdir 'github*/'
+ls
+ssh-add ~/.ssh/github
+cat github.pub
+cd
+ls
+git clone https://github.com/Alextibtab/obsidian-vault.git
+cd 
+cd .ssh
+ls
+cp ~/dotfiles/.ssh/config .
+ls
+cat config
+ls
+cd ~/vaults/
+ls
+git clone https://github.com/Alextibtab/obsidian-vault.git
+git clone git@github.com:Alextibtab/obsidian-vault.git
+nvim
+ls
+rm -rf obsidian-vault/
+ls
+ls -la
+git clone --recurse-submodules git@github.com:Alextibtab/obsidian-vault.git
+nvim
+nvim theme.conf
+ls
+ls -la
+chmod +rw theme.conf
+sudo chmod 771 theme.conf
+nvim theme.conf
+ls
+nvim theme.conf
+ls -la
+sudo chmod 777 theme.conf
+nvim theme.conf
+reboot
+sudo mv /etc/sddm.conf.d/.conf /etc/sddm.conf
+sudo rmdir /etc/sddm.conf.d/
+cat /etc/sddm.conf
+cd /usr/share/sddm/themes/
+ls
+cd corners/
+ls
+cd ../maya/
+ls
+ls -la
+cd ../corners/
+ls
+sudo chmod 666 theme.conf
+ls
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+ls
+nvim theme.conf
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+n
+cd /usr/share/sddm/
+ls
+cd faces/
+ls
+sudo mv ~/Downloads/48660540.png tibtab.face.icon
+ls
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+nvim theme.conf
+sudo cp theme.conf ~/dotfiles/
+cd
+cd .config/hypr/
+nvim
+cd ..
+ls
+cd waybar/
+ls
+ps -aux | grep waybar
+ps aux | grep waybar
+ps | grep waybar
+ps
+ps | grep waybar
+kill 2282
+waybar
+sudo pacman -S obs-studio
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+neofetch 
+cd .config/alacritty/
+ls
+nvim catppuccin-mocha.toml
+cd ../nushell/
+ls
+nvim
+opengl
+sudo pacman -S ttf-liberation
+sudo pacman -S lib32-systemd
+cd /etc/
+sudo nvim pacman-conf
+ls
+cd pacman.d/
+ls
+cd ..
+pacman-conf 
+nvim pacman-conf
+ls -la
+nvim pacman.conf
+pacman-key init
+pacman-key --init
+sudo pacman-key --init
+nvim pacman.conf
+pacman-key --populate archlinux
+sudo pacman-key --populate archlinux
+nvim pacman.conf
+sudo nvim pacman.conf
+pacman -Syu
+sudo pacman -Syu
+waypaper
+cd 
+cd .config/hypr/
+cd /etc/sysctl.d/
+sl
+ls
+sudo touch 80-gamecompatibility.conf
+sudo nvim 80-gamecompatibility.conf
+sysctl --system
+sudo sysctl --system
+sudo pacman -S lib32-nvidia-utils
+sudo pacman lib32-nvidia-utils
+sudo pacman -S lib32-nvidia-utils
+pacman -Syu
+sudo pacman -Syu
+sudo nvim /etc/pacman.conf
+sudo pacman -Syu
+sudo pacman -S lib32-nvidia-utils
+sudo pacman -S lib32-systemd
+cd /etc/
+cat resolv.conf
+ls
+ls -la
+cd
+sudo pacman -S steam
+ls
+cd .local/share/
+ls
+cd applications/
+ls
+cd ../Steam/
+ls
+cd ..
+ls
+cd applications/
+ls
+cp /usr/share/applications/steam.desktop .
+ls
+cat discord.desktop
+nvim steam.desktop
+hyprctl clients
+cd .local/share/applications/
+ls
+cat discord.desktop
+cd .local/share/applications/
+ls
+cat discord.desktop
+nvim steam.desktop
+nvim .config/hypr/
+cd ../alacritty/
+cd .config/alacritty/
+ls
+nvim
+cd ..
+cd waybar/
+ls
+ps | grep waybar
+kill 13686
+waybar
+nvim
+cd ..
+cd hypr/
+ls
+nvmi
+cd .config/alacritty/
+nvim
+cd ..
+cd waybar/
+waybar
+nvim
+neofetch 
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+sudo pacman -D nwg-look
+pacman
+sudo pacman -h
+sudo pacman -R nwg-look 
+cd .local/share/l
+cd .local/share/
+ls
+cd nwg-look/
+ls
+cat gsettings
+cd ..
+ls
+rm nwg-look/
+rm -r nwg-look/
+cd /usr/share/themes/
+ls
+cd Default/
+ls
+cd gtk-3.0/
+l
+ls
+cat gtk-keys.css
+cd ..
+ls
+cd ..
+ls
+cd Emacs/
+ls
+cd gtk-3.0/
+l
+ss
+ls
+sl
+sls
+ls
+waybar
+cd 
+cd .config/waybar/nvim
+cd .config/waybar/
+nvim
+cd .
+ls
+cd ..
+ls
+cd ..
+ls
+cd .config/
+ls
+nvim QtProject.conf
+cd gtk-3.0/
+ls
+cat settings.ini
+nvim settings.ini
+gsettings 
+gsettings get
+gsettings get org.gnome.desktop.interfact gtk-theme
+gsettings get org.gnome.desktop.interface gtk-theme
+gsettings get org.gnome.desktop.interface gtk-theme Adwaita
+ls
+gsettings
+gsettings list-schemas
+cd 
+ls
+ls -la
+nvim .gtkrc-2.0
+rm .gtkrc-2.0
+waybar
+nvim .config/waybar/
+yay spotify
+nvim .config/hypr/
+cd ../
+ls
+cd tibtab/
+l
+ls
+cd .local/share/applications/
+ls
+cp /usr/share/applications/spotify.desktop .
+ls
+nvim spotify.desktop
+rm spotify.desktop
+cd
+yay -h
+pacman -Qs spotify
+pacman -R spotify
+sudo pacman -R spotify
+sudo pacman -S spotify
+sudo pacman -S spotify-launcher
+nvim /etc/spotify-launcher.conf
+sudo nvim /etc/spotify-launcher.conf
+journalctl 
+journalctl | tail
+journalctl | less
+journalctl | less -h
+less -h
+journalctl | less -h 100
+journalctl | less 100
+journalctl | less 
+less -h
+tail -h
+tail --help
+journalctl | tail -n 50
+journalctl | tail -n 80
+journalctl | tail -n 150
+journalctl | tail -n 30
+journalctl | tail -n 300
+sudo pacman -Syu
+sudo pacman -Rns spotify-launcher && sudo pacman -S spotify-launcher
+sudo pacman -Rns spotify-launcher and sudo pacman -S spotify-launcher
+sudo pacman -Rns spotify-launcher; sudo pacman -S spotify-launcher
+spotify-launcher 
+sudo nvim /etc/spotify-launcher.conf
+spotify-launcher 
+sudo pacman -S libva-nvidia-driver
+nvim .config/hypr/
+spotify-launcher 
+nvim .config/hypr/
+spotify-launcher 
+echo $SHELL
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+spotify-launcher 
+journalctl | tail -n 150
+sudo nvim /etc/spotify-launcher.conf
+spotify-launcher 
+sudo pacman -S nvidia-utils
+vainfo
+sudo pacman -S libva-utils
+vainfo
+spotify-launcher 
+cd /usr/lib/dri/
+ls
+NVD_LOG
+nvim .config/hypr/
+cd
+nvim .config/hypr/
+spotify-launcher 
+dmesg | tail -n 100
+sudo dmesg | tail -n 100
+spotify-launcher 
+sudo dmesg | tail -n 100
+nvim .config/hypr/
+spotify-launcher 
+reboot
+spotify-launcher 
+shutdown
+shutdown now
+discord 
+sudo dmesg | tail -n 100
+journalctl | tail -n 150
+journalctl | tail -n 300
+journalctl | tail -n 500
+discord 
+journalctl | tail -n 300
+journalctl | tail -n 50
+journalctl | tail -n 500
+journalctl | tail -n 700
+sudo pacman -h
+sudo pacman -Q
+sudo pacman -Q -h
+sudo pacman -Qs vba
+sudo pacman -Qs va
+sudo pacman -Qs libva
+sudo pacman -Qs libva32
+vainfo
+discord 
+sudo dmesg 
+journalctl | tail -n 700
+discord 
+journalctl | tail -n 3000
+sudo pacman -Qs nvidia
+sudo pacman -Qs libva
+vainfo
+nvim .config/hypr/
+nvim .config/hypr/
+spotify-launcher 
+sudo dmesg
+discord
+sudo dmesg
+discord
+journalctl | tail -n 3000
+nvim .config/hypr/
+discord
+nvim /etc/mkinitcpio.conf
+nvim /etc/modprobe.d/nvidia.conf
+cd
+discord 
+spotify-launcher 
+discord 
+nvim .config/hypr/
+cd /boot/
+ls
+cd efi
+ls
+cd refind
+ls
+sudo nvim refind.conf
+cd
+cd .config/hypr/
+pacman -Qs nvidia
+pacman -R libvdpau
+sudo pacman -R libvdpau
+ls
+lsmod | grep nvidia
+nvim
+cd /boot/efi/refind
+ls
+sudo nvim refind.conf
+sudo nvim /etc/mkinitcpio.conf
+sudo mkinitcpio -P
+cat /boot/EFI/refind/refind.conf
+sudo nvim refind.conf
+reboot
+dmesg | grep nvidia
+sudo dmesg | grep nvidia
+discord
+spotify-launcher 
+vainfo
+nvim .config/hypr/
+cat /proc/cmdline
+sudo pacman -Qs nvidia 
+sudo pacman -Syu
+cd .local/share/applications/
+sls
+ls
+cat discord.desktop
+/usr/bin/discord
+cat discord.desktop
+/usr/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+journalctl | tail -n 1000
+sudo pacman -Qs nvidia 
+lspci -k | grep -A 2 -E "(VGA|3D)"
+sudo pacman -R nvidia-dkms
+sudo pacman -Qs nvidia 
+sudo pacman -R nvidia-open-dkms
+sudo pacman -R nvidia-open
+sudo pacman -S nvidia-open-dkms
+reboot
+discord 
+avinfo
+vainfo
+sudo dmesg | grep nvidis
+sudo dmesg | grep nvidia
+spotify-launcher 
+lspci -k | grep -A 2 -E "(VGA|3D)"
+lspci
+sudo nvim /etc/spotify-launcher.conf
+spotify-launcher 
+lshw -C display
+glxinfo
+nvidia-smi 
+discord 
+NVD_LOG=1 vainfo --display wayland
+lspci -k | grep -E "VGA|3D"
+ls -l /dev/dri/
+ls -l /dev/dri/by-path
+discord
+nvim /etc/modprobe.d/nvidia.conf
+sudo nvim /etc/modprobe.d/nvidia.conf
+reboot
+discord
+spotify-launcher 
+sudo pacman -Qs lib32
+sudo pacman -Qs libva
+sudo pacman -Qs va
+sudo pacman -Qs nvidia
+nvtop
+NVD_LOG=1 LIBVA_DRIVER_NAME=nvidia vainfo
+nvim .config/hypr/
+sudo pacman -Qs egl
+sudo mkinitcpio -P
+reboot
+discord
+spotify-launcher 
+sudo dmesg | grep nvidia
+discord
+nvim .config/hypr/
+reboot
+ps -aux | grep discord
+ps aux | grep discord
+ps | grep discord
+ps | grep wayland
+ps | grep hyprland
+ps | grep hypr
+ps | grep Hyprland
+discord
+journalctl | tail -n 1000
+spotify-launcher 
+sudo dmesg | grep nvidia
+ps | grep steam
+kill 5082
+ps | grep steam
+kill 5082
+ps | grep steam
+sudo pacman -Qs nvidia
+sudo pacman -R libva-nvidia-driver
+reboot
+discord
+spotify-launcher 
+pacman -Qs optimus
+pacman -Qs optimus-manager
+pacman -S optimus-manager
+sudo pacman -Qs optimus-manager
+sudo pacman -S optimus-manager
+yay optimus
+reboot
+lspci -k | grep -E "VGA|3D"
+discord
+nviml
+sudo pacman -R spotify-launcher 
+sudo pacman -R nvidia-open-dkms
+sudo pacman -R nvidia-dkms
+sudo pacman -S nvidia-dkms
+sudo nvim /etc/modprobe.d/nvidia.conf
+sudo mkinitcpio -P
+reboot
+discord
+cat .local/share/applications/discord.desktop
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+dmesg | grep nvidia
+sud odmesg | grep nvidia
+sudo dmesg | grep nvidia
+vainfo
+sudo vainfo
+discord
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+journalctl | tail -n 1000
+sudo pacman -R discord
+sudo pacman -S discord
+cp /usr/share/applications/discord.desktop .local/share/applications/
+cd .local/share/applications/
+ls
+cat discord.desktop
+nvim discord.desktop
+journalctl | tail -n 1000
+discord --verbose --enable-features=UseOzonePlatform --ozone-platform=wayland 
+discord --verbose --enable-features=UseOzonePlatform --ozone-platform=wayland > crash
+ls
+discord --verbose --enable-features=UseOzonePlatform --ozone-platform=wayland 2&> crash
+ls
+sudo journalctl -k
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+cd /usr/share/themes/
+ls
+cd ..
+cd sddm/
+ls
+cd themes/
+ls
+cd corners/
+ls
+cat theme.conf
+ls
+cd icons/
+ls
+cd ..
+ls
+nvim theme.conf
+ls
+cd ..
+ls
+cd corners/
+ls
+cd backgrounds/
+ls
+rm glacier.png
+sudo rm glacier.png
+sudo rm leaves.png
+ls
+cat theme.conf
+cd ..
+cat theme.conf
+cp ~/Documents/wallpapers/Cell_5000x3000.png ./backgrounds/
+sudo cp ~/Documents/wallpapers/Cell_5000x3000.png ./backgrounds/
+ls
+sudo nvim theme.conf
+ls
+cd backgrounds/
+ls
+cd ..
+ls
+nvtop
+vainfo
+nvim .config/hypr/
+cd
+nvim .config/hypr/
+grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log
+sudo grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log
+sudo pacman -S libva-nvidia-driver
+sudo mkinitcpio -P
+reboot
+grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log
+nvim .config/hypr
+discord
+cd .config/discord/0.0.71/crashlogs
+ls
+cd .config/discord/0.0.71/
+ls
+cd modules/
+ls
+cd crashlogs/
+ls
+nvim 
+touch tmp.json
+nvim tmp.json
+ls
+rm tmp.json
+ls
+cd ..
+ls
+cd discord_voice/
+ls
+nvim discord-webrtc_0
+ls
+cd ..
+ls
+cd
+cat .local/share/applications/discord.desktop
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+NV_LOG=1 discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+journalctl | tail -n 1000
+cd .local/share/applications/
+ls
+cat steam.desktop
+nvim steam.desktop
+journalctl | tail -n 1000
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+discord
+obsidian 
+obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
+steam-runtime 
+sudo dmesg 
+cd
+nvim .config/hypr
+pacman -Qs nvidia
+pacman -Qs libva
+lspci -k | grep -E "VGA|3D"
+grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log
+vainfo
+pacman -Syu
+sudo pacman -Syu
+discord
+sudo pacman -Qs nvidia
+glxinfo
+sudo pacman -Qs mesa
+sudo pacman -Qs mesa-utils
+sudo pacman -S mesa-utils
+eglinfo -B
+eglgears_wayland
+nvim .config/alacritty/
+ls
+eglinfo -B
+nvim .config/hypr/
+sudo pacman -S spotify-launcher
+sudo nvim /etc/spotify-launcher.conf
+nvim .config/obsidian/user-flags.conf
+ps | grep steam
+kill 6348
+sudo dmesg
+yum whatprovides */libc.so.6
+yay whatprovides */libc.so.6
+pacman-config
+sudo pacman-config
+sudo pacman-conf
+sudo reflector 
+sudo systemctl status reflector.service
+sudo systemctl start reflector.service
+sudo pacman -Syu
+sudo pacman -Qo /usr/lib/libc.so.6
+sudo pacman -Qo /usr/lib32/libc.so.6
+ls -l /usr/lib32/libc.so.6
+ls -l /home/tibtab/.local/share/Steam/steam.sh
+ls -h
+ls --help
+exa
+exa -ls
+exa -l
+exa -l /home/tibtab/.local/share/Steam/steam.sh
+ls
+cd .local/share/
+ls
+cd flatpak/
+ls
+cd ..
+ls
+cd vulkan/
+ls
+cd ..
+ls
+ldd
+ldd --help 
+cd l
+cd ..
+ls
+ls -la
+cd ..
+sl
+ls
+ls -la
+cd .config/discord/0.0.71/
+ls
+cd modules/
+ls
+cd crashlogs/
+ls
+ldd 2024_10_19T14_44_17_976Z-0-minidump.dmp
+chmod +x 2024_10_19T14_44_17_976Z-0-minidump.dmp
+ls
+ldd 2024_10_19T14_44_17_976Z-0-minidump.dmp
+ldd discord
+sudo pacman -S glibc
+sudo pacman -S lib32-glibc
+discord
+ps | grep steam
+kill 6483
+ps | grep steam
+kill 6348
+sudo kill 6348
+kill 6348
+ps | grep steam
+kill 6957
+ps | grep steam
+kill 68643
+ps | grep steam
+kill 6957 -K
+kill -h
+kill 6957 --force
+ps | grep steam
+ps | grep discord
+ps | grep obsidian
+discord
+sudo discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo discord --enable-features=UseOzonePlatform --ozone-platform=wayland --no-sandbox
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu
+discord --disable-gpu
+sudo dmesg
+steam-runtime 
+discord
+obsidian
+spotify-launcher 
+sudo dmesg
+htop
+ps | grep swww
+kill 945
+sudo dmesg
+sudo dmesg | grep nvidia
+vainfo
+vainfo -h
+eglinfo 
+sudo mkinitcpio -P
+sudo pacman -S nwg-look
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+reboot
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo dmesg | grep nvidia
+vainfo
+eglinfo -B
+cd Downloads/
+ls
+chmod +x `Modrinth App_0.8.9_amd64.AppImage`
+mv `Modrinth App_0.8.9_amd64.AppImage` /usr/local/bin/
+sudo mv `Modrinth App_0.8.9_amd64.AppImage` /usr/local/bin/
+Modrinth App_0.8.9_amd64.AppImage 
+sudo mv `/usr/local/bin/Modrinth App_0.8.9_amd64.AppImage` /usr/local/bin/Modrinth.AppImage
+hyprctl clients
+Modrinth.AppImage 
+cd 
+cd .local/
+ls
+cd state/
+ls
+cd ..
+ls
+cd share/
+ls
+rm Steam/
+rm -rf Steam/
+ls
+rm -rf `Tiny Glade/`
+ls
+rm -rf spotify-launcher/
+ls
+cd applications/
+ls
+rm `Tiny Glade.desktop`
+ls
+cat `Steam Linux Runtime 3.0 (sniper).desktop`
+cat '`Steam Linux Runtime 3.0 (sniper).desktop`'
+nvim `Steam Linux Runtime 3.0 (sniper).desktop`
+discord
+sudo dmesg
+spotify-launcher 
+hyprpm update --no-shallow
+hyprpm reload
+discord
+sudo pacman -Qs git
+shutdown now
+sudo dmesg 
+sudo journalctl | tail -n 1000
+locale -a
+strac
+strace
+gsettings set org.gnome.desktop.interfact gtk-theme Adwaita
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita
+nvim .config/hypr/
+discord
+cat .config/hypr/hyprland.conf
+nvim .config/hypr/
+hyprctl setcursor adwaita 24
+discord
+yay -S spicetify-cli
+spicetify 
+spicetify update
+cd .config/spicetify/
+ls
+cd Themes/
+ls
+mv ~/Downloads/spicetify-main.zip .
+ls
+unzip spicetify-main.zip
+ls
+rm spicetify-main.zip
+cd spicetify-main/
+ls
+cp catppuccin/ ../
+ls
+cp -r catppuccin/ ../
+ls
+cd .l.
+cd ..
+ls
+rm spicetify-main/
+rm -r spicetify-main/
+cd ..
+ls
+spicetify config spotify-path /home/tibtab/.local/share/spotify-launcher/install/usr/share/spotify/
+ls
+nvim config-xpui.ini
+spicetify config current_theme catppuccin
+spicetify config color_scheme mocha
+spicetify config inject_css 1 inject_theme_js 1 replace_colors 1 overwrite_assets 1
+spicetify apply
+spicetify backup apply
+hyprctl clients
+sudo nvim /etc/spotify-launcher.conf
+hyprctl clients
+cd /usr/share/applications/
+ls
+touch modrinth.desktop
+sudo touch modrinth.desktop
+cat discord.desktop
+ls
+mv modrinth.desktop ~/.local/share/applications/
+sudo mv modrinth.desktop ~/.local/share/applications/
+sudo mv Modrinth.AppImage ~/.local/share/applications/
+ls
+cd ~/.local/share/applications/
+ls
+whereis modrinth.desktop
+whereis Modrinth.AppImage
+sudo mv /usr/local/bin/Modrinth.AppImage .
+ls
+hyprctl clients
+cat /usr/share/applications/discord.desktop
+nvim modrinth.desktop
+sl
+ls
+cd ..
+ls
+nvim ~/.config/obsidian/user-flags.conf
+nvim
+ls
+cd applications/
+ls
+cp /usr/share/applications/discord.desktop .local/share/applications/
+cp /usr/share/applications/discord.desktop .local/share/applications/.
+ls
+cp /usr/share/applications/discord.desktop .
+ls
+nvim discord.desktop
+hy
+hyprctl clients
+hyprctl clients | grep xwayland
+spotify-launcher 
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+hyprctl clients | grep xwayland
+hyprctl clients
+cd .config/hypr/
+ls
+mkdir wofi
+ls
+cd wofi/
+ls
+cp ~/Downloads/wofi-main.zip .
+ls
+unzip wofi-main.zip
+ls
+rm -r wofi-main.zip
+ls
+cp wofi-main/* .
+ls
+cp -r wofi-main/* .
+ls
+rm wofi-main/
+ls
+rm -r wofi-main/
+ls
+rm README.md
+rm LICENSE
+ls
+nvim colors.css
+ls
+cd config/
+ls
+nvim config
+ls
+cd ..
+ls
+cd assets/
+ls
+nvim mocha.webp
+ls
+cd ..
+ls
+nvim src/mocha/
+ls
+cd .config/hypr/wofi/src/
+ls
+nvim mocha/
+cd ..
+ls
+nvim
+neofetch 
+fetch
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+ls -la
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+mkdir projects
+cd projects/
+mkdir rust
+cd rust/
+cargo init
+ls
+rm *
+ls
+rm -r src/
+ls
+cargo init hello-world
+ls
+cd he
+cd hello-world/
+ls
+cd src/
+ls
+cd ..
+cargo run
+cd
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+cd Downloads/
+ls
+cd
+cd vaults/obsidian-vault/
+ls
+cd 
+nvim .config/starship.toml
+cd vaults/obsidian-vault/
+nvim .config/starship.toml
+cd
+nvim .config/starship.toml
+neofetch 
+nvim .config/starship.toml
+cd projects/rust/hello-world/
+cd 
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+nvim .config/starship.toml
+ls
+ls -
+ls -a
+nvim .config/nushell/config.nu
+ls
+cd .config/nushell/
+ls
+cd themes/
+ls
+cat catppuccin-mocha.nu
+ls
+cd ..
+cd .config/nushell/themes/
+ls
+cat catppuccin-mocha.nu
+nvim
+source themes/catppuccin-mocha.nu
+ls
+ls -la
+nvim .config/nushell/config.nu
+ls
+nvim config.nu
+sl
+ls
+rm -r the
+rm -r themes/
+ls
+mkdir themes
+mkdir nu-themes
+rm -r themes/
+ls
+touc nu-themes/catppuccin-mocha.nu
+touch nu-themes/catppuccin-mocha.nu
+nvim nu-themes/catppuccin-mocha.nu
+ls
+source nu-themes/catppuccin-mocha.nu
+ls
+ls -la
+nvim config.nu
+ls
+nvim .config/nushell/nu-themes/catppuccin-mocha.nu
+ls
+nvim .config/nushell/nu-themes/catppuccin-mocha.nu
+ls
+neofetch 
+test ho
+echo what
+nvim .config/nushell/nu-themes/catppuccin-mocha.nu
+ls
+nvim .config/nushell/nu-themes/catppuccin-mocha.nu
+ls
+nvim .config/nushell/nu-themes/catppuccin-mocha.nu
+nvim .config/nushell/
+ls
+nvim .config/nushell/
+explore 
+ls | explore
+explore --peel
+explore --peek
+nvim .config/nushell/
+neofetch 
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/corners/
+neofetch 
+sudo pacman -Syu
+discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo pacman -Qs discord
+sudo pacman -R discord-canary-electron-bin
+sudo pacman -Qs discord
+cd projects/rust/hello-world/
+nvim
+ls
+cd
+nvim .config/discord/settings.json
+nvim
+sudo pacman -R neofetch
+sudo pacman -S onefetch
+onefetch 
+cd projects/rust/hello-world/
+onefetch 
+sudo pacman -S fastfetch
+fastfetch 
+fastfetch -h
+fastfetch --load-config examples/2.jsonc
+fastfetch --load-config examples/1.jsonc
+fastfetch --load-config examples/3.jsonc
+fastfetch --load-config examples/4.jsonc
+fastfetch --load-config examples/5.jsonc
+fastfetch --load-config examples/6.jsonc
+fastfetch --load-config examples/7.jsonc
+fastfetch --load-config examples/8.jsonc
+fastfetch --load-config examples/9.jsonc
+sudo pacman -Syu
+reboot
+nvim .config/alacritty/
+fastfetch --load-config examples/9.jsonc
+fastfetch --load-config examples/10.jsonc
+fastfetch --load-config examples/11.jsonc
+fastfetch --load-config examples/12.jsonc
+fastfetch --load-config examples/13.jsonc
+fastfetch --load-config examples/14.jsonc
+fastfetch --load-config examples/15.jsonc
+fastfetch --load-config examples/16.jsonc
+fastfetch --load-config examples/17.jsonc
+fastfetch --load-config examples/18.jsonc
+fastfetch --load-config examples/19.jsonc
+fastfetch --load-config examples/20.jsonc
+fastfetch --load-config examples/21.jsonc
+fastfetch --load-config examples/22.jsonc
+fastfetch --load-config examples/23.jsonc
+fastfetch --load-config examples/24.jsonc
+fastfetch --load-config examples/25.jsonc
+nvim .config/hypr/
+shutdown now
+ls
+neofetch
+fastfetch 
+nvim .config/nushell/
+fastfetch 
+nvim .config/alacritty/
+fastfetch 
+fas
+fastfetch 
+fastfetch --load-config examples/12.jsonc
+fastfetch 
+ls
+fastfetch 
+cd .local/share/applications/
+ls
+echo discord.desktop
+cat discord.desktop >> modrinth.desktop
+ls
+cat discord.desktop > modrinth.desktop
+ls
+cd .local/share/applications/
+cat discord.desktop
+nvim modrinth.desktop
+ls
+cd projects/
+ls
+cd
+cd ..
+cd home
+cd
+cd projects/
+cd rust/
+cd ..
+cd Music/
+ls
+sl
+s
+ls
+cd 
+cd projects/
+ls
+cd rust/
+ls
+cd ..
+ls
+mkdir go
+mkdir deno
+mkdir c++
+ls
+cd go
+cd ..
+cd rust/
+cd ..
+ls
+cd go
+ls
+cd ..
+ls
+cd go
+ls
+pwd
+ls
+cd projects/
+cd go
+ls
+cd ..
+ls
+cd rust/
+ls
+cd hello-world/
+cd ..
+ls
+cd ../deno
+cd ../c+
+cd ../c++/
+cd ..
+ls
+cd deno/
+ls
+cd ..
+ls
+cd rust/
+ls
+cd hello-world/
+ls
+cd ..
+ls
+cd ..
+ls
+mkdir python
+ls
+mkdir node
+cd deno/
+ls
+cd ..
+ls
+cd rust/
+ls -la
+rm -r .git/
+rm -r .gitignore
+ls
+cd ..
+ls
+cd python/
+ls
+cd ..
+ls
+nvim .config/starship.toml
+ls
+cd /
+cd /home/
+cd tibtab/
+cd projects/rust/hello-world/
+lss
+cd ..
+fastfetch 
+ls
+whoami
+pwd
+sudo pacman -Syu
+sudo pacman -S vlc
+cd /dev/
+ls
+sudo pacman -S nemo
+sudo pacman -S nautilus
+sudo pacman -S thunar
+whereami
+cd
+nvim .config/hypr/
+cd projects/python/
+ls
+mkdir hellow-world
+rm -r hellow-world/
+mkdir hello-world
+cd hello-world/
+touch main.py
+nvim main.py
+python main.py
+cd ..
+ls
+cd ..
+ls
+cd deno
+l
+sls
+mkdir hello-world
+curl -fsSL https://deno.land/install.sh | sh
+deno
+nvim .bash_profile
+cargo
+nvim .bash_profile
+nvim .bashrc
+nvim .profile
+cd .deno/
+ls
+cd bin
+ls
+echo env.$PATH
+echo $PATH
+echo $env.PATH
+cd
+ls
+cd
+ls
+nvim .config/nushell/
+nvim .profile
+cat .cargo/env
+deno
+cd .deno/bin
+ls
+deno
+./deno
+deno --versoin
+$env | table -e
+cd
+nvim .config/alacritty/
+echo $env.CARGO_HOME
+echo .profile
+cat .profile
+source .profile
+. .profile
+help path
+help uniq
+help split row
+help char esep
+help char
+help esep
+nvim .config/nushell/
+deno --version
+cargo
+cd projects/deno/
+ls
+cd hello-world/
+ls
+nvim hello-world.ts
+deno run hello-world.ts
+ls
+touch deno.json
+ls
+cd ..
+ls
+mkdir typescript-support
+cd typescript-support/
+touch deno.json
+touch main.ts
+nvim main.ts
+deno run main.ts
+cd ..
+ls
+mkdir deno-examples
+ls
+mv hello-world/ deno-examples/
+mv typescript-support/ deno-examples/
+ls
+cd deno-examples/
+ls
+nvim main.ts
+touch deno.json
+nvim main.ts
+deno run main.ts
+cd ..
+ls
+cd deno-examples/
+ls
+mkdir url-parsing
+mv deno.json url-parsing/
+mv main.ts url-parsing/
+ls
+mkdir imports
+cd imports/
+touch deno.json
+nvim main.ts
+nvim utils.ts
+ls
+run main.ts
+deno run main.ts
+cd projects/deno/deno-examples/
+ls
+cd imports/
+ls
+cat deno.json
+cat deno.lock
+nvim
+cd projects/python/hello-world/
+ls
+nvim main.py
+cd ../deno
+cd ../../deno/deno-examples/imports/
+nvim
+cd projects/deno/deno-examples/imports/
+ls
+nvim main.ts
+cd ..
+ls
+cd
+yay vcv-rack
+yay vcv
+hyprctl clients
+sudo pacman -S wine wine-gecko wine-mono lib32-pipewire lib32-libpulse lib32-alsa-lib lib32-alsa-plugins
+sudo pacman -S wine wine-gecko wine-mono lib32-pipewire lib32-libpulse
+wine -h
+wine --h
+sudo pacman -S lutris
+lutris
+sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse \<\n>lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite \<\n>lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs \<\n>lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2
+sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sd12
+sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2
+sudo pacman -Syu
+shutdown now
+sudo pacman -S proton-ge-custom-bin
+ya proton-ge-custom-bin
+yay proton-ge-custom-bin
+sudo pacman -S gamescope
+sudo pacman -S xorg-xwayland
+sudo pacman -S wayland-protocols
+hyprctl clients
+ls
+ls -la
+cd $env.HOME
+nvim explicit_filter.restore
+cd .wine/l
+cd .wine/
+ls
+cd ..
+ls
+cd .steam/
+ls
+cd ..
+ls
+sudo pacman -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2
+ls
+sudo pacman -S wine-staging
+sudo nvim /etc/modprobe.d/nvidia.conf
+fastfetch 
+cd projects/rust/hello-world/
+nvim
+cd projects/rust/hello-world/
+ls -la
+sudo pacman -Syu
+reboot
+alacritty migrate
+fastfetch 
+cd projects/rust/hello-world/
+ls -la
+nvim .config/starship.toml
+nvim
+spicetify backup apply
+nvim .local/share/applications/discord.desktop
+hyprctl clients
+nvim /usr/share/applications/discord.desktop
+nvim .config/hypr/
+hyprctl clients
+nvim .config/starship.toml
+nvim .config/hypr/
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+hide-env $env.ELECTRON_OZONE_PLATFORM_HINT
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+$env.ELECTRON_OZONE_PLATFORM_HINT = ""
+hide-env $env.ELECTRON_OZONE_PLATFORM_HINT
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+hyprctl clients
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+nvim .config/hypr/
+nvim .config/star
+nvim .config/starship.toml
+nvim .config/nushell/
+cd .cache/starship/
+ls
+cat init.nu
+nvim init.nu
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+unset $ELECTRON_OZONE_PLATFORM_HINT
+reboot
+echo $env.ELECTRON_OZONE_PLATFORM_HINT
+hyprctl clients
+sudo pacman -Syu
+sudo pacman -Qs linux
+sudo pacman -Qs kernel
+sudo pacman -Qs headers
+reboot
+sudo pacman -S pipewire wireplumber xdg-desktop-portal-hyprland
+nvim .local/share/Steam/
+ls
+touch .steam/steam/steam_dev.cfg
+nvim .steam/steam/steam_dev.cfg
+hyprctl clients
+nvim .config/hypr/
+yay xwaylandvideobridge
+nvim .local/share/applications/discord.desktop
+hyprctl clients
+reboot
+pacman -Q | grep xdg-desktop-portal-
+sudo pacman -S grim slurp
+cd .config/waybar/
+ls
+ip a
+ps | grep waybar
+kill 2876
+waybar
+sudo pacman -S bluez bluez-utils
+systemctl enable bluetooth.service
+sudo nvim /etc/mkinitcpio.conf
+lsmod
+lsmod btusb
+modprobe btusb
+reboot
+bluetoothctl 
+ls
+sudo pacman -Q | grep xfce
+sudo pacman -S blueman
+cd .config/waybar/
+ps | grep waybar
+kill 960
+waybar
+cd .config/waybar/
+waybar
+nvim
+cd .config/nvim
+ls
+cd
+cd projects/rust/
+cd hello-world/
+nvim 
+cd
+nvim .config/starship.toml
+cd .config/nvim
+ls
+nvim
+cd 
+cd projects/rust/hello-world/
+nvim
+shutdown now
+lsblk
+cfdisk 
+cfdisk /dev/nvme1n1p4
+udo cfdisk /dev/nvme1n1p4
+sudo cfdisk /dev/nvme1n1p4
+sudo cfdisk /dev/nvme1n1
+dd
+lsblk
+lsblkid
+blkid 
+cat /boot/EFI/refind/refind.conf
+blkid 
+dd
+dd -h
+dd --help
+fd
+fdisk 
+ls
+lsblk
+reboot
+lsblk
+cat /etc/fstab
+ls
+fast
+fastfetch 
+lsblk
+resize2fs /dev/nvme0n1p4
+sudo resize2fs /dev/nvme0n1p4
+fastfetch 
+nvim /usr/share/applications/steam.desktop
+sudo nvim /usr/share/applications/steam.desktop
+cp /usr/share/applications/steam.desktop .local/share/applications/
+cd .local/share/applications/
+ls
+nvim steam.desktop
+spicetify apply
+sudo nvim /etc/bluetooth/main.conf
+sudo pacman -S winetricks
+sudo pacman -S protontricks
+yay protontricks
+cd Downloads/
+protontricks -s trackmania
+protontricks-launch --appid 2225070 OpenplanetNext_1.27.2.exe
+cd .steam/
+ls
+cd steam/
+ls
+cd steamapps/
+ls
+cd common
+ls
+cd Trackmania/
+ls
+pwd
+wine OpenplanetNext_1.27.2.exe
+protontricks-launch OpenplanetNext_1.27.2.exe
+cd ..
+ls
+cd ..
+cd compatdata/
+ls
+cd 2805730/
+ls
+cd pfx/
+ls
+cd drive_c/
+ls
+cd ProgramData/
+ls
+cd ..
+cd `Program Files (x86)/`
+ls
+cd Steam/
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd 222q
+cd 2225070/
+ls
+cd pfx/
+ls
+cd drive_c/
+ls
+cd ProgramData/
+ls
+cd Trackmania/
+ls
+cd Anzu/
+ls
+cd ..
+cd Cache/
+ls
+cd ManiaCode/
+ls
+cd ..
+ls
+cd Leagues/
+ls
+cd ..
+cd .
+protontricks-launch VC_redist.x64.exe
+cd ..
+cd common/Trackmania/
+ls
+pwd
+protontricks-launch OpenplanetNext_1.27.2.exe
+winetricks
+cd 
+cd Games/
+ls
+cd ubisoft-connect/u
+cd ubisoft-connect/
+ls
+cat lutris.json
+cat winetricks.log
+protontricks-launch OpenplanetNext_1.27.2.exe
+cd 
+cd Downloads/
+sudo pacman -Qs wine
+sudo pacman -Qs proton
+protontricks-launch OpenplanetNext_1.27.2.exe
+pwd
+ls -la
+cd 
+ls -la
+cd .local/
+ls
+cd share
+ls
+cd Steam/steamapps/
+sl
+ls
+cd common/Trackmania/
+ls
+pwd
+cd .config/
+mkdir dunst
+cd dunst/
+touch dunstrc
+/usr/bin/xdg-open
+/usr/bin/xdg-open google.com
+/usr/bin/xdg-open ww.google.com
+/usr/bin/xdg-open www.google.com
+/usr/bin/xdg-open https://www.google.com
+dmenu
+ps | grep dunst
+dunst
+kill 21324
+ps | grep dunst
+dunst
