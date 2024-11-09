@@ -1,4 +1,3 @@
-
 [terminal.shell]
 program = "/usr/bin/nu"
 
@@ -23,5 +22,3 @@ primary.background = "#11111b"
 import = [
   "~/.config/alacritty/catppuccin-mocha.toml"
 ]
-
-[terminal]

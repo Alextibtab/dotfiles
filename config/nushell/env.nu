@@ -94,6 +94,24 @@ use std "path add"
 $env.PATH = ($env.PATH | split row (char esep))
 path add /home/tibtab/.cargo/bin
 path add /home/tibtab/.deno/bin
+$env.VCPKG_ROOT = "/home/tibtab/projects/c++/vcpkg/"
+path add $env.VCPKG_ROOT
+
+# fnm (fast node manager)
+load-env (fnm env --shell bash
+    | lines
+    | str replace 'export ' ''
+    | str replace -a '"' ''
+    | split column '='
+    | rename name value
+    | where name != "FNM_ARCH" and name != "PATH"
+    | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value }
+)
+
+$env.PATH = ($env.PATH
+    | split row (char esep)
+    | prepend $"($env.FNM_MULTISHELL_PATH)/bin"
+)
 # path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)

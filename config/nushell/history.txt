@@ -1980,3 +1980,1991 @@ dunst
 kill 21324
 ps | grep dunst
 dunst
+cp -r .config/ dotfiles/
+cd dotfiles/
+ls
+git status
+cd ..
+ls
+cp /boot/EFI/refind/refind.conf .
+ls
+mv refind.conf dotfiles/
+cd
+ls -la
+ls
+ls -la
+sudo pacman -Q
+sudo pacman -Q > packages
+ls
+sudo pacman -Q save packages
+sudo pacman -Q >> packages
+sudo pacman -Q | table
+sudo pacman -Q | table -h
+sudo pacman -Q | save packages.txt
+nvim packages.txt
+yay
+sudo pacman -Syu
+yay -h
+yay -Q
+la
+ls
+mv packages.txt dotfiles/
+cd dotfiles/
+ls
+mv .config config
+ls
+mkdir distros
+mkdir distros/arch
+mv packages.txt distros/arch/
+ls
+cd distros/arch/
+touch README.md
+bw unlock
+export BW_SESSION="kr61hLiHW7YMMbOvv4fBGU19+3bDhpHnCSq6BY62pnvtCxr8jOdlWgLO+9ur0DIO6z90z0ZReqzFAcppD7a7HQ=="
+export --help
+$env.BW_SESSION="kr61hLiHW7YMMbOvv4fBGU19+3bDhpHnCSq6BY62pnvtCxr8jOdlWgLO+9ur0DIO6z90z0ZReqzFAcppD7a7HQ=="
+$env.BW_SESSION = "kr61hLiHW7YMMbOvv4fBGU19+3bDhpHnCSq6BY62pnvtCxr8jOdlWgLO+9ur0DIO6z90z0ZReqzFAcppD7a7HQ=="
+ls
+nvim
+ls
+cd ..
+ls
+nvim ~/.config/hypr
+ls
+cd ..
+ls
+nvim README.md
+ls
+cd config/
+ls
+cd `Bitwarden CLI/`
+ls
+cat data.json
+cd ..
+sl
+ls
+rm -r `Bitwarden CLI/`
+cd CrossCode/
+ls
+cd Default/
+ls
+cd ..
+ls
+cd ..
+ls
+rm -r CrossCode/
+ls
+cd Electron/
+ls
+cd ..
+rm -r Electron/
+ls
+cd ModrinthApp/
+ls
+cd ..
+rm -r ModrinthApp/
+ls
+cat QtProject.conf
+ls
+cd Thunar/
+ls
+cat uca.xml
+cd ..
+ls
+rm -r Thunar/
+cd alacritty/
+lsx
+ls
+cd ..
+ls
+cd btop/
+ls
+cat btop.conf
+ls
+cd ..
+ls
+rm -r btop/
+ls
+cd cava/
+ls
+cat config
+cd ..
+ls
+rm -r cava
+ls
+cd dconf/
+ls
+cat user
+cd ..
+ls
+rm -r dconf/
+cd discord/
+ls
+cd ..
+ls
+rm -r discord/
+rm -r discordcanary/
+ls
+cd dunst/
+ls
+cd ..
+ls
+cd glib-2.0/
+ls
+cd settings/
+ls
+cd ..
+ls
+rm -r glib-2.0/
+cd go/
+ls
+cd telemetry/
+ls
+cd ..
+ls
+rm -r go/
+cd gtk-3.0/
+ls
+cat settings.ini
+cd ..
+ls
+cd kitty/
+ls
+cd ..
+rm -r kitty/
+ls
+cd menus/
+ls
+cd applications-merged/
+ls
+cd ..
+ls
+rm -r menus/
+cd neofetch/
+ls
+cat config.conf
+cd ..
+ls
+neofetch
+ls
+rm -r neofetch/
+ls
+cd nwg-look/
+ls
+cat config
+cd ..
+ls
+cd obs-studio/
+ls
+cd basic/
+ls
+cd profiles/
+ls
+cd Untitled/
+ls
+cd ..
+ls
+cd ..
+ls
+cd scenes/
+ls
+cat Untitled.json
+cd ..
+ls
+cd ..
+ls
+rm -r obs-studio/
+ls
+cd obsidian/
+ls
+cd ..
+ls
+rm -r obsidian/
+ls
+cd ohmyposh/
+ls
+cd ..
+ls
+cd pulse/
+ls
+cat cookie
+cd ..
+ls
+rm -r pulse/
+cd spicetify/
+ls
+cd ..
+ls
+rm -r spicetify/
+cd spotify/
+ls
+cat prefs
+cd ..
+ls
+rm -r spotify/
+cd tmux/
+ls
+cd ..
+ls
+cd unity3d/
+ls
+cd ..
+ls
+rm -r unity3d/
+cat user-dirs.dirs
+rm user-dirs.*
+ls
+cd vlc
+ls
+cd ..
+rm -r vlc
+ls
+cd waybar
+ls
+cd ..
+ls
+cd waypap
+cd waypaper
+ls
+cat config.ini
+cd ..
+ls
+cd xfce4/
+ls
+cd xfconf/
+ls
+cd xfce-perchannel-xml/
+ls
+cat thunar.xml
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd xsettingsd/
+ls
+cat xsettingsd.conf
+cd ..
+ls
+rm -r xfce4/
+rm -r xsettingsd/
+ls
+cd yay/
+ls
+cd ..
+ls
+rm -r yay
+ls
+cd ..
+ls
+git status
+git add .
+git commit -m "Update dotfiles no more windows support only linux added arch dotfiles"
+git remote origin
+get remote get-url origin
+get remote get-url
+ls
+cd .git
+ls
+nvim config
+cd ..
+ls
+git commit -m "Update dotfiles no more windows support only linux added arch dotfiles"
+git config --global user.email "14alexcockburn@gmail.com"
+git config --global user.name "Alextibtab"
+git commit -m "Update dotfiles no more windows support only linux added arch dotfiles"
+git push
+cd projects/c++/
+ls
+git clone git@github.com:Alextibtab/voxel-engine.git
+git clone git@github.com:Alextibtab/shader-examples.git
+git clone git@github.com:Alextibtab/learn-opengl-cxx.git
+git clone git@github.com:Alextibtab/cxx-template.git
+sudo pacman -S cmak
+sudo pacman -S cmake
+sudo pacman -S vcpkg
+cd voxel-engine/
+ls
+sudo pacman -R vcpkg
+shutdown now
+nvim .config/hypr/
+LC_ALL=C.UTF-8 lscpu 
+LC_ALL=C.UTF-8 lscpu | grep Virtualisation
+LC_ALL=C.UTF-8 lscpu | grep Virtualization
+zgrep 
+zgrep CONFIG_KVM= /proc/config.gz
+lsmod | grep kvm
+zgrep VIRTIO /proc/config.gz
+lsmod | grep virtio
+reboot
+lspci
+lspci -k | grep -E "VGA|3D"
+vtop
+ntop
+nvtop
+fastfetch 
+lspci -nn | grep -E "NVIDIA"
+yay nordvpn-bin
+groupadd -r nordvpn
+gpassswd -a tibtab nordvpn
+groupadd -r nordvpn
+ls
+sudo systemctl enable nordvpnd.service
+sudo systemctl start nordvpnd.service
+nordvpn login
+sudo groupadd nordvpn
+sudo usermod -aG nordvpn
+sudo usermod -aG nordvpn $USER 
+sudo usermod -aG nordvpn $env.USER 
+nordvpn login
+reboot
+nordvpn login
+nordvpn set technology nordlynx
+nordvpn connect netherlands
+nordvpn login --callback "nordvpn://login?action=login&exchange_token=YWJlNjMzMWU5ZmM5Y2RjZjQ0N2FkMjBmZjc3YmY3MGZlOTE2MDIzOGM2NDMxN2U4NWIzMTQzOGRmZDNlMDBjZA%3D%3D&status=done"
+nordvpn --help
+nordvpn settings
+nordvpn technology --help
+nordvpn set technology --help
+nordvpn --help
+nordvpn settings --help
+nordvpn set --help
+nordvpn set post-quantum
+nordvpn set post-quantum --help
+nordvpn set post-quantum 1
+nordvpn set --help
+nordvpn set autoconnect --help
+nordvpn set autoconnect enabled Switzerland
+nordvpn status
+nordvpn connect Switzerland
+nordvpn status
+xwaylandvideobridge
+xwaylandvideobridge --hlep
+xwaylandvideobridge --help
+sudo systemctl status xwaylandvideobridge 
+sudo systemctl status xwaylandvideobridge.service
+sudo systemctl enable xwaylandvideobridge.service
+xwaylandvideobridge --help
+ps | grep xwayland
+ps | grep xdg
+sudo systemctl status xdg-desktop-portal
+sudo systemctl status xdg-desktop-portal-hyprland
+sudo systemctl status xdg-desktop-portal-hyprland pipewier
+sudo systemctl status xdg-desktop-portal-hyprland pipewire
+pacman -Q | grep xdg-desktop-portal-
+pacman -Q | grep xdg-desktop-portal
+sudo systemctl enable xdg-desktop-portal-hyprland
+nvim .local/share/applications/discord.desktop
+nvim .config/hypr/
+sudo systemctl status xdg-desktop-portal-hyprland.service
+sudo systemctl status xdg-desktop-portal.service
+pacman -Q | grep xdg-desktop-portal
+sudo systemctl --use status xdg-desktop-portal.service
+systemctl --user status xdg-desktop-portal.service
+systemctl --user status xdg-desktop-portal-hyprland.service
+systemctl --user status xwaylandvideobridge.service
+systemctl --user status xwaylandvideobridge
+nvim .local/share/applications/discord.desktop
+sudo nvim .steam/steam/steam_dev.cfg
+ps | grep discord
+systemctl --user status xwaylandvideobridge
+systemctl --user status pipewire
+systemctl --user enable pipewire
+systemctl --user status pipewire
+systemctl --user enable wireplumber
+systemctl --user enable xdg-desktop-portal-hyprland
+pacman -Q | grep xdg-desktop-portal
+systemctl --user status pipewire wireplumber
+pacman -Q | grep xdg-desktop-portal
+yay vesktop
+pacman -Q | grep discord
+pacman -R discord
+sudo pacman -R discord
+sudo pacman -Syu
+hyprctl clients
+nvim /usr/share/applications/vesktop.desktop
+rm .local/share/applications/discord.desktop
+ls
+cp /usr/share/applications/vesktop.desktop .local/share/applications/
+ls
+cd .local/share/applications/
+ls
+nvim vesktop.desktop
+hyprctl clients
+nvim .config/hypr/
+journalctl | tail -n 4000
+nvim .local/share/applications/vesktop.desktop
+hyprctl clients
+nvim .local/share/applications/vesktop.desktop
+journalctl | tail -n 1000
+cd .config/vesktop/
+ls
+cd Crashpad/
+ls
+cd ..
+ls
+cd sessionData/
+ls
+xwaylandvideobridge
+sudo pacman -S piper
+nordvpn connect Switzerland
+vesktop 
+vainfo
+systemctl --user status pipewire wireplumber
+systemctl --user status xdg-desktop-portal-hyprland.service
+/usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime
+vesktop
+/usr/bin/vesktop --enable-features=WaylandWindowDecorations,UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+sudo pacman -Syu
+reboot
+hyprctl clients
+nvim .config/hypr/
+vesktop
+nvim .config/hypr/
+cd .config/hypr/wofi/
+ls
+cd config/
+ls
+cat config
+/usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime<\n>
+journalctl | tail -n 1000
+sudo pacman -Qs xdg-
+yay xdg-desktop-portal-hyprland
+systemctl --user status pipewire wireplumber
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user status pipewire.socket
+systemctl --user status pipewire-media-session
+systemctl --user status xdg-desktop-portal
+env | grep "^WAYLAND_DISPLAY="
+< "/proc/$(pidof xdg-desktop-portal)/environ" tr '\0' '\n' | grep '^WAYLAND_DISPLAY='
+cd /proc/
+ls
+ps | grep xdg-desktop
+cd /proc/1051/
+ls
+cat environ | grep "^WAYLAND_DISPLAY="
+sudo cat environ | grep "^WAYLAND_DISPLAY="
+nvim environ
+cd ..
+ps | grep xdg-desktop
+cd 1270
+ls
+cat environ | grep "^WAYLAND_DISPLAY="
+cd ..
+ps | grep xdg-desktop
+cd 1294
+cat environ | grep "^WAYLAND_DISPLAY="
+ls
+cd ..
+cd 1051
+sl
+ps | grep xdg-desktop
+cd 1051
+ls
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=$compositor_name
+journalctl
+journalctl | grep exec
+journalctl | grep execandget
+echo $env.XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland
+systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-hyprland
+sudo systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
+systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
+systemctl --user stop pipewire pipewire.socket wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
+systemctl --user start wireplumber
+ps | grep xdg-desktop
+cd /proc/1051/
+cat environ | grep "^WAYLAND_DISPLAY="
+sudo cat environ | grep "^WAYLAND_DISPLAY="
+nvim .config/hypr/
+cat .local/share/applications/vesktop.desktop
+pw-dump 
+ls
+touch sc.sh
+nvim sc.sh
+chmod +x sc.sh
+./sc.sh
+ls
+select
+jq
+gojq
+rm sc.sh
+pw-dump | save dump
+ls
+nvim dump
+mv dump dump.json
+/usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime
+nordvpn status
+nordvpn settings
+nordvpn set --help
+nordvpn set ipv6 1
+nordvpn status
+nordvpn 
+nordvpn d
+nordvpn c Switzerland
+systemctl --user status xdg-desktop-portal
+systemctl --user status xdg-desktop-portal-hyprland
+sudo pacman -Qs qt
+sudo pacman -Qs xdph
+cd Downloads/
+ls
+cat patch.txt
+cd
+nvim .config/hypr/
+systemctl --user stop xdg-desktop-portal-hyprland
+systemctl --user stop xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland -l DEBUG
+systemctl --user status xdg-desktop-portal-hyprland
+ps | grep xdg-desktop
+/usr/lib/xdg-desktop-portal-hyprland -l DEBUG
+/usr/lib/xdg-desktop-portal-hyprland -v
+/usr/lib/xdg-desktop-portal-hyprland -l
+/usr/lib/xdg-desktop-portal-hyprland -h
+/usr/lib/xdg-desktop-portal-hyprland -V
+ps | grep xdg-desktop
+ps
+/usr/lib/xdg-desktop-portal-hyprland -V
+/usr/lib/xdg-desktop-portal-hyprland -v
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -v
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -v
+ls
+cd /usr/share/xdg-desktop-portal/portals/
+ls
+cat hyprland.portal
+nvim .config/hypr/
+ps | grep xdg-desktop
+cd /proc/29979
+ls
+ps | grep xdg-desktop
+cd ../33230
+ls
+/usr/lib/xdg-desktop-portal-hyprland -v
+/usr/lib/xdg-desktop-portal
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland<\n>systemctl --user restart pipewire pipewire.socket xdg-desktop-portal xdg-desktop-portal-hyprland
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime
+systemctl --user status xdg-desktop-portal-hyprland
+nvim .config/hypr/
+cd .config/hypr/
+ls
+touch xdph.conf
+nvim xdph.conf
+fastfetch
+sudo pacman -Qs hyprland
+systemctl --user status xdg-desktop-portal-wlr
+systemctl --user status xdg-desktop-portal
+systemctl --user status xdg-desktop-hyprland
+systemctl --user status xdg-desktop-portal-hypr
+systemctl --user status xdg-desktop-portal-hyprland
+ls
+nvim dump.json
+ls
+nvim xdgh-log.yaml
+ls
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -v | save log-xdgh.txt
+/usr/lib/xdg-desktop-portal-hyprland
+ls
+shutdown now
+nvim .config/hypr/
+systemctl --user status xdg-desktop-portal-hyprland
+journalctl | tail -n 2000
+systemctl --user restart xdg-desktop-portal-hyprland
+journalctl | tail -n 2000
+sudo dmesg
+sudo pacman -Qs xdg
+sudo pacman -Syu
+cat .local/share/applications/vesktop.desktop
+nvim .config/hypr/
+reboot
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user restart xdg-desktop-portal-hyprland
+fastfetch
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+hyprpm reload
+hyprpm update
+hyprpm reload
+systemctl --user restart xdg-desktop-portal-hyprland
+fastfetch
+ls
+fastfetch 
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+sudo pacman -h
+pacman -U file:// /var/cache/pacman/pkg/xdg-desktop-portal-hyprland-1.3.6-1-x86_64.pkg.tar.zst
+sudo pacman -U file:// /var/cache/pacman/pkg/xdg-desktop-portal-hyprland-1.3.6-1-x86_64.pkg.tar.zst
+sudo pacman -U file:///var/cache/pacman/pkg/xdg-desktop-portal-hyprland-1.3.6-1-x86_64.pkg.tar.zst
+sudo pacman -R xdg-desktop-portal-hyprland
+sudo pacman -R xdg-desktop-portal-impl
+sudo pacman -R xdg-desktop-portal-hyprland
+sudo pacman -U file:///var/cache/pacman/pkg/xdg-desktop-portal-hyprland-1.3.6-1-x86_64.pkg.tar.zst
+yay downgrade
+downgrade -h
+downgrade xdg-desktop-portal-hyprland
+sudo downgrade xdg-desktop-portal-hyprland
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+sudo pacman -Qs xdg
+sudo downgrade xdg-desktop-portal-hyprland
+fastfetch 
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+systemctl --user restart xdg-desktop-portal-hyprland
+systemctl --user status xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -l DEBUG
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -v
+systemctl --user stop xdg-desktop-portal-hyprland
+/usr/lib/xdg-desktop-portal-hyprland -v | save xdgh-portal-bug.txt
+ls
+cd Documents/ls
+cd Downloads/
+ls
+cat `patch(1).txt`
+cat patch.txt
+echo $env.XDPH_WINDOW_SHARING_LIST
+systemctl --user restart xdg-desktop-portal-hyprland
+echo $env.XDPH_WINDOW_SHARING_LIST
+cd projects/c++/
+ls
+git clone --recursive https://github.com/hyprwm/xdg-desktop-portal-hyprland
+cd xdg-desktop-portal-hyprland/
+ls
+cd src/
+ls
+cd ..
+ls
+cd hyprland-share-picker/
+ls
+nvim main.cpp
+sudo pacman -S --needed gbm hyprland-protocols hyprlang hyprutils hyprwayland-scanner libdrm libpipewire-0.3 libspa-0.2 sdbus-cpp wayland-client wayland-protocols
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build 
+cmake --build build
+sudo cmake --install build
+ls
+cd bin/
+ls
+./hyprland-share-picker
+rm -r bin
+cd ..
+rm -r bin/
+sudo rm -r bin
+rm -r build/
+ls
+cd ..
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build 
+cmake --build build
+sudo cmake --install build
+ls
+./xdg-desktop-portal-hyprland -l
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v
+cd hyprland-share-picker/
+ls
+nvim main.cpp
+cd ..
+cmake --build build
+sudo cmake --install build
+./xdg-desktop-portal-hyprland -v
+./xdg-desktop-portal-hyprland -v | save temp.txt
+nvim temp.txt
+ls
+cd hyprland-share-picker/
+ls
+nvim main.cpp
+ls
+cd ..
+ls
+cat hyprland.portal
+cd ..
+ls
+cd xdg-desktop-portal-hyprland/
+ls
+cd bin/
+ls
+./hyprland-share-picker
+shutdown now
+cd projects/c++/
+mkdir xdph
+ls
+mv xdg-desktop-portal-hyprland xdph/
+ls
+cd xdph/
+ls
+mv xdg-desktop-portal-hyprland/ xdg-desktop-portal-hyprlan-1-3-7
+mv ~/Downloads/xdg-desktop-portal-hyprland-1.3.6.zip .
+ls
+unzip xdg-desktop-portal-hyprland-1.3.6.zip
+ls
+mv xdg-desktop-portal-hyprlan-1-3-7/ xdg-desktop-portal-hyprland-1-3-7/
+ls
+rm xdg-desktop-portal-hyprland-1.3.6.zip
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+sudo pacman -Qs xdg
+cmake --build build
+nvim README.md
+sudo pacman -S hyprland-protocols
+ls
+cd protocols/
+ls
+cd ..
+ls
+cd subprojects/
+ls
+cd hyprland-protocols/
+ls
+cd ..
+ls
+cd ..
+ls
+cd subprojects/
+ls
+cd sdbus-cpp/
+ks
+ls
+cd ..
+ls
+mv ~/Downloads/hyprland-protocols-main.zip .
+mv ~/Downloads/sdbus-cpp-master.zip .
+ls
+rm -r hyprland-protocols
+rm -r sdbus-cpp/
+unzip hyprland-protocols-main.zip
+unzip sdbus-cpp-master.zip
+sl
+ls
+rm sdbus-cpp-master.zip
+rm hyprland-protocols-main.zip
+mv hyprland-protocols-main/ hyprland-protocols/
+mv sdbus-cpp-master/ sdbus-cpp/
+cd ..
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+ls
+cd subprojects/
+ls
+cd hyprland-protocols/
+ls
+cd ..
+ls
+cd sdbus-cpp/
+ls
+cd ..
+ls
+cd ..
+ls
+nvim CMakeLists.txt
+ls
+rm -r build/
+cd protocols/
+ls
+cd ..
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+nvim CMakeLists.txt
+ls
+cd protocols/
+ls
+cd ..
+cd subprojects/
+ls
+cd hyprland-protocols/
+ls
+nvim README.md
+cd protocols/
+ls
+cat hyprland-ctm-control-v1.xml
+cd ..
+ls
+cat meson.build
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1-3-7/
+ls
+cd subprojects/
+ls
+cd hyprland-protocols/
+ls
+cd protocols/
+ls
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+cd subprojects/
+ls
+rm hyprland-protocols/
+rm -r hyprland-protocols/
+mv ~/Downloads/hyprland-protocols-main.zip .
+ls
+unzip hyprland-protocols-main.zip
+rm hyprland-protocols-main.zip
+ls
+mv hyprland-protocols-main/ hyprland-protocols/
+cd hyprland-protocols/
+ls
+cd protocols/
+ls
+cd ..
+ls
+cd ..
+ls
+rm -r build/
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1-3-7/
+ls
+rm -r build/
+rm -r bin/
+ls
+sudo rm -r bin
+ls
+rm temp.txt
+ls
+rm xdg-desktop-portal-hyprland
+ls
+rm hyprland.portal
+rm org.freedesktop.impl.portal.desktop.hyprland.service.in
+ls
+ls ../xdg-desktop-portal-hyprland-1.3.6/
+ls
+ls -la
+cat .gitmodules
+cat .gitignore
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+ls
+ls -la
+cd subprojects/
+ls
+rm -r hyprland-protocols/
+rm -r sdbus-cpp/
+ls
+cd ..
+ls
+git submodule update --init --recursive
+ls -la
+git init
+git submodule update --init --recursive
+ls -la
+cd .builds/
+ls
+cd ..
+rm -r .git/
+ls
+rm -r build/
+cd protocols/
+ls
+rm wlr-screencopy-unstable-v1.cpp
+rm wlr-screencopy-unstable-v1.hpp
+cd ..
+ls
+ls -la
+cd .github/
+ls
+cd ..
+ls
+ls -la
+cat .gitmodules
+cd subprojects/
+mkdir hyprland-protocols
+rm -r hyprland-protocols/
+git clone https://github.com/hyprwm/hyprland-protocols
+git clone https://github.com/Kistler-Group/sdbus-cpp
+ls
+cd ..
+ls
+cmak
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build
+nvim CMakeLists.txt
+bw unlock
+export BW_SESSION="GLhQ8Sk5mAsOo+lhpUDh5RkyR3EbFgQwhkC4X79mdzAXfBy2+8TTPk0Wjc2HhnIF9byeEjCpidwKEbQgoUixDg=="
+$env.BW_SESSION="GLhQ8Sk5mAsOo+lhpUDh5RkyR3EbFgQwhkC4X79mdzAXfBy2+8TTPk0Wjc2HhnIF9byeEjCpidwKEbQgoUixDg=="
+$env.BW_SESSION = "GLhQ8Sk5mAsOo+lhpUDh5RkyR3EbFgQwhkC4X79mdzAXfBy2+8TTPk0Wjc2HhnIF9byeEjCpidwKEbQgoUixDg=="
+nvim CMakeLists.txt
+ls
+rm -r build/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+ls
+cd build/
+ls
+nvim cmake_install.cmake
+ls
+nvim CMakeCache.txt
+cmake --build build
+cd ..
+cmake --build build
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build
+nvim CMakeLists.txt
+ls
+git status
+cd ~/Downloads/
+ls
+rm `patch(1).txt`
+rm patch.txt
+rm VC_redist.x64.exe
+rm OpenplanetNext_1.27.2.exe
+rm xdgh-portal-bug.txt
+ls
+unzip xdg-desktop-portal-hyprland-1.3.6.zip
+ls
+rm xdg-desktop-portal-hyprland-1.3.6.zip
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+ls
+cmake --build build
+ls ~/projects/c++/xdph/xdg-desktop-portal-hyprland-1.3.6/
+cd subprojects/
+cat ../.gitmodules
+git clone https://github.com/Kistler-Group/sdbus-cpp
+git clone https://github.com/hyprwm/hyprland-protocols
+cd ..
+cmake --build build
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build
+cd ..
+ls
+rm -r xdg-desktop-portal-hyprland-1.3.6/
+cd
+cd projects/c++/xdph/
+ls
+cd xdg-desktop-portal-hyprland-1.3.6/
+ls
+cd subprojects/
+ls
+cd hyprland-protocols/
+ls
+cd protocols/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cd ..
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cd build/
+ls
+cd contrib/
+ls
+cd systemd/
+ls
+cd ..
+ls
+cd hyprland-share-picker/
+ls
+cd ..
+ls
+cd ..
+ls
+cmake --build build
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cat ../.gitmodules
+cd ..
+cat xdg-desktop-portal-hyprland-1-3-7/.gitmodules
+cat xdg-desktop-portal-hyprland-1-3-6/.gitmodules
+cat xdg-desktop-portal-hyprland-1.3.6/
+cat xdg-desktop-portal-hyprland-1.3.6/.gitmodules
+nvim CMakeLists.txt
+:q
+ls
+cd subprojects/
+ls
+rm -r sdbus-cpp/
+mv ~/Downloads/sdbus-cpp-1.6.0.zip .
+ls
+unzip sdbus-cpp-1.6.0.zip
+rm sdbus-cpp-1.6.0.zip
+ls
+mv sdbus-cpp-1.6.0/ sdbus-cpp/
+cd ..
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build
+nvim CMakeLists.txt
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build
+ls
+sudo cmake --install build
+ls
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -h
+./xdg-desktop-portal-hyprland -v | save log1.txt
+cd ..
+ls
+cd xdg-desktop-portal-hyprland-1-3-7/
+ls
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+ls
+touch org.freedesktop.impl.portal.desktop.hyprland.service.in
+nvim org.freedesktop.impl.portal.desktop.hyprland.service.in
+cmake -DCMAKE_INSTALL_LIBEXECDIR=. -DCMAKE_INSTALL_PREFIX=. -B build
+cmake --build build/
+sudo cmake --install build
+ls
+touch hyprland.portal
+nvim hyprland.portal
+sudo cmake --install build
+ls
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v | save log1.txt
+ls
+cd src/
+ls
+cd core/
+ls
+cd ..
+cd shared/
+l
+ls
+cd ../portals/
+ls
+cd ..
+ls
+cd ..
+ls
+cd hyprland-share-picker/
+ls
+nvim main.cpp
+ls
+cd ..
+ls
+cd projects/c++/xdph/xdg-desktop-portal-hyprland-1-3-7/
+ls
+cmake --build build/
+nvim log1.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v | save log2.txt
+nvim log2.txt
+ls
+sudo cmake --install build
+ls
+rm log2.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v | save log2.txt
+cmake --build build/
+sudo cmake --install build
+nvim log2.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v | save log3.txt
+rm log3.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+./xdg-desktop-portal-hyprland -v | save log3.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+cmake --build build/
+sudo cmake --install build
+nvim log3.txt
+systemctl --user stop xdg-desktop-portal-hyprland
+ls
+./xdg-desktop-portal-hyprland -v | save log4.txt
+cd //
+cd 
+cd projects/c++/xdph/
+git clone git@github.com:Alextibtab/xdg-desktop-portal-hyprland.git
+cd xdg-desktop-portal-hyprland/
+git fetch upstream
+git remote add upstream https://github.com/hyprwm/xdg-desktop-portal-hyprland.git
+git fetch upstream
+git checkout -b bugfix/add-portalmanager-toplevel-activate-call upstream/master
+nvim src/core/PortalManager.cpp
+git status
+git add .
+systemctl --user stop xdg-desktop-portal-hyprland
+cmake --build build/
+sudo cmake --install build
+systemctl --user stop xdg-desktop-portal-hyprland
+ls
+./xdg-desktop-portal-hyprland -v | save log4.txt
+git status
+ls
+git checkout -b bugfix/onCreateSession-removed-activate-call upstream/master
+git log --oneline
+git status
+nvim src/portals/Screencopy.cpp
+git status
+git restore --staged src/portals/Screencopy.cpp
+git status
+git diff 
+git add .
+git commit -m "Readded call to toplevel activate function in onCreateSession after being removed in previous commit"
+git branch -m bugfix/onCreateSession-removed-activate-call bugfix/onCreateSession-add-toplevel-activate-call
+git push -u origin bugfix/onCreateSession-add-toplevel-activate-call
+nvim .config/alacritty/
+cd .config/nushell/
+nvim
+nvim .config/nushell/config.nu
+fastfetch -c all.jsonc
+whereis fastfetch
+cd /usr/share/fastfetch/
+ls
+cd presets/
+ls
+fastfetch -c ci.jsonc
+ls
+fastfetch -c screenfetch.jsonc
+fastfetch -c archey.jsonc
+fastfetch --print-logos
+fastfetch --logo arch2
+fastfetch --logo arch_small
+fastfetch -c presets/10.jsonc
+fastfetch --logo ~/Downloads/icon.jpg
+ls
+cd examples/
+ls
+fastfetch -c 10.jsonc
+fastfetch -c 2.jsonc
+fastfetch -c 3.jsonc
+fastfetch -c 4.jsonc
+fastfetch -c 5.jsonc
+fastfetch -c 6.jsonc
+fastfetch -c 7.jsonc
+fastfetch -c 8.jsonc
+fastfetch -c 9.jsonc
+fastfetch -c 10.jsonc
+fastfetch -c 11.jsonc
+fastfetch -c 12.jsonc
+fastfetch -c 13.jsonc
+fastfetch -c 14.jsonc
+fastfetch -c 15.jsonc
+fastfetch -c 16.jsonc
+fastfetch -c 17.jsonc
+fastfetch -c 18.jsonc
+fastfetch -c 19.jsonc
+fastfetch -c 20.jsonc
+ls
+fastfetch -c 21.jsonc
+fastfetch -c 22.jsonc
+fastfetch -c 23.jsonc
+fastfetch -c 24.jsonc
+fastfetch -c 11.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+cp 12.jsonc ~/.config/
+cd
+cd .config/
+mkdir fastfetch
+mv 12.jsonc fastfetch/
+cd fastfetch/
+nvim 
+fastfetch -c 12.jsonc
+cp /usr/share/fastfetch/presets/examples/11 .
+ls
+cp /usr/share/fastfetch/presets/examples/11.jsonc .
+nvim
+fastfetch -c 12.jsonc
+fastfetch --logo-type small
+fastfetch --logo-type small --logo-position
+fastfetch --logo-type small --logo-position right
+fastfetch --logo-type small --logo-position top
+fastfetch --logo-type small --logo-position bottom
+fastfetch --small
+fastfetch --arch-small
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim 12.jsonc
+fastfetch -c 12.jsonc
+nvim ../nushell/config.nu
+nvim .config/fastfetch/12.jsonc
+cd /usr/share/fastfetch/
+ls
+cd  presets/
+ls
+cd examples/
+fastfetch -c 11.jsonc
+fastfetch -c 10.jsonc
+fastfetch -c 13.jsonc
+fastfetch -c 14.jsonc
+fastfetch -c 15.jsonc
+fastfetch -c 2.jsonc
+fastfetch -c 3.jsonc
+fastfetch -c 4.jsonc
+fastfetch -c 5.jsonc
+fastfetch -c 6.jsonc
+fastfetch -c 7.jsonc
+fastfetch -c 8.jsonc
+fastfetch -c 9.jsonc
+fastfetch -c 10.jsonc
+fastfetch -c 13.jsonc
+fastfetch -c 14.jsonc
+fastfetch -c 15.jsonc
+fastfetch -c 16.jsonc
+fastfetch -c 17.jsonc
+fastfetch -c 18.jsonc
+fastfetch -c 19.jsonc
+fastfetch -c 20.jsonc
+fastfetch -c 21.jsonc
+fastfetch -c 22.jsonc
+fastfetch -c 23.jsonc
+fastfetch -c 24.jsonc
+cd ..
+ls
+fastfetch -c all.jsonc
+ls
+fastfetch -c all archey.jsonc
+fastfetch -c archey.jsonc
+nvim .config/fastfetch/12.jsonc
+ls
+systemctl --user stop xdg-desktop-portal-hyprland
+cd projects/c++/xdph/xdg-desktop-portal-hyprland/
+ls
+cd ..
+cd xdg-desktop-portal-hyprland-1-3-7/
+ls
+cd projects/
+ls
+cd c++/
+ls
+cd voxel-engine/
+ls
+cd ..
+ls
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg; .\bootstrap-vcpkg.bat
+cd vcpkg | .\bootstrap-vcpkg.bat
+cd vcpkg/
+ls
+./bootstrap-vcpkg.sh
+./bootstrap-vcpkg.sh -disableMetrics
+nvim ~/.config/nushell/
+ls
+cd ..
+sl
+ls
+cd voxel-engine/
+ls
+nvim
+ninja
+nvim
+ls
+chmod +x build-ninja.sh
+./build-ninja.sh
+nvim build-ninja.sh
+./build-ninja.sh
+nvim build-ninja.sh
+./build-ninja.sh
+nvim
+./build-ninja.sh
+cd projects/c++/voxel-engine/
+./build-ninja.sh
+ninja
+cd build/
+ninja
+ls
+./voxel-engine
+cd ..
+ls
+cd ..
+ls
+cd shader-examples/
+ls
+nvim 
+touch build-ninja.sh
+nvim 
+./build-ninja.sh
+chmod +x build-ninja.sh
+./build-ninja.sh
+nvim
+./build-ninja.sh
+cd build/
+ninja
+./shader-examples
+ls
+cd ..
+ls
+./build/shader-examples
+ls
+cd build/
+ninja
+./shader-examples
+nvim
+cd ..
+cd python/
+ls
+git clone https://github.com/astropy/astropy.git
+cd ..
+mkdir opensource
+mv python/astropy/ opensource/
+cd opensource/
+git clone https://github.com/oppia/oppia.git
+cd oppia/
+ls
+sudo pacman -S docker
+sudo systemctl enable docker.service docker.socket
+sudo systemctl start docker.service docker.socket
+docker info
+groupadd docker
+sudo usermod -aG docker tibtab
+sudo systemctl restart docker.service
+docker info
+docker run -it --rm archlinux bash -c "echo hello world"
+cd projects/opensource/oppia/
+docker run -it --rm archlinux bash -c "echo hello world"
+cd ..
+rm -r oppia/
+git clone git@github.com:Alextibtab/oppia.git
+cd oppia/
+git remote add upstream https://github.com/oppia/oppia.git
+git remote -v
+git fetch upstream
+cd ~/.ssh/
+ls
+nvim config
+cd 
+cd projects/opensource/oppia/
+make build
+sudo pacman -S docker-compose
+make build
+make run-devserver
+make clean
+make run-devserver
+sudo groupadd docker
+sudo gpasswd -a $env.USER docker
+make clean
+make run-devserver
+reboot
+cd projects/opensource/oppia/
+git status
+make clean
+make run-devserver
+groups
+systemctl --user status docker.service
+sudo systemctl status docker.service
+sudo systemctl restart docker.service
+make clean
+make build
+make run-devserver
+make clean
+docker builder prune --all
+sudo pacman -S docker-buildx
+make build
+yay google-chrome
+make clean
+shell 
+cd projects/opensource/oppia/
+make clean
+ls
+nvim Makefile
+make clean
+make build
+make run-devserver
+sudo systemctl status docker.service
+make clean
+make build
+sudo make run-devserver
+git fetch upstream
+git checkout develop
+git merge upstream/develop
+git switch
+git switch -h
+git switch -c bugfix/remove-gifFrames-global develop
+nvim
+ls
+nvim
+bw unlock
+$env.BW_SESSION = "QSIjFPqYi25DhVSP/9ygmCBWnDfDMQQrTUQDdV1EzI1lIdcCGySAMaTDmnsfVh9+V7YKQXKoI7mw7mfIc7pc6g=="
+shutdown now
+ip a
+networkctl 
+sudo systemctl status networkctl
+sudo systemctl status networ
+sudo systemctl status network
+sudo systemctl status networkmanager
+ping 8.8.8.8
+journalctl
+journalctl | tail -n 2000
+curl -L https://github.com/bootdotdev/worldbanc/archive/refs/heads/main.zip -o worldbanc.zip<\n>unzip worldbanc.zip<\n>rm worldbanc.zip<\n>mv worldbanc-main worldbanc<\n>sudo chown -R $(whoami) worldbanc<\n>sudo chmod -R 755 worldbanc
+curl -L https://github.com/bootdotdev/worldbanc/archive/refs/heads/main.zip -o worldbanc.zip<\n>unzip worldbanc.zip<\n>rm worldbanc.zip<\n>mv worldbanc-main worldbanc<\n>sudo chown -R $env.(whoami) worldbanc<\n>sudo chmod -R 755 worldbanc
+curl -L https://github.com/bootdotdev/worldbanc/archive/refs/heads/main.zip -o worldbanc.zip<\n>unzip worldbanc.zip<\n>rm worldbanc.zip<\n>mv worldbanc-main worldbanc<\n>sudo chown -R tibtab worldbanc<\n>sudo chmod -R 755 worldbanc
+ls
+cd worldbanc/
+ls
+cd projects/rust/
+ls
+mkdir the-complete-developers-guide
+cd the-complete-developers-guide/
+cargo new deck
+cd deck/
+lx
+ls
+cargo run
+cargo add rand
+cargo run
+;
+cargo run
+nvim
+shutdown now
+cd projects/opensource/oppia/
+git fetch upstream
+git merge upstream/develop
+git status
+git log
+git checkout develop
+git pull
+git fetch upstream
+git merge upstream/develop
+git status
+git branch
+git checkout bugfix/remove-gitFrames-global
+git checkout bugfix/remove-gifFrames-global
+ls
+git status
+make run-devserver
+cd projects/opensource/oppia/
+git log --oneline
+sudo make run-devserver
+docker ps -a
+make build
+sudo make run-devserver
+make run-tests
+make run_tests
+nvim Makefile
+make clean
+make build
+sudo make run_devserver
+make run_tests.prettier
+make run_tests.lint
+sudo make run-devserver
+make clean
+make run_tests.frontend
+docker builder prune --all
+make build
+nvim
+bw unlock
+$env.BW_SESSION = "feFyt4D9iOkjmWswrZ5OB1IYYQRGpASmNfnFwAl4mf7nlOoifTI6qKOw/+CmqEinI4PZmTbeZ20O1XyFW8BaBQ=="
+make run_tests.frontend
+sudo make run-devserver
+docker ps -a
+docker prune 
+docker prune all
+docker --help
+docker images prune
+docker image prune
+docker stop all
+ls
+make clean
+docker builder prune --all
+docker ps -a
+docker images
+make build
+make run-devserver
+sudo make run-devserver
+docker ps -a
+make clean
+docker ps -a
+make build
+systemctl --user status docker.service
+docker ps -a
+cd projects/opensource/oppia/
+nvim Makefile
+make shell.dev-server
+make shell.dev
+make shell.devserver
+nvim Makefile
+make shell.dev
+make shell.oppia-dev-server
+docker ps -a
+make shell.oppia-dev-server
+docker ps -a
+make shell.oppia-dev-server
+nvim docker-compose.yml
+nvim docker/Dockerfile.backend
+nvim docker-compose.yml
+pwd
+ls
+make shell.oppia-dev-server
+cd docker/
+ls
+./dev-server.healthcheck.sh
+chmod +x dev-server.*
+./dev-server.healthcheck.sh
+nvim dev-server.healthcheck.sh
+nvim dev-server.entrypoint.sh
+make shell.oppia-dev-server
+cd ..
+make shell.oppia-dev-server
+sudo make run-devserver
+make build
+make run-devserver
+make run-offline
+make run_offline
+doc
+docker ps -a
+sudo make start-devserver
+make stop
+cd projects/opensource/oppia/
+docker ps -a
+make check.dev-container-healthy
+cd .dev/
+ls
+nvim containers-health.json
+cat status_code.txt
+make logs.oppia-dev-server
+docker ps -a
+cd ..
+make logs.oppia-dev-server
+make logs.dev-server
+docker ps -a
+make logs.firebase-emulator
+make logs.oppia-firebase-emulator
+make logs.node
+docker compose logs -f
+docker ps -a
+docker compose logs -h
+docker compose logs -f -h
+docker ps -a
+docker compose logs node:16.13.0-alpine
+docker compose logs oppia-firebase-emulator
+docker compose logs -f oppia-firebase-emulator
+docker compose logs -f firebase-emulator
+cd .dev/
+ls
+cd ..
+cd docker/
+ls
+cat dev-server.entrypoint.sh
+docker compose logs
+docker ps -a
+pwd
+cd ..
+make logs.dev-server
+make shell.oppia-dev-server
+docker ps -a
+make restart.firebase-emulator
+nvim docker-compose.yml
+make logs.firebase
+ls
+make restart.firebase
+docker ps -a
+make logs.firebase
+sudo make start-devserver
+cd projects/opensource/oppia/
+make clean
+docker builder prune --all
+sudo pacman -Syu
+sudo pacman -h
+sudo pacman -V
+sudo pacman -Q -h
+sudo pacman -Q xdg-desktop-portal-hyprland
+sudo pacman -U xdg-desktop-portal-hyprland
+sudo pacman -S xdg-desktop-portal-hyprland
+sudo nvim /etc/pacman.conf
+downgrade -h
+downgrade --unignore xdg-desktop-portal-hyprland
+sudo downgrade --unignore xdg-desktop-portal-hyprland
+sudo make build
+sudo pacman -Syu
+shutdown now
+cd projects/opensource/oppia/
+make clean
+docker builder prune --all
+make build
+make run-devserver
+sudo make run-devserver
+git fetch upstream
+git merge upstream/develop
+ls -la
+cd .dev
+ls
+cat containers-health.json
+cat status_code.txt
+cd ..
+ls
+make stop
+make clean
+ls -la
+docker builder prune --all
+git checkout develop
+git merge upstream/develop
+git fetch upstream
+ls
+rm -rf node_modules/
+sudo rm -rf node_modules/
+ls
+rm -rf webpack_bundles/
+sudo rm -rf webpack_bundles/
+ls
+rm -rf __pycache__/
+sud orm -rf __pycache__/
+sudo rm -rf __pycache__/
+ls
+docker 
+ls
+make clean
+cd projects/opensource/oppia/
+nvim Makefile
+make build
+sudo make run-devserver
+cd projects/opensource/oppia/
+make run-devserver
+sudo make run-devserver
+make logs.dev-server
+s
+ls
+make run-devserver
+sudo make run-devserver
+make clean
+cd projects/rust/
+git clone git@github.com:Alextibtab/pcap-analyzer.git
+cd pcap-analyzer/
+ls
+cd pcap_core/
+ls
+swapon --show
+free -h
+mkswap -U clear --size 16G --file /swapfile
+sudo mkswap -U clear --size 16G --file /swapfile
+swapon /swapfile
+sudo swapon /swapfile
+sudo nvim /etc/fstab
+reboot
+cd projects/opensource/oppia/
+make clean
+docker builder prune --all
+make build
+make run-devserver
+sudo make run-devserver
+make logs.dev-server
+sudo make clean
+docker builder prune --all
+sudo make build
+sudo make run-devserver
+ls -la
+cd ..
+ls
+cd oppia_tools/
+ls
+cd ..
+ls
+rm -r oppia_tools/
+cd oppia/
+make clean
+docker builder prune --all
+cd ..
+ls
+rm -r karma_coverage_reports/
+ls
+sudo rm -r karma_coverage_reports/
+ls
+cd oppia/
+ls
+cd ..
+ls
+rm -r oppia
+sudo rm -r oppia
+git clone git@github.com:Alextibtab/oppia.git
+cd oppia/
+git status
+git remote add upstream https://github.com/oppia/oppia.git
+git fetch upstream
+git merge upstream/develop
+git push
+make build
+make run-devserver
+nvim Makefile
+nvim docker/dev-server.entrypoint.sh
+nvim docker-compose.yml
+cd docker/
+ls
+nvim fix_google_module.py
+nvim angular-build.entrypoint.sh
+nvim Dockerfile.backend
+nvim Dockerfile.frontend
+s
+ls
+nvim firebase.entrypoint.sh
+cd ..
+ls
+nvim Makefile
+ls -la
+sudo make run-devserver
+make logs.dev-server
+nvim Makefile
+git switch -c bugfix/remove-gifFrames-global develop
+make run_tests.backend
+make run_tests.frontend
+nvim
+ls
+docker ps -a
+make logs.firebase
+make logs.dev-server
+nvim Makefile
+make start-devserver
+make logs.dev-server
+make clean
+make build
+make start-devserver
+make clean
+make build
+sudo make run-devserver
+ls -la
+chmod +x node_modules/
+sudo chmod 744 node_modules/
+make run-devserver
+sudo make run-devserver
+sudo systemctl status nordvpn
+sudo systemctl --user status nordvpn
+systemctl --user status nordvpn
+sudo systemctl status nordvpn
+sudo systemctl restart nordvpn
+ip a
+nordvpn d
+ip a
+make clean
+docker builder prune --all
+ip a
+cd projects/opensource/oppia/
+docker ps -a
+ls
+cd ..
+ls
+cd oppia/ls
+cd oppia/
+git status
+git add extensions/objects/templates/image-editor.component.ts
+ip a
+git commit -m "Remove GifFrames from global/window"
+netcap 
+sudo netcap
+ss
+ip a
+sudo systemctl status networkctl 
+sudo systemctl status network
+sudo systemctl status networkmanager
+networkctl 
+sudo systemctl status systemd-networkd
+sudo systemctl restart systemd-networkd
+ip a
+ks
+ss
+ip a
+ping 8.8.8.8
+networkctl
+networkctl --help
+networkctl reload
+networkctl renew
+networkctl status
+ip a
+reboot
+ping 8.8.8.8
+cd projects/opensource/oppia/
+ls -la
+git status
+docker ps -a
+git commit -m "Remove GifFrames from global/window"
+npx
+node -v
+npx
+npm -v
+nvm use latset
+nvm use latest
+nvm
+sudo pacman -Qs node
+nvim .config/nushell/config.nu
+cd .config/nushell/
+ls
+nvim
+npx
+nvm
+nvim .profile
+nvim .bash_profile
+nvim .bashrc
+sudo pacman -R nvm
+yay fnm
+fnm
+fnm install 
+fnm install -h
+fnm install --lts
+npx
+node
+fnm use lts
+fnm use 22
+fnm env
+cd projects/opensource/oppia/
+ls
+cd scripts/
+ls
+npx
+nvim pre_commit_hook.py
+cc
+cd
+cd .config/nushell/
+nvim
+cd .config/nushell/
+nvim
+npx
+cd projects/opensource/oppia/
+git commit -m "Remove GifFrames from global/window"
+nvim .git/hooks/pre-commit-python
+npx lint-staged
+docker compose --remove-orphans
+docker --remove-orphans
+make clean
+docker builder prune --all
+ls
+git commit -m "Remove GifFrames from global/window"
+node -v
+sudo git commit -m "Remove GifFrames from global/window"
+ls
+make clean
+docker builder prune --all
+make build
+make run-devserver
+sudo make run-devserver
+docker ps -a
+nvim docker-compose.yml
+ls
+docker ps -a
+make logs.angular-build
+nvim
+make clean
+docker builder prune --all
+make build
+docker ps -a
+make logs.angular-build
+cd projects/opensource/oppia/
+sudo make run-devserver
+make logs.angular-build
+nvim
+make test.frontend
+make tests.frontend
+ls
+nvim Makefile
+make run_tests.frontend
+cd projects/opensource/oppia/
+make run_tests.frontend
+shutdown now
+sudo parted
+lfdisk
+lsblk
+cfdisk
+cfdisk /dev/nvme0n1
+sudo cfdisk /dev/nvme0n1
+cd projects/opensource/oppia/
+ls
+make run_tests.frontend
+shutdown now
+cd
+ls
+cd /mnt/
+ls
+sudo mkdir /mnt/windows
+lsblk
+sudo mount /dev/nvme0n1p3 /mnt/windows/
+sudo mount -t ntfs3 /dev/nvme0n1p3 /mnt/windows/
+ls
+cd windows/
+ls
+ls -la
+cd tt
+ls
+cd maisiewinspearxx/
+ls
+cd ..
+l
+cd ..
+ls
+rm -r tt/
+sudo rm -r tt/
+ls
+cd tools
+ls
+cd ..
+ls
+cd settings/
+ls
+cd ..
+ls
+cd `Riot Games/`
+ls
+cd ..
+ls
+cd Keyscape/
+ls
+cd `Keyscape Installation/`
+ls
+cd Data/
+ls
+cd Full/
+ls
+cd STEAM/
+ls
+cd Keyscape/
+ls
+cd `Settings Library/`ls
+cd Soundsources/
+ls
+cd Factory/
+ls
+cd `Keyscape Library/`
+ls
+cd Keyboards/
+ls
+cd ..
+cd
+ls
+cd /mnt/windows/
+ls
+shu
+shutdown now
+nordvpn c Switzerland
+shutdown now
+ps | grep deadlock
+ps | grep steam
+ps
+ps | grep project
+ps | grep secret
+ps
+shutdown now
+^ls 
+ls
+cd projects/opensource/oppia/
+ls
+git fetch upstream
+git merge upstream/develop
+sl
+git status
+ls
+make run_tests.frontend
+cd dotfiles/
+git status
+ls
+cd config/
+ls
+cp ~/.config/alacritty/ .
+cp -r ~/.config/alacritty/ .
+ls
+cp -r ~/.config/dunst/ .
+cp -r ~/.config/gtk-3.0/ .
+cp -r ~/.config/hypr/ .
