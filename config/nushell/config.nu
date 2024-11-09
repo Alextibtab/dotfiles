@@ -2,7 +2,7 @@
 #
 # version = "0.99.1"
 
-if not (which fastfetch | is-empty) { fastfetch -c /home/tibtab/.config/fastfetch/12.jsonc }
+if not (which fastfetch | is-empty) { fastfetch -c /home/tibtab/.config/fastfetch/catppuccin-peach.jsonc }
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
