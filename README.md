@@ -2,6 +2,10 @@
 
 This repository contains all my dotfiles for customising my developer workflow.
 
+## TODO:
+
+Figure out how best to use GNU Stow with this workflow. Extract rice specific customisations to specific distro rice folder with instructions on how you'd either use the replacement config or paste code to certain file.
+
 ## Overview
 
 This repository contains my personal dotfiles and configuration settings for various development tools and applications. These files help maintain a consistent development environment across different machines.
