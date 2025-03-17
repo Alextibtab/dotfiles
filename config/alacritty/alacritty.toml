@@ -1,5 +1,9 @@
+[general]
+import = ["/home/tibtab/.cache/wal/colors-alacritty.toml"]
+live_config_reload = true
+
 [terminal.shell]
-program = "/usr/bin/nu"
+program = "/usr/bin/zsh"
 
 [env]
 TERM = "xterm-256color"
@@ -13,12 +17,5 @@ bold.family = "SpaceMono Nerd Font Mono"
 italic.family = "SpaceMono Nerd Font Mono"
 bold_italic.family = "SpaceMono Nerd Font Mono"
 
-size = 16.0
+size = 24.0
 
-[colors]
-primary.background = "#11111b"
-
-[general]
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]

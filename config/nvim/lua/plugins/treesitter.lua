@@ -4,6 +4,7 @@ return {
     build = ':TSUpdate',
     opts = {
       ensure_installed = {
+        'astro',
         'bash',
         'hyprlang',
         'c',
@@ -25,6 +26,7 @@ return {
         'glsl',
         'toml',
         'tsx',
+        'css',
         'typescript',
         'vim',
         'vimdoc',
@@ -51,6 +53,7 @@ return {
     end,
     dependencies = {
       { 'nushell/tree-sitter-nu', build = ':TSUpdate nu' },
+      { 'virchau13/tree-sitter-astro' },
     },
   },
 }

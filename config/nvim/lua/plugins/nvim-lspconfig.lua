@@ -106,6 +106,9 @@ return {
       glsl_analyzer = {},
       wgsl_analyzer = {},
       markdown_oxide = {},
+      emmet_language_server = {
+        filetypes = { 'css', 'html', 'javascript', 'javascriptreact', 'astro' },
+      },
       lua_ls = {
         settings = {
           Lua = {
