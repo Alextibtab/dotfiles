@@ -1,0 +1,127 @@
+@import url("file:///home/tibtab/.cache/wal/colors-waybar.css");
+
+* {
+  font-family: SpaceMono Nerd Font;
+  font-weight: 600;
+  font-size: 18px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @color1;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border: .1rem solid @color1;
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @background;
+  margin-left: 1rem;
+  margin-right: .5rem;
+}
+
+#workspaces button {
+  color: @foreground;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @foreground;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @background;
+  border-color: @background;
+  background: @color1;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#custom-music,
+#window,
+#tray,
+#clock,
+#wireplumber,
+#custom-lock,
+#network,
+#custom-power {
+  border-top: .1rem solid;
+  border-bottom: .1rem solid;
+  border-color: @color1;
+  background-color: @background;
+  padding: 0.5rem 1em;
+  margin: 5px 0;
+  transition-duration: 500ms;
+}
+
+#custom-music:hover,
+#window:hover,
+#tray:hover,
+#clock:hover,
+#wireplumber:hover,
+#custom-lock:hover,
+#custom-power:hover,
+#network:hover {
+  color: @background;
+  background: @color1;
+  border-color: @background;
+}
+
+
+#clock {
+  color: @foreground;
+  border-right: .1rem solid @color1;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: .5rem;
+}
+
+#wireplumber {
+  border-left: .1rem solid @color1;
+  color: @foreground;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#network {
+  padding: 0 .55rem 0 0;
+  color: @foreground;
+  margin: 5px 0;
+}
+
+#custom-music {
+  border-left: .1rem solid @color1;
+  border-right: .1rem solid @color1;
+  color: @foreground;
+  border-radius: 1rem;
+}
+
+#window {
+  border-left: .1rem solid @color1;
+  border-right: .1rem solid @color1;
+  color: @foreground;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-left: .1rem solid @color1;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @foreground;
+}
+
+#custom-power {
+    border-right: .1rem solid @color1;
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @foreground;
+}
+
+#tray {
+  border-left: .1rem solid;
+  border-right: .1rem solid;
+  margin-right: .5rem;
+  border-radius: 1rem;
+}
+

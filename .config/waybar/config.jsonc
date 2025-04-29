@@ -1,0 +1,72 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "wireplumber", "network", "clock", "custom/lock", "custom/power"],
+    "hyprland/workspaces": {
+        "format": " {icon} ",
+        "format-icons": {
+            "default": "",
+            "active": "",
+        },
+        "persistent-workspaces": {
+            "HDMI-A-1": [ 1, 2, 3, 4, 5, 6 ],
+            "DP-1": [ 7, 8, 9, 10, 11, 12 ]
+        }
+     },
+    "hyprland/window" : {
+        "separate-outputs": true
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "timezone": "Europe/London",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "󰃭 {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
+    },
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pwvucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "hyprlock"
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "⏻"
+    }
+}
+

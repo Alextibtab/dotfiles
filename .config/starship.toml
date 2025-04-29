@@ -1,0 +1,147 @@
+palette = "catppuccin_mocha"
+
+format = """
+[ ](peach)\
+$os\
+$username\
+[](bg:surface1 fg:peach)\
+$directory\
+[](fg:surface1 bg:surface0)\
+$git_branch\
+$git_status\
+[](fg:surface0 bg:base)\
+$c\
+$deno\
+$golang\
+$haskell\
+$lua\
+$nodejs\
+$python\
+$rust\
+$zig\
+[](fg:base bg:mantle)\
+$time\
+[](mantle) \
+[ ](bold peach)
+"""
+
+[character]
+success_symbol = '[](bold green) '
+error_symbol = '[](bold red) '
+
+[username]
+show_always = true
+style_user = "bg:peach bold fg:crust"
+style_root = "bg:peach bold fg:crust"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:peach fg:crust"
+disabled = false
+
+[os.symbols]
+Arch = "󰣇 "
+
+[directory]
+style = "bg:surface1 fg:peach"
+format = "[ $path ]($style)"
+home_symbol = ""
+truncation_length = 6
+truncation_symbol = "../"
+
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"rust" = ""
+"deno" = "🦕"
+"go" = ""
+"c++" = ""
+"python" = ""
+
+[git_branch]
+symbol = ""
+style = "bg:surface0 fg:peach"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:surface0 fg:peach"
+format = '[$all_status$ahead_behind]($style)'
+
+[c]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version)]($style)'
+
+[deno]
+symbol = "🦕"
+style = "bg:base fg:yellow"
+format = "[ $symbol ($version)]($style)"
+
+[golang]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:base fg:yellow"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:mantle"
+format = '[ ♥ $time ]($style)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
