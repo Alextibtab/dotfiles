@@ -63,7 +63,7 @@ o888o   8""888P' `Y8bod8P' `Y8bod8P' o888o `Y8bod8P'   "888"      d8'
 
       sections = {
         { section = 'header' },
-        { section = 'terminal', pane = 2, cmd = 'echo "\n\n"; colorscript -e fade', height = 8, padding = 1 },
+        { section = 'terminal', pane = 2, cmd = '', height = 8, padding = 1 },
         { section = 'keys', gap = 1, padding = 1 },
         {
           pane = '2',

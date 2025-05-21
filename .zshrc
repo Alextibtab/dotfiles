@@ -4,6 +4,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/hatch/pythons/3.12/python/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Set VCPKG_ROOT environment variable
 export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg/"
@@ -128,3 +129,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
