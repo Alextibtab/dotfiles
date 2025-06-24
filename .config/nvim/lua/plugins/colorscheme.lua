@@ -52,24 +52,6 @@ return {
     name = 'catppuccin',
     opts = {
       flavour = 'mocha',
-      highlight_overrides = {
-        mocha = function(mocha)
-          return {
-            DashboardFooter = { fg = mocha.red },
-            DashboardHeader = { fg = mocha.peach },
-            DashboardKey = { fg = mocha.maroon },
-            DashboardIcon = { fg = mocha.peach },
-            DashboardDesc = { fg = mocha.yellow },
-            NeoTreeTitleBar = { bg = mocha.peach, fg = mocha.crust },
-            NeoTreeStats = { bg = mocha.text },
-            NeoTreeStatsHeader = { fg = mocha.peach },
-            NeoTreeRootName = { fg = mocha.peach },
-            NeoTreeDirectoryIcon = { fg = mocha.peach },
-            NeoTreeDirectoryName = { fg = mocha.peach },
-            FloatBorder = { fg = mocha.peach },
-          }
-        end,
-      },
     },
     init = function()
       vim.cmd.colorscheme 'catppuccin'

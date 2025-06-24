@@ -52,7 +52,6 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
     dependencies = {
-      { 'nushell/tree-sitter-nu', build = ':TSUpdate nu' },
       { 'virchau13/tree-sitter-astro' },
     },
   },

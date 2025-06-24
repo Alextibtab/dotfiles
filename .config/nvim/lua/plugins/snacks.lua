@@ -94,5 +94,6 @@ o888o   8""888P' `Y8bod8P' `Y8bod8P' o888o `Y8bod8P'   "888"      d8'
         { section = 'startup' },
       },
     },
+    lazygit = {},
   },
 }

@@ -22,4 +22,8 @@ vim.keymap.set('t', '<C-t>', function()
   require('snacks.terminal').toggle()
 end, { desc = 'Toggle Snacks terminal', noremap = true, silent = true })
 
+vim.keymap.set('n', '<C-g>', function()
+  require('snacks.lazygit').open()
+end, { desc = 'Open lazygit', noremap = true, silent = true })
+
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
