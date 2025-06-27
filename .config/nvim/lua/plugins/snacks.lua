@@ -52,45 +52,14 @@ o888o   8""888P' `Y8bod8P' `Y8bod8P' o888o `Y8bod8P'   "888"      d8'
           { icon = ' ', key = 'n', action = ':ene | startinsert', desc = ' New File' },
           { icon = ' ', key = 'x', action = ':Leet', desc = ' Leetcode' },
           { icon = ' ', key = 'o', action = ':ObsidianQuickSwitch', desc = ' Obsidian' },
-          { icon = ' ', key = 'r', action = ':Telescope oldfiles', desc = ' Recent Files' },
-          { icon = ' ', key = 'g', action = ':Telescope live_grep', desc = ' Find Text' },
           { icon = ' ', key = 'c', action = ':Telescope find_files cwd=~/.config/nvim', desc = ' Config' },
-          { icon = ' ', key = 'm', action = ':Mason', desc = ' Mason' },
-          { icon = '󰒲 ', key = 'l', action = ':Lazy', desc = ' Lazy' },
           { icon = ' ', key = 'q', action = ':qa', desc = ' Quit' },
         },
       },
 
       sections = {
         { section = 'header' },
-        { section = 'terminal', pane = 2, cmd = '', height = 8, padding = 1 },
         { section = 'keys', gap = 1, padding = 1 },
-        {
-          pane = '2',
-          icon = ' ',
-          desc = 'Browse Repo',
-          padding = 1,
-          key = 'b',
-          action = function()
-            require('snacks').gitbrowse()
-          end,
-        },
-        { pane = 2, icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 1 },
-        { pane = 2, icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 1 },
-        {
-          pane = 2,
-          icon = ' ',
-          title = 'Git Status',
-          section = 'terminal',
-          enabled = function()
-            return Snacks.git.get_root() ~= nil
-          end,
-          cmd = 'git status --short --branch --renames',
-          height = 5,
-          padding = 1,
-          ttl = 5 * 60,
-          indent = 3,
-        },
         { section = 'startup' },
       },
     },
