@@ -14,16 +14,7 @@ return {
     },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    {
-      'j-hui/fidget.nvim',
-      opts = {
-        notification = {
-          window = {
-            winblend = 0,
-          },
-        },
-      },
-    },
+    'j-hui/fidget.nvim',
     {
       'folke/lazydev.nvim',
       ft = 'lua', -- only load on lua files
@@ -50,7 +41,7 @@ return {
         map('gI', require('telescope.builtin').lsp_implementations, 'goto implementation')
         map('<leader>ld', require('telescope.builtin').lsp_type_definitions, 'type definition')
 
-        map('<leader>ld', require('telescope.builtin').lsp_document_symbols, 'document symbols')
+        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'document symbols')
         map('<leader>lw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'workspace symbols')
 
         map('<leader>lr', vim.lsp.buf.rename, 'rename')

@@ -22,7 +22,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'both'
 
-vim.opt.shell = 'bash'
+vim.opt.shell = 'zsh'
 
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
@@ -30,8 +30,4 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.filetype.add {
   pattern = { ['.*/hypr/.*.conf'] = 'hyprlang' },
-}
-
-vim.filetype.add {
-  pattern = { ['*.nu'] = 'nu' },
 }
