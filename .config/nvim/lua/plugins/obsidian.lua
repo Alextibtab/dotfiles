@@ -1,7 +1,8 @@
 return {
-  'epwalsh/obsidian.nvim',
+  'obsidian-nvim/obsidian.nvim',
   version = '*',
   lazy = false,
+  ft = 'markdown',
   event = {
     'BufReadPre ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
     'BufNewFile ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
@@ -23,6 +24,9 @@ return {
         name = 'vault',
         path = '~/vaults/obsidian-vault',
       },
+    },
+    completion = {
+      blink = true,
     },
   },
 }
