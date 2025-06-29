@@ -9,5 +9,8 @@ return {
       maxkeys = 5,
       position = 'top-right',
     },
+    init = function()
+      require('showkeys').open()
+    end,
   },
 }

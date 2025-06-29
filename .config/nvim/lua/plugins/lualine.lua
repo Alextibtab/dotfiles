@@ -7,7 +7,7 @@ return {
     opts = {
       window = { winblend = 80 },
       options = {
-        theme = 'catppuccin',
+        theme = 'kanso',
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
       },
