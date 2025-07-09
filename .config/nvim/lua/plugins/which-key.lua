@@ -16,7 +16,7 @@ return {
         { '<leader>g', group = 'git' },
         { '<leader>l', group = 'lsp', icon = '' },
         { '<leader>o', group = 'obsidian', icon = '' },
-        { '<leader>t', group = 'toggle' },
+        { '<leader>t', group = 'toggle/trouble' },
         { '<leader>s', group = 'search' },
         { '<leader>n', group = 'noice' },
         { '<leader>u', group = 'ui' },
