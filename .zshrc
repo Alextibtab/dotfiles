@@ -10,10 +10,20 @@ export PATH="$HOME/go/bin:$PATH"
 export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg/"
 export PATH="$VCPKG_ROOT:$PATH"
 
+# STARSHIP CONFIG
+export STARSHIP_CONFIG="/home/tibtab/.cache/hellwal/starship.toml"
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 source /usr/share/nvm/init-nvm.sh
+
+# API Keys
+if [[ -f ~/.secrets ]]; then
+    source ~/.secrets
+else
+    export OPEN_WEATHER_API_KEY=""
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,

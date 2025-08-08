@@ -1,0 +1,147 @@
+palette = "dynamic_theme"
+
+format = """
+[ ](accent_primary)\
+$os\
+$username\
+[](fg:accent_primary bg:surface_dark)\
+$directory\
+[](fg:surface_dark bg:accent_secondary)\
+$git_branch\
+$git_status\
+[](fg:accent_secondary bg:surface_light)\
+$c\
+$deno\
+$golang\
+$haskell\
+$lua\
+$nodejs\
+$python\
+$rust\
+$zig\
+[](fg:surface_light bg:bg_primary)\
+$time\
+[](fg:bg_primary)\
+[ ](bold accent_primary)
+"""
+
+
+[character]
+success_symbol = '[](bold success) '
+error_symbol = '[](bold error) '
+
+[username]
+show_always = true
+style_user = "bg:accent_primary bold fg:text_on_accent"
+style_root = "bg:error bold fg:text_on_accent"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:accent_primary fg:text_on_accent"
+disabled = false
+
+[os.symbols]
+Arch = "󰣇 "
+
+[directory]
+style = "bg:surface_dark fg:text_primary"
+format = "[ $path ]($style)"
+home_symbol = ""
+truncation_length = 6
+truncation_symbol = "../"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"rust" = ""
+"deno" = "🦕"
+"go" = ""
+"c++" = ""
+"python" = ""
+
+[git_branch]
+symbol = ""
+style = "bg:accent_secondary fg:text_on_accent"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:accent_secondary fg:text_on_accent"
+format = '[$all_status$ahead_behind]($style)'
+
+[c]
+symbol = ""
+style = "bg:surface_light fg:accent_primary"
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+symbol = ""
+style = "bg:surface_light fg:warning"
+format = '[ $symbol ($version)]($style)'
+
+[deno]
+symbol = "🦕"
+style = "bg:surface_light fg:accent_tertiary"
+format = "[ $symbol ($version)]($style)"
+
+[golang]
+symbol = ""
+style = "bg:surface_light fg:info"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:surface_light fg:accent_tertiary"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:surface_light fg:success"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:surface_light fg:warning"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:surface_light fg:error"
+format = '[ $symbol ($version) ]($style)'
+
+[zig]
+symbol = ""
+style = "bg:surface_light fg:accent_primary"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:bg_primary fg:text_secondary"
+format = '[ ♥ $time ]($style)'
+
+[palettes.dynamic_theme]
+# Primary accent colors (contrasting with terminal background)
+accent_primary = "#%%color4.hex%%"
+accent_secondary = "#%%color6.hex%%"
+accent_tertiary = "#%%color5.hex%%"
+
+# Status colors
+success = "#%%color2.hex%%"
+warning = "#%%color3.hex%%"
+error = "#%%color1.hex%%"
+info = "#%%color6.hex%%"
+
+# Text colors for better contrast
+text_primary = "#%%foreground.hex%%"
+text_secondary = "#%%color7.hex%%"
+text_dim = "#%%color8.hex%%"
+text_on_accent = "#%%background.hex%%"
+
+# Background colors with better contrast
+bg_primary = "#%%color0.hex%%"
+bg_secondary = "#%%color8.hex%%"
+surface_dark = "#%%color0.hex%%"
+surface_light = "#%%color8.hex%%"

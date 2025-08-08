@@ -1,0 +1,123 @@
+* {
+  font-family: SpaceMono Nerd Font;
+  font-weight: 600;
+  font-size: 18px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: #%%color1.hex%%;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border: .1rem solid #%%color1.hex%%;
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: #%%background.hex%%;
+  margin-left: 5px;
+  margin-right: .5rem;
+}
+
+#workspaces button {
+  color: #%%foreground.hex%%;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: #%%foreground.hex%%;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: #%%background.hex%%;
+  border-color: #%%background.hex%%;
+  background: #%%color1.hex%%;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#custom-music,
+#window,
+#tray,
+#clock,
+#wireplumber,
+#custom-lock,
+#network,
+#custom-power {
+  border-top: .1rem solid;
+  border-bottom: .1rem solid;
+  border-color: #%%color1.hex%%;
+  background-color: #%%background.hex%%;
+  padding: 0.5rem 1em;
+  margin: 5px 0;
+  transition-duration: 500ms;
+}
+
+#custom-music:hover,
+#window:hover,
+#tray:hover,
+#clock:hover,
+#wireplumber:hover,
+#custom-lock:hover,
+#custom-power:hover,
+#network:hover {
+  color: #%%background.hex%%;
+  background: #%%color1.hex%%;
+  border-color: #%%background.hex%%;
+}
+
+#clock {
+  color: #%%foreground.hex%%;
+  border-right: .1rem solid #%%color1.hex%%;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: .5rem;
+}
+
+#wireplumber {
+  border-left: .1rem solid #%%color1.hex%%;
+  color: #%%foreground.hex%%;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#network {
+  padding: 0 .55rem 0 0;
+  color: #%%foreground.hex%%;
+  margin: 5px 0;
+}
+
+#custom-music {
+  border-left: .1rem solid #%%color1.hex%%;
+  border-right: .1rem solid #%%color1.hex%%;
+  color: #%%foreground.hex%%;
+  border-radius: 1rem;
+}
+
+#window {
+  border-left: .1rem solid #%%color1.hex%%;
+  border-right: .1rem solid #%%color1.hex%%;
+  color: #%%foreground.hex%%;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-left: .1rem solid #%%color1.hex%%;
+    border-radius: 1rem 0px 0px 1rem;
+    color: #%%foreground.hex%%;
+}
+
+#custom-power {
+    border-right: .1rem solid #%%color1.hex%%;
+    margin-right: 5px;
+    border-radius: 0px 1rem 1rem 0px;
+    color: #%%foreground.hex%%;
+}
+
+#tray {
+  border-left: .1rem solid;
+  border-right: .1rem solid;
+  margin-right: .5rem;
+  border-radius: 1rem;
+}

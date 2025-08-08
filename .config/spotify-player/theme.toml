@@ -266,3 +266,99 @@ bright_blue = "#74a8fc"
 bright_magenta = "#f2aede"
 bright_cyan = "#6bd7ca"
 bright_white = "#bac2de"
+
+# Ayu Dark Theme
+# Based on the ayu.vim color scheme (dark variant)
+[[themes]]
+name = "ayu_dark"
+[themes.palette]
+background = "#0F1419"
+foreground = "#E6E1CF"
+black = "#0F1419"
+red = "#F07178"
+green = "#B8CC52"
+yellow = "#F29718"
+blue = "#36A3D9"
+magenta = "#FFEE99"
+cyan = "#95E6CB"
+white = "#FFFFFF"
+bright_black = "#3E4B59"
+bright_red = "#FF3333"
+bright_green = "#B8CC52"
+bright_yellow = "#F29718"
+bright_blue = "#36A3D9"
+bright_magenta = "#FFEE99"
+bright_cyan = "#95E6CB"
+bright_white = "#5C6773"
+
+# TokyoDark Theme
+# A clean dark theme with purple/blue accents
+[[themes]]
+name = "tokyodark"
+[themes.palette]
+background = "#11121D"
+foreground = "#A0A8CD"
+black = "#06080A"
+red = "#EE6D85"
+green = "#95C561"
+yellow = "#D7A65F"
+blue = "#7199EE"
+magenta = "#A485DD"
+cyan = "#38A89D"
+white = "#A0A8CD"
+bright_black = "#212234"
+bright_red = "#EE6D85"
+bright_green = "#95C561"
+bright_yellow = "#D7A65F"
+bright_blue = "#7199EE"
+bright_magenta = "#A485DD"
+bright_cyan = "#38A89D"
+bright_white = "#EEEEEE"
+
+# Yorumi Theme
+# Deep sea inspired colors with muted tones
+[[themes]]
+name = "yorumi"
+[themes.palette]
+background = "#0C0E15"
+foreground = "#C5C8C6"
+black = "#0C0E15"
+red = "#C4746E"
+green = "#8A9A7B"
+yellow = "#C4B28A"
+blue = "#8BA4B0"
+magenta = "#A292A3"
+cyan = "#8EA4A2"
+white = "#C5C8C6"
+bright_black = "#2A2F36"
+bright_red = "#C4746E"
+bright_green = "#8A9A7B"
+bright_yellow = "#C4B28A"
+bright_blue = "#8BA4B0"
+bright_magenta = "#A292A3"
+bright_cyan = "#8EA4A2"
+bright_white = "#D5D8D6"
+
+# Yorumi Abyss Variant
+# The darker variant of Yorumi
+[[themes]]
+name = "yorumi_abyss"
+[themes.palette]
+background = "#06080C"
+foreground = "#B5B8B6"
+black = "#06080C"
+red = "#B4645E"
+green = "#7A8A6B"
+yellow = "#B4A27A"
+blue = "#7B94A0"
+magenta = "#928293"
+cyan = "#7E9492"
+white = "#B5B8B6"
+bright_black = "#1A1F26"
+bright_red = "#B4645E"
+bright_green = "#7A8A6B"
+bright_yellow = "#B4A27A"
+bright_blue = "#7B94A0"
+bright_magenta = "#928293"
+bright_cyan = "#7E9492"
+bright_white = "#C5C8C6"
