@@ -90,6 +90,7 @@ return {
       rust_analyzer = {},
       prettier = {},
       cpptools = {},
+      qmlls = {},
       cssls = {},
       denols = {},
       hyprls = {},

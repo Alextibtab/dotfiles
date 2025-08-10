@@ -16,6 +16,9 @@ export STARSHIP_CONFIG="/home/tibtab/.cache/hellwal/starship.toml"
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# change autosuggest style
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
+
 source /usr/share/nvm/init-nvm.sh
 
 # API Keys

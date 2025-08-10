@@ -22,13 +22,13 @@ $zig\
 [](fg:surface_light bg:bg_primary)\
 $time\
 [](fg:bg_primary)\
-[ ](bold accent_primary)
+[ ](bold accent_primary)
 """
 
 
 [character]
-success_symbol = '[](bold success) '
-error_symbol = '[](bold error) '
+success_symbol = '[](bold success) '
+error_symbol = '[](bold error) '
 
 [username]
 show_always = true
@@ -47,23 +47,23 @@ Arch = "󰣇 "
 [directory]
 style = "bg:surface_dark fg:text_primary"
 format = "[ $path ]($style)"
-home_symbol = ""
-truncation_length = 6
-truncation_symbol = "../"
+home_symbol = ""
+truncation_length = 3
+truncation_symbol = ""
 
 [directory.substitutions]
 "Documents" = "󰈙"
-"Downloads" = ""
-"Music" = ""
-"Pictures" = ""
-"rust" = ""
-"deno" = "🦕"
-"go" = ""
-"c++" = ""
-"python" = ""
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"projects/rust" = ""
+"projects/deno" = ""
+"projects/go" = ""
+"projects/c++" = ""
+"projects/python" = ""
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:accent_secondary fg:text_on_accent"
 format = '[ $symbol $branch ]($style)'
 
@@ -72,47 +72,47 @@ style = "bg:accent_secondary fg:text_on_accent"
 format = '[$all_status$ahead_behind]($style)'
 
 [c]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:accent_primary"
 format = '[ $symbol ($version) ]($style)'
 
 [lua]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:warning"
 format = '[ $symbol ($version)]($style)'
 
 [deno]
-symbol = "🦕"
+symbol = ""
 style = "bg:surface_light fg:accent_tertiary"
 format = "[ $symbol ($version)]($style)"
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:info"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:accent_tertiary"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:success"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:warning"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:error"
 format = '[ $symbol ($version) ]($style)'
 
 [zig]
-symbol = ""
+symbol = ""
 style = "bg:surface_light fg:accent_primary"
 format = '[ $symbol ($version) ]($style)'
 
