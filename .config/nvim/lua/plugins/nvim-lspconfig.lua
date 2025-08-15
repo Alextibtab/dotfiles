@@ -83,10 +83,10 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
-    local servers = {
+    -- Servers managed by Mason (excluding clangd)
+    local mason_servers = {
       pyright = {},
       gopls = {},
-      clangd = {},
       rust_analyzer = {},
       prettier = {},
       cpptools = {},
@@ -114,7 +114,7 @@ return {
 
     require('mason').setup()
 
-    local ensure_installed = vim.tbl_keys(servers or {})
+    local ensure_installed = vim.tbl_keys(mason_servers or {})
     vim.list_extend(ensure_installed, {
       'stylua',
       'clang-format',
@@ -126,11 +126,38 @@ return {
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          local server = servers[server_name] or {}
+          -- Skip clangd here since we'll set it up manually
+          if server_name == 'clangd' then
+            return
+          end
+
+          local server = mason_servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },
+    }
+
+    -- Manually setup clangd with system binary and custom flags
+    require('lspconfig').clangd.setup {
+      cmd = { '/usr/bin/clangd', '--experimental-modules-support' },
+      capabilities = capabilities,
+      -- Additional clangd-specific settings
+      init_options = {
+        usePlaceholders = true,
+        completeUnimported = true,
+        clangdFileStatus = true,
+      },
+      -- Ensure it uses the same compile commands as your build
+      root_dir = require('lspconfig.util').root_pattern(
+        '.clangd',
+        '.clang-tidy',
+        '.clang-format',
+        'compile_commands.json',
+        'compile_flags.txt',
+        'configure.ac',
+        '.git'
+      ),
     }
   end,
 }
