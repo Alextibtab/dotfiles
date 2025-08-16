@@ -11,6 +11,7 @@ $git_branch\
 $git_status\
 [](fg:accent_secondary bg:surface_light)\
 $c\
+$cpp\
 $deno\
 $golang\
 $haskell\
@@ -75,6 +76,15 @@ format = '[$all_status$ahead_behind]($style)'
 symbol = ""
 style = "bg:surface_light fg:accent_primary"
 format = '[ $symbol ($version) ]($style)'
+
+[cpp]
+symbol = ''
+style = "bg:surface_light fg:accent_primary"
+format = '[ $symbol ($version) ]($style)'
+detect_folders = [
+  "/home/tibtab/projects/c++"
+]
+disabled = false
 
 [lua]
 symbol = ""

@@ -5,6 +5,7 @@ vim.g.have_nerd_font = true
 require 'options'
 require 'keymaps'
 require 'autocmds'
+require 'hellwal'
 require 'lazy-install'
 require 'lazy-setup'
 

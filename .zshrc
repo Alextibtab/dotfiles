@@ -7,7 +7,8 @@ export PATH="$HOME/.local/share/hatch/pythons/3.12/python/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # Set VCPKG_ROOT environment variable
-export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg/"
+export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg"
+export VCPKG_DEFAULT_TRIPLET="x64-linux"
 export PATH="$VCPKG_ROOT:$PATH"
 
 # STARSHIP CONFIG

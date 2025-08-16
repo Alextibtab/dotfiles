@@ -17,6 +17,10 @@ return {
       require('themery').setup {
         themes = {
           {
+            name = 'Dynamic Theme',
+            colorscheme = 'dynamic',
+          },
+          {
             name = 'Ayu Mirage',
             colorscheme = 'ayu-mirage',
             before = [[
