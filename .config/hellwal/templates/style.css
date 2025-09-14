@@ -16,7 +16,7 @@
   border-radius: 1rem;
   margin: 5px;
   background-color: #%%background.hex%%;
-  margin-left: 5px;
+  margin-left: .5rem;
   margin-right: .5rem;
 }
 
@@ -110,7 +110,7 @@
 
 #custom-power {
     border-right: .1rem solid #%%color1.hex%%;
-    margin-right: 5px;
+    margin-right: .5rem;
     border-radius: 0px 1rem 1rem 0px;
     color: #%%foreground.hex%%;
 }
