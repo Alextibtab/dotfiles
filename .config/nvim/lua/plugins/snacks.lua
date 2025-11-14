@@ -51,7 +51,7 @@ o888o   8""888P' `Y8bod8P' `Y8bod8P' o888o `Y8bod8P'   "888"      d8'
           { icon = ' ', key = 'f', action = ':Telescope find_files', desc = ' Find File' },
           { icon = ' ', key = 'n', action = ':ene | startinsert', desc = ' New File' },
           { icon = ' ', key = 'x', action = ':Leet', desc = ' Leetcode' },
-          { icon = ' ', key = 'o', action = ':ObsidianQuickSwitch', desc = ' Obsidian' },
+          { icon = ' ', key = 'o', action = ':Obsidian quick_switch', desc = ' Obsidian' },
           { icon = ' ', key = 'c', action = ':Telescope find_files cwd=~/.config/nvim', desc = ' Config' },
           { icon = ' ', key = 'q', action = ':qa', desc = ' Quit' },
         },

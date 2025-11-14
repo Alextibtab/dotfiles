@@ -6,6 +6,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/hatch/pythons/3.12/python/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
+# Remove duplicate from history
+setopt HIST_IGNORE_ALL_DUPS
+
 # Set VCPKG_ROOT environment variable
 export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg"
 export VCPKG_DEFAULT_TRIPLET="x64-linux"
@@ -146,3 +149,5 @@ fi
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+[[ -s "/home/tibtab/.gvm/scripts/gvm" ]] && source "/home/tibtab/.gvm/scripts/gvm"

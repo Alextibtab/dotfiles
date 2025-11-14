@@ -133,13 +133,16 @@ return {
 
           local server = mason_servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+          vim.lsp.config(server_name, {
+            server,
+          })
+          vim.lsp.enable { server_name }
         end,
       },
     }
 
     -- Manually setup clangd with system binary and custom flags
-    require('lspconfig').clangd.setup {
+    vim.lsp.config('clangd', {
       cmd = { '/usr/bin/clangd', '--experimental-modules-support' },
       capabilities = capabilities,
       -- Additional clangd-specific settings
@@ -158,6 +161,7 @@ return {
         'configure.ac',
         '.git'
       ),
-    }
+    })
+    vim.lsp.enable { 'clangd' }
   end,
 }

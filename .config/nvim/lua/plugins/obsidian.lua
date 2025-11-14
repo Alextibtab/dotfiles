@@ -16,9 +16,10 @@ return {
       vim.keymap.set('n', keys, func, { desc = 'obsidian: ' .. desc })
     end
 
-    map('<leader>of', '<cmd>ObsidianQuickSwitch<CR>', 'search notes')
+    map('<leader>of', '<cmd>Obsidian quick_switch<CR>', 'search notes')
   end,
   opts = {
+    legacy_commands = false,
     workspaces = {
       {
         name = 'vault',
