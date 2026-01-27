@@ -7,9 +7,6 @@ return {
     'BufReadPre ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
     'BufNewFile ' .. vim.fn.expand '~' .. '/personal/obsidian-vault/*.md',
   },
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  },
   -- TODO: flesh out these keymappings
   keys = function()
     local map = function(keys, func, desc)
@@ -20,11 +17,21 @@ return {
   end,
   opts = {
     legacy_commands = false,
+    attachments = {
+      folder = '.Attachments',
+    },
     workspaces = {
       {
-        name = 'vault',
-        path = '~/vaults/obsidian-vault',
+        name = 'public',
+        path = '~/vaults/obsidian-vault/public-notes',
       },
+      {
+        name = 'private',
+        path = '~/vaults/obsidian-vault/private-notes',
+      },
+    },
+    picker = {
+      name = 'snacks.pick',
     },
     completion = {
       blink = true,

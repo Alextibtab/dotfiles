@@ -35,14 +35,26 @@ return {
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'lsp: ' .. desc })
         end
 
-        map('gd', require('telescope.builtin').lsp_definitions, 'goto definition')
-        map('gr', require('telescope.builtin').lsp_references, 'goto references')
+        map('gd', function()
+          Snacks.picker.lsp_definitions()
+        end, 'goto definition')
+        map('gr', function()
+          Snacks.picker.lsp_references()
+        end, 'references')
 
-        map('gI', require('telescope.builtin').lsp_implementations, 'goto implementation')
-        map('<leader>ld', require('telescope.builtin').lsp_type_definitions, 'type definition')
+        map('gI', function()
+          Snacks.picker.lsp_implementations()
+        end, 'goto implementation')
+        map('<leader>ld', function()
+          Snacks.picker.lsp_type_definitions()
+        end, 'type definition')
 
-        map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'document symbols')
-        map('<leader>lw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'workspace symbols')
+        map('<leader>ls', function()
+          Snacks.picker.lsp_symbols()
+        end, 'document symbols')
+        map('<leader>lw', function()
+          Snacks.picker.lsp_workspace_symbols()
+        end, 'workspace symbols')
 
         map('<leader>lr', vim.lsp.buf.rename, 'rename')
         map('<leader>lc', vim.lsp.buf.code_action, 'code action')
@@ -149,18 +161,16 @@ return {
       init_options = {
         usePlaceholders = true,
         completeUnimported = true,
-        clangdFileStatus = true,
       },
       -- Ensure it uses the same compile commands as your build
-      root_dir = require('lspconfig.util').root_pattern(
+      root_maerkers = {
         '.clangd',
         '.clang-tidy',
         '.clang-format',
         'compile_commands.json',
         'compile_flags.txt',
-        'configure.ac',
-        '.git'
-      ),
+        '.git',
+      },
     })
     vim.lsp.enable { 'clangd' }
   end,

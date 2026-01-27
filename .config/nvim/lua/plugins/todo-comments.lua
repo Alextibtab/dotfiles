@@ -6,8 +6,20 @@ return {
     event = 'VimEnter',
     config = true,
     keys = {
-      { '<leader>st', '<cmd>TodoTelescope<cr>', desc = 'telescope: todo' },
-      { '<leader>sT', '<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>', desc = 'telescope: todo/fix/fixme' },
+      {
+        '<leader>st',
+        function()
+          Snacks.picker.todo_comments()
+        end,
+        desc = 'Todo',
+      },
+      {
+        '<leader>sT',
+        function()
+          Snacks.picker.todo_comment { keywords = { 'TODO', 'FIX', 'FIXME' } }
+        end,
+        desc = 'Todo/Fix/Fixme',
+      },
     },
   },
 }

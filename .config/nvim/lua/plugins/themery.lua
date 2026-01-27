@@ -12,6 +12,7 @@ return {
       'haishanh/night-owl.vim',
       'dasupradyumna/midnight.nvim',
       'yorumicolors/yorumi.nvim',
+      'sainnhe/everforest',
     },
     config = function()
       require('themery').setup {
@@ -205,6 +206,17 @@ return {
 						      theme = "auto",
 					      },
 				      })
+            ]],
+          },
+          {
+            name = 'Everforest',
+            colorscheme = 'everforest',
+            before = [[
+              require("lualine").setup({
+                options = {
+                  theme = "everforest",
+                },
+              })
             ]],
           },
         },

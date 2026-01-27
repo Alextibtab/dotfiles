@@ -104,6 +104,7 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	tmux
 	git
 	z
 	zsh-autosuggestions
@@ -150,6 +151,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pomo="timr -n on -m pomodoro -w 30:00 -p 8:00"
 
 
 # Generated for envman. Do not edit.

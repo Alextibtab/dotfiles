@@ -39,7 +39,7 @@ return {
       },
     },
     -- stylua: ignore
-    keys = { -- TODO: see if I can use telescope for some of these.
+    keys = {
       { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "noice: redirect cmdline" },
       { "<leader>nl", function() require("noice").cmd("last") end, desc = "noice: last message" },
       { "<leader>nh", function() require("noice").cmd("history") end, desc = "noice: history" },

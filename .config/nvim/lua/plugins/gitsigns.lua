@@ -15,10 +15,6 @@ return {
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
-
-        -- toggles
-        map('n', '<leader>gb', gitsigns.toggle_current_line_blame, { desc = 'gitsigns: toggle git blame' })
-        map('n', '<leader>gD', gitsigns.toggle_deleted, { desc = 'gitsigns: toggle git deleted' })
       end,
     },
   },
