@@ -11,6 +11,16 @@ return {
       ---@type opencode.Opts
       vim.g.opencode_opts = {
         -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition" on the type or field.
+        provider = {
+          enabled = 'snacks',
+          snacks = {
+            shell = 'zsh',
+            win = {
+              width = 0.4,
+              height = 0.4,
+            },
+          },
+        },
       }
 
       -- Required for `opts.events.reload`.

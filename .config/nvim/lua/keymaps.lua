@@ -14,12 +14,18 @@ function _G.set_terminal_keymaps()
 end
 
 vim.keymap.set('n', '<C-t>', function()
+  if vim.bo.filetype == 'opencode_terminal' then
+    return
+  end
   require('snacks.terminal').toggle()
-end, { desc = 'Toggle Snacks terminal', noremap = true, silent = true })
+end, { desc = 'Toggle snacks terminal', noremap = true, silent = true })
 
 vim.keymap.set('t', '<C-t>', function()
+  if vim.bo.filetype == 'opencode_terminal' then
+    return
+  end
   require('snacks.terminal').toggle()
-end, { desc = 'Toggle Snacks terminal', noremap = true, silent = true })
+end, { desc = 'Toggle snacks terminal', noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>gg', function()
   require('snacks.lazygit').open()

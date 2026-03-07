@@ -5,9 +5,9 @@ return {
   opts = {
     terminal = {
       shell = 'zsh',
-      direction = 'float',
-      float_opts = {
-        width = 0.5,
+      win = {
+        position = 'float',
+        width = 0.6,
         height = 0.8,
         border = 'rounded',
       },
@@ -200,6 +200,34 @@ return {
         Snacks.picker.git_log_file()
       end,
       desc = 'Git Log File',
+    },
+    {
+      '<leader>tt',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = 'Diagnostics',
+    },
+    {
+      '<leader>tT',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = 'Buffer Diagnostics',
+    },
+    {
+      '<leader>tL',
+      function()
+        Snacks.picker.loclist()
+      end,
+      desc = 'Location List',
+    },
+    {
+      '<leader>tQ',
+      function()
+        Snacks.picker.qflist()
+      end,
+      desc = 'Quickfix List',
     },
   },
 }

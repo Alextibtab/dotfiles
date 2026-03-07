@@ -16,7 +16,7 @@ return {
       {
         '<leader>sT',
         function()
-          Snacks.picker.todo_comment { keywords = { 'TODO', 'FIX', 'FIXME' } }
+          Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
         end,
         desc = 'Todo/Fix/Fixme',
       },
