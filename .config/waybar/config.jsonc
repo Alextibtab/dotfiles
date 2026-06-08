@@ -8,13 +8,17 @@
     "hyprland/workspaces": {
         "format": " {icon} ",
         "format-icons": {
-            "default": "",
+            "default": "",
             "active": "",
+	    "empty": "",
         },
-        "persistent-workspaces": {
-            "HDMI-A-1": [ 1, 2, 3, 4, 5 ],
-            "DP-1": [ 6, 7, 8, 9, 10 ]
-        }
+	"persistent-workspaces": {
+	    "HDMI-A-1": [ 1, 2, 3, 4 ,5 ],
+	    "DP-1": [ 6, 7, 8, 9, 10 ],
+	},
+	"persistent-only": true,
+	"on-scroll-up": "hyprctl dispatch split-cycleworkspaces -1",
+        "on-scroll-down": "hyprctl dispatch split-cycleworkspaces +1",
      },
     "hyprland/window" : {
         "separate-outputs": true

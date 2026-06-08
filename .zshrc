@@ -151,10 +151,55 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pomo="timr -n on -m pomodoro -w 30:00 -p 8:00"
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+pomo_options["longbreak"]="25"
+
+# Pomodoro session counter
+POMO_SESSION_FILE="/tmp/.pomo_session_count"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}m
+  
+  # Track work sessions and suggest appropriate break
+  if [ "$val" = "work" ]; then
+    # Initialize or read session count
+    if [ -f "$POMO_SESSION_FILE" ]; then
+      session_count=$(cat "$POMO_SESSION_FILE")
+    else
+      session_count=0
+    fi
+    
+    # Increment session count
+    session_count=$((session_count + 1))
+    echo $session_count > "$POMO_SESSION_FILE"
+    
+    # Determine break type
+    if [ $((session_count % 4)) -eq 0 ]; then
+      notify-send "Pomodoro Timer" "Work session $session_count done! Time for a 25min long break."
+    else
+      notify-send "Pomodoro Timer" "Work session $session_count done! Time for a 5min break."
+    fi
+  else
+    notify-send "Pomodoro Timer" "'$val' session done"
+  fi
+  fi
+}
+
+alias wo="clear; pomodoro 'work'"
+alias br="clear; pomodoro 'break'"
+alias lb="clear; pomodoro 'longbreak'"
+alias pomo-reset="rm -f $POMO_SESSION_FILE && echo 'Pomodoro session counter reset'"
+alias pomo-status="if [ -f /tmp/.pomo_session_count ]; then echo \"Current session: \$(cat /tmp/.pomo_session_count)\"; else echo 'No sessions yet'; fi"
+alias mpv-hdr='mpv --target-colorspace-hint-mode=source'
 
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 [[ -s "/home/tibtab/.gvm/scripts/gvm" ]] && source "/home/tibtab/.gvm/scripts/gvm"
+. "/home/tibtab/.deno/env"
