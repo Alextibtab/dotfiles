@@ -1,0 +1,36 @@
+{
+  "version": 1,
+
+  "bar": {
+    "position": "top",
+    "height": 38,
+    "margin": 0,
+    "transparent": false,
+    "layout": {
+      "left": [
+        { "id": "workspaces" }
+      ],
+      "center": [
+        { "id": "activeWindow", "maxWidth": 600 }
+      ],
+      "right": [
+        { "id": "clock", "format": "ddd d MMM  HH:mm" }
+      ]
+    }
+  },
+
+  "workspaces": {
+    "_comment": "Mirrors split-monitor-workspaces. monitorPriority MUST match the monitor_priority list in ~/.config/hypr/hyprland/plugins.lua, and perMonitor MUST match workspace_count.",
+    "perMonitor": 5,
+    "monitorPriority": ["HDMI-A-1", "DP-1"],
+    "showEmpty": true,
+    "localNumbering": true
+  },
+
+  "theme": {
+    "_comment": "'dynamic' follows ~/.cache/hellwal/quickshell.json and recolours live on wallpaper change. Any other value loads theme/<name>.json - shipped: mocha, gruvbox.",
+    "name": "dynamic",
+    "font": "SpaceMono Nerd Font",
+    "fontSize": 13
+  }
+}

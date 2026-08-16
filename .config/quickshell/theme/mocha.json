@@ -1,0 +1,12 @@
+{
+  "source": "static",
+  "_comment": "Catppuccin Mocha. Selected with \"theme\": { \"name\": \"mocha\" } in shell.json.",
+  "roles": {
+    "background": "#1e1e2e",
+    "foreground": "#cdd6f4",
+    "accent": "#89b4fa",
+    "accentAlt": "#cba6f7",
+    "muted": "#6c7086",
+    "urgent": "#f38ba8"
+  }
+}

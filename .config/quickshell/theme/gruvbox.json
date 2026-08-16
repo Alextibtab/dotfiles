@@ -1,0 +1,12 @@
+{
+  "source": "static",
+  "_comment": "Gruvbox dark. Selected with \"theme\": { \"name\": \"gruvbox\" } in shell.json.",
+  "roles": {
+    "background": "#282828",
+    "foreground": "#ebdbb2",
+    "accent": "#83a598",
+    "accentAlt": "#fabd2f",
+    "muted": "#928374",
+    "urgent": "#fb4934"
+  }
+}

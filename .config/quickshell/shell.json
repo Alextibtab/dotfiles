@@ -1,0 +1,20 @@
+{
+  "_readme": [
+    "Your overrides. Deep-merged over defaults.json, so you only list what you",
+    "want to change. Objects merge key by key; ARRAYS REPLACE WHOLESALE.",
+    "",
+    "That array rule is what lets you remove a widget: to drop the clock, copy",
+    "the whole bar.layout.right array here without it. A merging array could",
+    "never express a removal.",
+    "",
+    "Both this file and defaults.json are watched - saving either one applies",
+    "immediately, no restart.",
+    "",
+    "'version': 1 is required or the file is ignored (with a warning on stderr).",
+    "",
+    "Example - move the bar to the bottom and show absolute workspace numbers:",
+    "  \"bar\": { \"position\": \"bottom\" },",
+    "  \"workspaces\": { \"localNumbering\": false }"
+  ],
+  "version": 1
+}
