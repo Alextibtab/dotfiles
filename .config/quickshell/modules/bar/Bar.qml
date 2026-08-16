@@ -39,7 +39,12 @@ Scope {
       readonly property var registry: ({
         "workspaces": workspacesComponent,
         "clock": clockComponent,
-        "activeWindow": activeWindowComponent
+        "activeWindow": activeWindowComponent,
+        "volume": volumeComponent,
+        "network": networkComponent,
+        "media": mediaComponent,
+        "tray": trayComponent,
+        "session": sessionComponent
       })
 
       Component {
@@ -59,6 +64,31 @@ Scope {
         ActiveWindow {
           monitorName: panel.monitorName
         }
+      }
+
+      Component {
+        id: volumeComponent
+        Volume {}
+      }
+
+      Component {
+        id: networkComponent
+        Network {}
+      }
+
+      Component {
+        id: mediaComponent
+        Media {}
+      }
+
+      Component {
+        id: trayComponent
+        Tray {}
+      }
+
+      Component {
+        id: sessionComponent
+        SessionButtons {}
       }
 
       // ---- sections ------------------------------------------------------

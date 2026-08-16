@@ -7,14 +7,19 @@
     "margin": 0,
     "transparent": false,
     "layout": {
+      "_comment": "activeWindow is registered but unplaced; add { \"id\": \"activeWindow\" } to any section to bring it back.",
       "left": [
-        { "id": "workspaces" }
+        { "id": "workspaces" },
+        { "id": "media", "maxWidth": 320 }
       ],
       "center": [
-        { "id": "activeWindow", "maxWidth": 600 }
+        { "id": "clock", "format": "ddd d MMM  HH:mm" }
       ],
       "right": [
-        { "id": "clock", "format": "ddd d MMM  HH:mm" }
+        { "id": "tray", "iconSize": 18 },
+        { "id": "volume", "step": 0.05 },
+        { "id": "network", "showLabel": true, "maxLabelWidth": 160 },
+        { "id": "session" }
       ]
     }
   },
