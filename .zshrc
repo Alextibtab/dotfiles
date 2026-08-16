@@ -117,9 +117,16 @@ source $ZSH/oh-my-zsh.sh
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 
-# Run fastfetch on terminal startup if it exists
+# Run fastfetch on terminal startup if it exists.
+# Prefer the hellwal-generated config so the colours follow the wallpaper
+# palette like everything else; fall back to the static Catppuccin theme if
+# hellwal has not run yet (fresh machine, or before the first wallpaper set).
 if command -v fastfetch &> /dev/null; then
-    fastfetch -c $HOME/.config/fastfetch/catppuccin-peach.jsonc
+    if [[ -f "$HOME/.cache/hellwal/fastfetch.jsonc" ]]; then
+        fastfetch -c "$HOME/.cache/hellwal/fastfetch.jsonc"
+    else
+        fastfetch -c "$HOME/.config/fastfetch/catppuccin-peach.jsonc"
+    fi
 fi
 
 # User configuration
