@@ -21,6 +21,11 @@ hl.window_rule({ match = { class = "jetbrains-.*", float = true }, no_initial_fo
 hl.window_rule({ match = { class = "jetbrains-.*", float = true }, opacity = "1 override 1 override 1" })
 hl.window_rule({ match = { class = "jetbrains-.*" }, opacity = "1 override 1 override 1" })
 
-hl.window_rule({ match = { class = "firefox-developer-edition" }, opacity = "1 override 1 override 1" })
+hl.window_rule({ match = { class = "librewolf" }, opacity = "1 override 1 override 1" })
+hl.window_rule({ match = { class = "discord" }, opacity = "1 override 1 override 1" })
+hl.window_rule({ match = { class = "flipperui" }, opacity = "1 override 1 override 1" })
+hl.window_rule({ match = { class = "winboat" }, opacity = "1 override 1 override 1" })
 
+hl.window_rule({ match = { title = "mal-tui" }, opacity = "1 override 1 override 1" })
 
+hl.window_rule({ match = { initial_title = "Steam Big Picture Mode" }, monitor = "2" })

@@ -21,8 +21,8 @@ for i = 1, smw.get_amount_of_workspaces() do
 	hl.bind("SUPER + SHIFT + " .. n, smw.move_to_workspace_silent(n))
 end
 
-hl.bind("SUPER + mouse_down", smw.cycle_workspaces("next"))
-hl.bind("SUPER + mouse_up", smw.cycle_workspaces("prev"))
+hl.bind("SUPER + mouse_down", smw.cycle_workspaces("prev"))
+hl.bind("SUPER + mouse_up", smw.cycle_workspaces("next"))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -32,4 +32,3 @@ hl.bind("SUPER + F", hl.dsp.window.fullscreen())
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("hyprshot -m output --clipboard-only"))
 hl.bind("SUPER + CTRL + P", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 hl.bind("SUPER + P", hl.dsp.exec_cmd("hyprshot -m window --clipboard-only"))
-
