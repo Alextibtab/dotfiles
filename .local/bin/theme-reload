@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Nudge running apps to re-read the hellwal-generated colour files.
+#
+# Most consumers of ~/.cache/hellwal/ pick up changes on their own:
+#   quickshell  - FileView { watchChanges: true }, reloads in-process
+#   starship    - re-reads its config on every prompt
+#   wofi        - launched fresh each time, reads --style at startup
+#   fastfetch   - launched fresh each time
+#   hyprland    - re-reads hyprland-colours.lua on config reload
+#
+# Terminals are the exception: they parse their config once at startup and
+# hold it. They each need a different poke, so this centralises them.
+#
+# Intended to be called by hellwal's -s/--script hook, which runs after the
+# templates are written. Safe to run standalone.
+
+set -uo pipefail
+
+# Ghostty: SIGUSR2 triggers a full config reload, which re-reads the
+# `config-file = ~/.cache/hellwal/ghostty-colours` include. Without this an
+# already-open window keeps the palette it started with, which is why a
+# wallpaper change appeared to skip the terminal.
+if pgrep -x ghostty >/dev/null 2>&1; then
+  pkill -USR2 -x ghostty && echo "theme-reload: ghostty reloaded"
+fi
+
+# Kitty uses SIGUSR1 for the same purpose.
+if pgrep -x kitty >/dev/null 2>&1; then
+  pkill -USR1 -x kitty && echo "theme-reload: kitty reloaded"
+fi
+
+# Alacritty watches its config file, so touching it is enough. Only meaningful
+# if the config actually imports the hellwal output.
+if pgrep -x alacritty >/dev/null 2>&1 && [[ -f ~/.config/alacritty/alacritty.toml ]]; then
+  touch ~/.config/alacritty/alacritty.toml && echo "theme-reload: alacritty touched"
+fi
+
+exit 0
