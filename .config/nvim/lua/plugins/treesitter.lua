@@ -1,9 +1,10 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate',
-    opts = {
-      ensure_installed = {
+    config = function()
+      local parsers = {
         'astro',
         'latex',
         'bash',
@@ -33,27 +34,38 @@ return {
         'vimdoc',
         'xml',
         'yaml',
-      },
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<C-space>',
-          node_incremental = '<C-space>',
-          scope_incremental = false,
-          node_decremental = '<bs>',
-        },
-      },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.install').prefer_git = true
-      --@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      }
+      require('nvim-treesitter').install(parsers)
+
+      ---@param buf integer
+      ---@param language string
+      local function try_attach(buf, language)
+        if not vim.treesitter.language.add(language) then return end
+        vim.treesitter.start(buf, language)
+        local has_indent = vim.treesitter.query.get(language, 'indents') ~= nil
+        if has_indent then
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end
+
+      local available = require('nvim-treesitter').get_available()
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local buf = args.buf
+          local language = vim.treesitter.language.get_lang(args.match)
+          if not language then return end
+          local installed = require('nvim-treesitter').get_installed 'parsers'
+          if vim.tbl_contains(installed, language) then
+            try_attach(buf, language)
+          elseif vim.tbl_contains(available, language) then
+            require('nvim-treesitter').install(language):await(function()
+              try_attach(buf, language)
+            end)
+          else
+            try_attach(buf, language)
+          end
+        end,
+      })
     end,
-    dependencies = {
-      { 'virchau13/tree-sitter-astro' },
-    },
   },
 }
