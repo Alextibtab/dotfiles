@@ -33,8 +33,5 @@ return {
     picker = {
       name = 'snacks.pick',
     },
-    completion = {
-      blink = true,
-    },
   },
 }
