@@ -1,5 +1,4 @@
 theme = "dracula"
-client_id = "4ba09545e3b94ef69d6882968b8f56bf"
 client_port = 8080
 login_redirect_uri = "http://127.0.0.1:8989/login"
 playback_format = """
@@ -13,6 +12,7 @@ page_size_in_rows = 20
 play_icon = "▶"
 pause_icon = "▌▌"
 liked_icon = "♥"
+enable_audio_visualization = true
 border_type = "Plain"
 progress_bar_type = "Rectangle"
 enable_cover_image_cache = true
