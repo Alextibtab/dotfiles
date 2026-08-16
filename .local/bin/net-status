@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# Emit a single JSON line describing the primary network connection.
+#
+# Why this exists: Quickshell's Networking service is NetworkManager-only
+# ("Network will not work. Could not find an available backend." on this
+# machine), and this system runs systemd-networkd + iwd. Quickshell also
+# exposes no generic D-Bus API to QML, so the shell cannot talk to
+# net.connman.iwd itself. This script is the bridge - the bar polls it.
+#
+# `iw` is not installed and `iwctl station <dev> show` prints an
+# ANSI-coloured, column-aligned table that is unpleasant to parse, so
+# wireless facts come from iwd's D-Bus via busctl --json=short plus
+# /proc/net/wireless for signal quality.
+#
+# Output shape (always valid JSON, always one line):
+#   {"kind":"wifi","state":"connected","ssid":"...","quality":70,"rssi":-39,
+#    "iface":"wlan0","ip":"10.2.0.134"}
+#   {"kind":"wired","state":"connected","iface":"enp14s0","ip":"..."}
+#   {"kind":"none","state":"disconnected"}
+
+set -uo pipefail
+
+json_escape() { printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
+
+ip_of() {
+  local dev="$1"
+  ip -4 -br addr show "$dev" 2>/dev/null | awk '{print $3}' | cut -d/ -f1 | head -1
+}
+
+up() {
+  [[ "$(cat "/sys/class/net/$1/operstate" 2>/dev/null)" == "up" ]]
+}
+
+# --- wired first: a cabled link is the better connection when present ------
+for dev in /sys/class/net/*; do
+  d=$(basename "$dev")
+  # Skip loopback, virtual, container and tunnel interfaces - none of them
+  # represent "the network" from a user's point of view.
+  case "$d" in
+    lo|docker*|br-*|veth*|tailscale*|virbr*|wg*|tun*|zt*) continue ;;
+  esac
+  # Wireless devices have a `wireless` subdir; handle those below.
+  [[ -d "$dev/wireless" ]] && continue
+  if up "$d"; then
+    printf '{"kind":"wired","state":"connected","iface":"%s","ip":"%s"}\n' \
+      "$(json_escape "$d")" "$(json_escape "$(ip_of "$d")")"
+    exit 0
+  fi
+done
+
+# --- wireless via iwd ------------------------------------------------------
+wdev=""
+for dev in /sys/class/net/*/wireless; do
+  [[ -d "$dev" ]] || continue
+  wdev=$(basename "$(dirname "$dev")")
+  break
+done
+
+if [[ -n "$wdev" ]]; then
+  # Signal quality from /proc/net/wireless. Column 3 is link quality, column 4
+  # is level in dBm; both carry a trailing '.' that has to come off.
+  read -r quality rssi < <(
+    awk -v d="$wdev:" '$1==d {gsub(/\./,"",$3); gsub(/\./,"",$4); print $3, $4}' \
+      /proc/net/wireless 2>/dev/null
+  ) || true
+  quality=${quality:-0}
+  rssi=${rssi:-0}
+
+  # Locate this device's iwd station object. Paths are opaque
+  # (/net/connman/iwd/0/4), so match on the Device interface's Name property
+  # rather than assuming a layout.
+  station=""
+  while read -r path; do
+    [[ -n "$path" ]] || continue
+    name=$(busctl --system get-property net.connman.iwd "$path" \
+      net.connman.iwd.Device Name --json=short 2>/dev/null |
+      sed -n 's/.*"data":"\([^"]*\)".*/\1/p')
+    if [[ "$name" == "$wdev" ]]; then station="$path"; break; fi
+  done < <(busctl --system tree net.connman.iwd 2>/dev/null |
+    grep -oE '/net/connman/iwd/[0-9]+/[0-9]+$')
+
+  state="disconnected"
+  ssid=""
+  if [[ -n "$station" ]]; then
+    state=$(busctl --system get-property net.connman.iwd "$station" \
+      net.connman.iwd.Station State --json=short 2>/dev/null |
+      sed -n 's/.*"data":"\([^"]*\)".*/\1/p')
+    state=${state:-disconnected}
+
+    netpath=$(busctl --system get-property net.connman.iwd "$station" \
+      net.connman.iwd.Station ConnectedNetwork --json=short 2>/dev/null |
+      sed -n 's/.*"data":"\([^"]*\)".*/\1/p')
+    if [[ -n "$netpath" ]]; then
+      ssid=$(busctl --system get-property net.connman.iwd "$netpath" \
+        net.connman.iwd.Network Name --json=short 2>/dev/null |
+        sed -n 's/.*"data":"\([^"]*\)".*/\1/p')
+    fi
+  elif up "$wdev"; then
+    # iwd unreachable but the link is up - report what the kernel knows rather
+    # than claiming disconnected.
+    state="connected"
+  fi
+
+  printf '{"kind":"wifi","state":"%s","ssid":"%s","quality":%s,"rssi":%s,"iface":"%s","ip":"%s"}\n' \
+    "$(json_escape "$state")" "$(json_escape "$ssid")" \
+    "$quality" "$rssi" "$(json_escape "$wdev")" "$(json_escape "$(ip_of "$wdev")")"
+  exit 0
+fi
+
+printf '{"kind":"none","state":"disconnected"}\n'
