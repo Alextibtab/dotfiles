@@ -8,6 +8,9 @@ hl.bind("SUPER + Space", hl.dsp.exec_cmd("wofi --conf ~/.config/wofi/config --st
 hl.bind("SUPER + E", hl.dsp.exec_cmd("thunar"))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind("SUPER + ALT + S", hl.dsp.window.move({ workspace = "special:scratchpad" }))
+
 hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))

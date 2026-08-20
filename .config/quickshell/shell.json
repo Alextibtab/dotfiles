@@ -16,5 +16,8 @@
     "  \"bar\": { \"position\": \"bottom\" },",
     "  \"workspaces\": { \"localNumbering\": false }"
   ],
-  "version": 1
+  "version": 1,
+  "theme": {
+    "fontSize": 16
+  }
 }

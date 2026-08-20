@@ -25,6 +25,15 @@ Row {
 
   readonly property int base: Hypr.baseFor(root.monitorName)
 
+  readonly property var numerals: {
+    1: "一", 2: "二", 3: "三", 4: "四", 5: "五",
+    6: "六", 7: "七", 8: "八", 9: "九", 10: "十"
+  }
+
+  function numeral(n) {
+    return root.numerals[n] || String(n)
+  }
+
   Repeater {
     model: Hypr.perMonitor
 
@@ -50,7 +59,9 @@ Row {
       visible: Config.workspaces.showEmpty || isOccupied || isActive
 
       implicitWidth: isActive ? 28 : 20
-      implicitHeight: 20
+      // Chips fill the whole bar height so the active workspace reads as a
+      // full-height block rather than a small square floating in padding.
+      implicitHeight: Config.bar.height || 38
       radius: Style.radiusSmall
 
       color: {
@@ -77,7 +88,7 @@ Row {
 
       Text {
         anchors.centerIn: parent
-        text: Config.workspaces.localNumbering ? chip.localIndex : chip.globalId
+        text: root.numeral(Config.workspaces.localNumbering ? chip.localIndex : chip.globalId)
         font.family: Style.fontFamily
         font.pixelSize: Style.fontSizeSmall
         font.bold: chip.isActive

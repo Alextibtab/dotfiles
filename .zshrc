@@ -13,6 +13,15 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_SAVE_NO_DUPS
 
+# Ignore specific commands
+HISTORY_IGNORE="(nordvpn|n-m3u8dl-re|tar|7z|unzip|zip)*"
+
+# Don't save history for commands run from ~/vid (including subdirs)
+zshaddhistory() {
+  [[ "$PWD" == "$HOME/vid"* ]] && return 1
+  return 0
+}
+
 # Set VCPKG_ROOT environment variable
 export VCPKG_ROOT="/home/tibtab/projects/c++/vcpkg"
 export VCPKG_DEFAULT_TRIPLET="x64-linux"

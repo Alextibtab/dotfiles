@@ -1,0 +1,189 @@
+#!/usr/bin/env bash
+# One knob for apparent text size across the desktop. Drives three settings in
+# lockstep, anchored to the shell default of 13px:
+#
+#   • the quickshell shell's font size  (shell.json -> theme.fontSize; Config
+#     watches the file, so the bar and panels reflow live)
+#   • GNOME/GTK's text-scaling-factor   (13px -> 1.0, quantized so the UI font
+#     lands on a whole point size)
+#   • the terminal font point size      (proportionally from the size in place
+#     when this script first ran, so an existing terminal setup is preserved)
+#
+# Usage: display-text-size [size|reset]
+#   (no args)  print current text size, GTK factor, and terminal point size
+#   <size>     set text size in px (9-20)
+#   reset      return the shell to its default (13px) and factor to 1.0
+
+set -uo pipefail
+
+MIN=9
+MAX=20
+SHELL_DEFAULT_PX=13
+SHELL_JSON="$HOME/.config/quickshell/shell.json"
+GKEY_SCHEMA="org.gnome.desktop.interface"
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/quickshell"
+ANCHOR_FILE="$STATE_DIR/display-text-size.anchor"
+
+usage() {
+  echo "Usage: display-text-size [size|reset]"
+  echo "  (no args)   print the current text size, GTK factor, and terminal size"
+  echo "  <size>      set text size in px ($MIN-$MAX); shell + GTK + terminals together"
+  echo "  reset       return shell and GTK to their defaults"
+}
+
+# ---- shell base size ----------------------------------------------------
+
+current_shell_px() {
+  jq -r '.theme.fontSize // 13' "$SHELL_JSON" 2>/dev/null || echo "$SHELL_DEFAULT_PX"
+}
+
+set_shell_px() {
+  local size="$1"
+  mkdir -p "$(dirname "$SHELL_JSON")"
+  local tmp
+  tmp="$(mktemp)"
+  if [[ -f $SHELL_JSON ]]; then
+    jq --argjson s "$size" '.theme.fontSize = $s' "$SHELL_JSON" >"$tmp"
+  else
+    jq -n --argjson s "$size" '{ version: 1, theme: { fontSize: $s } }' >"$tmp"
+  fi
+  mv "$tmp" "$SHELL_JSON"
+}
+
+reset_shell_px() {
+  [[ -f $SHELL_JSON ]] || return 0
+  local tmp
+  tmp="$(mktemp)"
+  jq 'del(.theme.fontSize)' "$SHELL_JSON" >"$tmp" && mv "$tmp" "$SHELL_JSON"
+}
+
+# ---- GTK text-scaling-factor -------------------------------------------
+
+gtk_font_pt() {
+  local name pt
+  name="$(gsettings get "$GKEY_SCHEMA" font-name 2>/dev/null)"
+  pt="${name%\'}"
+  pt="${pt##* }"
+  if [[ $pt =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+    echo "$pt"
+  else
+    echo 11
+  fi
+}
+
+set_factor() {
+  gsettings set "$GKEY_SCHEMA" text-scaling-factor "$1" 2>/dev/null || true
+}
+
+# ---- terminals ----------------------------------------------------------
+# Point size is derived from an anchor captured on first run (the terminal
+# size that matched the shell default), so scaling text never resets a
+# user-tuned terminal. Ghostty reloads on SIGUSR2; kitty on SIGUSR1.
+
+term_current_pt() {
+  if [[ -f ~/.config/ghostty/config ]]; then
+    grep -oP '^font-size = \K[0-9.]+' ~/.config/ghostty/config | head -1
+  elif [[ -f ~/.config/alacritty/alacritty.toml ]]; then
+    grep -oP '^size[[:space:]]*=[[:space:]]*\K[0-9.]+' ~/.config/alacritty/alacritty.toml | head -1
+  elif [[ -f ~/.config/kitty/kitty.conf ]]; then
+    grep -oP '^font_size[[:space:]]+\K[0-9.]+' ~/.config/kitty/kitty.conf | head -1
+  elif [[ -f ~/.config/foot/foot.ini ]]; then
+    grep -oP ':size=\K[0-9.]+' ~/.config/foot/foot.ini | head -1
+  fi
+}
+
+ensure_anchor() {
+  [[ -f $ANCHOR_FILE ]] && return 0
+  mkdir -p "$STATE_DIR"
+  local px term
+  px="$(current_shell_px)"
+  term="$(term_current_pt)"
+  term="${term:-9}"
+  printf '%s %s\n' "$px" "$term" >"$ANCHOR_FILE"
+}
+
+anchor_term_pt() {
+  awk '{ print $2 }' "$ANCHOR_FILE" 2>/dev/null | head -1
+}
+
+anchor_shell_px() {
+  awk '{ print $1 }' "$ANCHOR_FILE" 2>/dev/null | head -1
+}
+
+term_pt_for() {
+  local size="$1"
+  local anchor_term anchor_shell
+  anchor_term="$(anchor_term_pt)"
+  anchor_shell="$(anchor_shell_px)"
+  anchor_term="${anchor_term:-9}"
+  anchor_shell="${anchor_shell:-13}"
+  awk -v s="$size" -v t="$anchor_term" -v b="$anchor_shell" \
+    'BEGIN { printf "%d", int(s * t / b + 0.5) }'
+}
+
+set_terminal_size() {
+  local pt="$1"
+
+  if [[ -f ~/.config/ghostty/config ]]; then
+    if grep -q '^font-size = ' ~/.config/ghostty/config; then
+      sed -i -E "s/^font-size = .*/font-size = $pt/" ~/.config/ghostty/config
+    else
+      printf '\nfont-size = %s\n' "$pt" >>~/.config/ghostty/config
+    fi
+    pkill -USR2 -x ghostty 2>/dev/null || true
+  fi
+
+  if [[ -f ~/.config/alacritty/alacritty.toml ]]; then
+    sed -i -E "s/^size[[:space:]]*=[[:space:]]*[0-9.]+/size = $pt/" ~/.config/alacritty/alacritty.toml
+  fi
+
+  if [[ -f ~/.config/kitty/kitty.conf ]]; then
+    sed -i -E "s/^font_size[[:space:]]+[0-9.]+/font_size $pt.0/" ~/.config/kitty/kitty.conf
+    pkill -USR1 -x kitty 2>/dev/null || true
+  fi
+
+  if [[ -f ~/.config/foot/foot.ini ]]; then
+    sed -i -E "s/(:size=)[0-9.]+/\1$pt/" ~/.config/foot/foot.ini
+  fi
+}
+
+# ---- main ---------------------------------------------------------------
+
+case "${1:-}" in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+  "")
+    ensure_anchor
+    cur="$(current_shell_px)"
+    size="${cur:-13 (default)}"
+    factor="$(gsettings get "$GKEY_SCHEMA" text-scaling-factor 2>/dev/null)"
+    term="$(term_current_pt)"
+    printf 'text size: %s px\ngtk text-scaling-factor: %s\nterminal font: %s pt\n' \
+      "$size" "$factor" "${term:-n/a}"
+    exit 0
+    ;;
+  reset | default)
+    reset_shell_px
+    gsettings reset "$GKEY_SCHEMA" text-scaling-factor 2>/dev/null || true
+    set_terminal_size "$(anchor_term_pt)"
+    exit 0
+    ;;
+esac
+
+size="$1"
+if [[ ! $size =~ ^[0-9]+$ ]] || ((size < MIN || size > MAX)); then
+  echo "Size must be an integer between $MIN and $MAX (px)." >&2
+  usage >&2
+  exit 1
+fi
+
+ensure_anchor
+set_shell_px "$size"
+
+factor="$(awk -v s="$size" -v b="$SHELL_DEFAULT_PX" -v f="$(gtk_font_pt)" \
+  'BEGIN { printf "%.4f", int(f * s / b + 0.5) / f }')"
+set_factor "$factor"
+
+set_terminal_size "$(term_pt_for "$size")"

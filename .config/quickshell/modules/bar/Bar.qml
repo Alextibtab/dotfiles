@@ -33,6 +33,23 @@ Scope {
       readonly property var hyprMonitor: Hyprland.monitorFor(modelData)
       readonly property string monitorName: hyprMonitor ? hyprMonitor.name : modelData.name
 
+      // Hyprland <= 0.56 does not move existing layer surfaces when an output
+      // changes position at runtime (a scale change re-flows auto-positioned
+      // monitors). Only a fresh configure re-commits them, so a bar whose
+      // screen moved keeps rendering at its old spot. Unmap/remap the window
+      // when the screen geometry changes to force that re-commit.
+      Connections {
+        target: panel.screen
+        function onGeometryChanged() {
+          if (!panel.screen)
+            return;
+          panel.visible = false;
+          Qt.callLater(() => {
+            panel.visible = true;
+          });
+        }
+      }
+
       // ---- widget registry ---------------------------------------------
       // id -> Component. Each component may declare `monitorName`; the
       // loader below feeds it in along with any per-entry settings.
@@ -43,8 +60,12 @@ Scope {
         "volume": volumeComponent,
         "network": networkComponent,
         "media": mediaComponent,
+        "display": displayComponent,
         "tray": trayComponent,
-        "session": sessionComponent
+        "weather": weatherComponent,
+        "session": sessionComponent,
+        "gitSwitcher": gitSwitcherComponent,
+        "opencodeUsage": opencodeUsageComponent
       })
 
       Component {
@@ -82,13 +103,47 @@ Scope {
       }
 
       Component {
+        id: displayComponent
+        Display {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
+      }
+
+      Component {
         id: trayComponent
-        Tray {}
+        Tray {
+          screen: panel.screen
+        }
+      }
+
+      Component {
+        id: weatherComponent
+        WeatherWidget {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
       }
 
       Component {
         id: sessionComponent
         SessionButtons {}
+      }
+
+      Component {
+        id: gitSwitcherComponent
+        GitSwitcher {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
+      }
+
+      Component {
+        id: opencodeUsageComponent
+        OpencodeUsage {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
       }
 
       // ---- sections ------------------------------------------------------

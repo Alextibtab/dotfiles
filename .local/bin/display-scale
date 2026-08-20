@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+# Show, set, or step the scale of the focused Hyprland monitor.
+#
+#   display-scale            print the focused monitor's scale
+#   display-scale <scale>    set scale (1, 1.25, 1.6, 2, 3, 4, or any 1..4)
+#   display-scale up|down    step through the preset ratios
+#
+# Hyprland only accepts scales whose logical pixel grid is whole (in 1/120
+# steps), so the requested value is cleaned to the nearest valid one for the
+# monitor's mode. The new scale is persisted into the hl.monitor() block for
+# that output in hyprland/general.lua, then applied with `hyprctl reload` —
+# reload re-runs the full Lua config, which faithfully re-applies the monitor's
+# other settings (position, bitdepth, cm, vrr) alongside the new scale.
+
+set -uo pipefail
+
+SCALES=(1 1.25 1.6 2 3 4)
+MONITOR_FILE="$HOME/.config/hypr/hyprland/general.lua"
+
+usage() {
+  echo "Usage: display-scale [up|down|SCALE] [MONITOR]"
+  echo "  MONITOR defaults to the focused monitor."
+}
+
+focused_monitor_scale() {
+  hyprctl monitors -j 2>/dev/null | jq -r '.[] | select(.focused == true) | .scale'
+}
+
+# Round the requested scale up to the nearest value that divides the monitor's
+# mode into whole logical pixels.
+clean_scale() {
+  awk -v s="$1" -v w="$2" -v h="$3" '
+    function gcd(a, b, t) { while (b) { t = a % b; a = b; b = t } return a }
+    BEGIN {
+      g = gcd(int(w * 120 + 0.5), int(h * 120 + 0.5))
+      k = int(s * 120 + 0.5)
+      if (k > g) k = g
+      while (g % k != 0) k++
+      printf "%g\n", k / 120
+    }'
+}
+
+# Update the hl.monitor({ ... }) block whose output matches $1: set the scale
+# to $2 and force position to "auto". Explicit positions plus a scale change
+# leave dead gaps between monitors (a monitor's logical size shrinks as its
+# scale grows, but a fixed coordinate does not move) - the mouse gets stuck in
+# the gap. Auto makes Hyprland lay monitors out contiguously, which is what
+# makes runtime scaling usable. Other fields are left untouched.
+persist_scale() {
+  local name="$1" val="$2"
+  [[ -f $MONITOR_FILE ]] || return 0
+  local tmp
+  tmp="$(mktemp)"
+  awk -v name="$name" -v val="$val" '
+    /^[[:space:]]*hl\.monitor\(/ { inmon = 1; cur = "" }
+    /^[[:space:]]*\)/ { inmon = 0 }
+    inmon && match($0, /output[[:space:]]*=[[:space:]]*"[^"]*"/) {
+      s = substr($0, RSTART, RLENGTH)
+      if (match(s, /"[^"]*"/)) cur = substr(s, RSTART + 1, RLENGTH - 2)
+    }
+    inmon && cur == name && /scale[[:space:]]*=/ {
+      sub(/scale[[:space:]]*=[[:space:]]*[^,]*/, "scale = " val)
+      print
+      next
+    }
+    inmon && cur == name && /^[[:space:]]*position[[:space:]]*=/ {
+      sub(/position[[:space:]]*=[[:space:]]*[^,]*/, "position = \"auto\"")
+      print
+      next
+    }
+    { print }
+  ' "$MONITOR_FILE" >"$tmp"
+  mv "$tmp" "$MONITOR_FILE"
+}
+
+set_scale() {
+  local requested="$1"
+  local monitor="${2:-}"
+  local info name w h
+  if [[ -n $monitor ]]; then
+    info="$(hyprctl monitors -j 2>/dev/null | jq -c --arg m "$monitor" '.[] | select(.name == $m)')"
+  else
+    info="$(hyprctl monitors -j 2>/dev/null | jq -c '.[] | select(.focused == true)')"
+  fi
+  [[ -n $info ]] || { echo "no such monitor: ${monitor:-<focused>}" >&2; exit 1; }
+
+  name="$(echo "$info" | jq -r '.name')"
+  w="$(echo "$info" | jq -r '.width')"
+  h="$(echo "$info" | jq -r '.height')"
+  local new
+  new="$(clean_scale "$requested" "$w" "$h")"
+
+  persist_scale "$name" "$new"
+  hyprctl reload >/dev/null 2>&1
+  echo "$new"
+}
+
+# Nearest preset (by effective/clean value), then step to next/previous. Falls
+# back to plain clean_scale when the monitor's mode makes presets collapse.
+scale_from_current() {
+  local direction="$1" w="$2" h="$3"
+  local current
+  read -r current
+  awk -v direction="$direction" -v list="${SCALES[*]}" -v scale="$current" \
+    -v w="$w" -v h="$h" '
+    function gcd(a, b, t) { while (b) { t = a % b; a = b; b = t } return a }
+    function clean(s,    g, k) {
+      g = gcd(int(w * 120 + 0.5), int(h * 120 + 0.5))
+      k = int(s * 120 + 0.5)
+      if (k > g) k = g
+      while (g % k != 0) k++
+      return k / 120
+    }
+    BEGIN {
+      n = split(list, presets, " ")
+      for (i = 1; i <= n; i++) {
+        eff = clean(presets[i])
+        key = sprintf("%.8f", eff)
+        dist = presets[i] - eff; if (dist < 0) dist = -dist
+        if (!(key in idx)) {
+          idx[key] = ++m
+          effs[m] = eff
+          labels[m] = presets[i]
+          dists[m] = dist
+        } else {
+          j = idx[key]
+          if (dist < dists[j]) { labels[j] = presets[i]; dists[j] = dist }
+        }
+      }
+      best = 1; bestdiff = 1e9
+      for (i = 1; i <= m; i++) {
+        diff = scale - effs[i]; if (diff < 0) diff = -diff
+        if (diff < bestdiff) { bestdiff = diff; best = i }
+      }
+      if (direction == "next") print labels[(best < m ? best + 1 : m)]
+      else if (direction == "previous") print labels[(best > 1 ? best - 1 : 1)]
+      else print labels[best]
+    }'
+}
+
+case "${1:-}" in
+  "")
+    focused_monitor_scale
+    ;;
+  -h | --help)
+    usage
+    ;;
+  up | down)
+    monitor="${2:-}"
+    if [[ -n $monitor ]]; then
+      info="$(hyprctl monitors -j 2>/dev/null | jq -c --arg m "$monitor" '.[] | select(.name == $m)')"
+    else
+      info="$(hyprctl monitors -j 2>/dev/null | jq -c '.[] | select(.focused == true)')"
+    fi
+    if [[ -n $info ]]; then
+      dir="$([[ $1 == up ]] && echo next || echo previous)"
+      set_scale "$(echo "$info" | jq -r '.scale' | scale_from_current "$dir" \
+        "$(echo "$info" | jq -r '.width')" "$(echo "$info" | jq -r '.height')")" "$monitor"
+    fi
+    ;;
+  *)
+    if [[ $1 =~ ^[0-9]+([.][0-9]+)?$ ]] &&
+      awk -v s="$1" 'BEGIN { exit !(s >= 1 && s <= 4) }'; then
+      set_scale "$1" "${2:-}"
+    else
+      usage >&2
+      exit 1
+    fi
+    ;;
+esac

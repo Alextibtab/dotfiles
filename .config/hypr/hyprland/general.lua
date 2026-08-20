@@ -1,7 +1,7 @@
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "3840x2160@240",
-	position = "0x0",
+	position = "auto",
 	scale = 1,
 	bitdepth = 10,
 	cm = "srgb",
@@ -11,7 +11,7 @@ hl.monitor({
 hl.monitor({
 	output = "DP-1",
 	mode = "2560x1440@144",
-	position = "3840x0",
+	position = "auto",
 	scale = 1,
 	bitdepth = 8,
 	vrr = 0,
@@ -19,6 +19,9 @@ hl.monitor({
 
 hl.layer_rule({ match = { namespace = "hyprpicker" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "selection" }, no_anim = true })
+-- quickshell tray menus: full-screen input-grabbing window; popin on a
+-- full-screen surface reads as the menu flying in from the centre.
+hl.layer_rule({ match = { namespace = "quickshell-menu" }, no_anim = true })
 
 hl.config({
 	input = {

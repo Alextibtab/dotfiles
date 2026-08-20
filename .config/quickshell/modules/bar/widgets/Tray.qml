@@ -12,95 +12,195 @@ import qs.components
 // by name - discord does this. Image handles both directly, so there is no icon
 // lookup to do here.
 //
-//   click        activate
-//   middle click secondary activate
+// Themed names only resolve because the shell runs with
+// QT_QPA_PLATFORMTHEME=qt6ct (set in hyprland/env.lua), which puts the icon
+// theme chosen in qt6ct (breeze-dark) on Qt's search path. Without it Qt
+// searches only hicolor and Quickshell's provider renders its pink/black
+// "missing icon" square - which counts as Ready, so it wins over the glyph
+// fallback below. The glyph remains for artwork that is genuinely absent.
 //
-// Right-click menus are not wired up yet: that needs a QsMenuOpener plus a
-// popup surface, which lands with the panel work in a later phase. Items whose
-// only interaction is a menu (onlyMenu) would therefore do nothing on click, so
-// they are marked visually rather than silently ignoring input.
+//   left click    activate; opens the menu instead for onlyMenu items
+//   middle click  secondary activate
+//   right click   open the item's menu (components/MenuPopup)
+//
+// Menus close on a click ANYWHERE: MenuPopup is a full-screen input-grabbing
+// window, so no click reaches the tray while one is open.
+//
+// Collapsible: with `collapsible` set, the items are hidden behind a chevron
+// at the section's end. Clicking pins the tray open; hovering expands it only
+// while hovered. The chevron is the LAST row child on purpose: the section is
+// right-anchored, so the last child is the only one that does not move when
+// the row grows - the hover target stays under the pointer.
 Row {
   id: root
 
   property int iconSize: 18
 
-  spacing: Style.spacingSmall
+  // The output this bar instance is on; the menu popup needs it to cover the
+  // correct screen on multi-monitor setups.
+  property var screen: null
 
-  Repeater {
-    model: SystemTray.items
+  // When false, every item is always shown and no chevron is rendered.
+  property bool collapsible: true
 
-    delegate: BarButton {
-      id: item
+  // Sticky expand, toggled by clicking the chevron.
+  property bool pinned: false
 
-      required property var modelData
+  // Set when the chevron is clicked to close the tray: the pointer is still
+  // hovering us at that moment, and plain hover would instantly re-expand.
+  // Suppressed until the pointer has fully left and come back.
+  property bool suppressHover: false
 
-      horizontalPadding: Style.paddingSmall
+  // Hovering any part of the tray (chevron or revealed icons) expands it.
+  // Collapse is delayed a beat so the pointer can wander off for a moment
+  // without the row snapping shut under it.
+  readonly property bool hoverLive: trayHover.hovered || collapseTimer.running
+  readonly property bool hovered: hoverLive && !suppressHover
+  onHoverLiveChanged: {
+    if (!hoverLive)
+      suppressHover = false;
+  }
 
-      // Passive items are, by SNI convention, ones the app considers not worth
-      // showing. Hiding them keeps the tray to what is actually relevant.
-      visible: item.modelData.status !== Status.Passive
+  // An open menu keeps the icons shown: they are its anchor, and the pointer
+  // is expected to leave the tray while browsing the menu.
+  readonly property bool expanded: !collapsible || pinned || hovered || menuPopup.visible
 
-      onClicked: {
-        if (item.modelData.onlyMenu) {
-          // Nothing useful to do until menus are implemented; say so rather
-          // than appearing broken.
-          console.log(`tray: ${item.modelData.id} is menu-only, menus land with the panel work`);
-          return;
-        }
-        item.modelData.activate();
+  // Zero so the collapsed tray leaves no phantom gap between the (zero-width)
+  // item container and the chevron. Inter-item spacing lives on iconsRow.
+  spacing: 0
+
+  HoverHandler {
+    id: trayHover
+  }
+
+  Timer {
+    id: collapseTimer
+    interval: 350
+  }
+
+  // Clipped so the width animation reads as the icons sliding in from behind
+  // the chevron. Delegates stay alive while collapsed - tray items must keep
+  // their D-Bus registration regardless of visibility.
+  Item {
+    id: trayItems
+
+    clip: true
+    implicitWidth: iconsRow.implicitWidth
+    implicitHeight: iconsRow.implicitHeight
+    width: root.expanded ? implicitWidth : 0
+
+    Behavior on width {
+      NumberAnimation {
+        duration: Style.animNormal
+        easing.type: Style.animEasing
       }
-      onMiddleClicked: item.modelData.secondaryActivate()
+    }
 
-      // Icon, with a glyph fallback.
-      //
-      // This system has no working Qt icon theme: there is no
-      // QT_QPA_PLATFORMTHEME, no qt6ct and no XDG_ICON_THEME, so Qt's loader
-      // searches only `hicolor`. Quickshell.hasThemeIcon() returns false for
-      // every standard name tried, including audio-volume-high and
-      // input-keyboard-symbolic - the latter exists in both Adwaita and
-      // breeze-dark, but neither theme is in Qt's search path. Icons shipped
-      // directly into hicolor (nordvpn-tray-white) and embedded D-Bus pixmaps
-      // (discord's image://qspixmap/...) resolve fine.
-      //
-      // So a themed-icon failure is expected here rather than exceptional, and
-      // the tray must stay usable through it: a missing icon would otherwise
-      // leave an invisible but clickable gap. Fixing it properly means
-      // installing and configuring a Qt icon theme - worth doing, since
-      // notification app icons will hit the same wall.
-      Item {
-        width: root.iconSize
-        height: root.iconSize
-        opacity: item.modelData.onlyMenu ? 0.65 : 1.0
+    Row {
+      id: iconsRow
+      spacing: Style.spacingSmall
 
-        Image {
-          id: icon
-          anchors.fill: parent
-          source: item.modelData.icon
+      Repeater {
+        model: SystemTray.items
 
-          // Request a concrete size. Without sourceSize, Image asks the
-          // provider for its default 100x100, which fails for themed icons
-          // that only ship 16/22/24/32 variants even when the theme is found.
-          sourceSize: Qt.size(32, 32)
+        delegate: BarButton {
+          id: item
 
-          // Tray icons often arrive at a mismatched size; smoothing avoids the
-          // aliasing from scaling a 22px pixmap down to 18px.
-          smooth: true
-          mipmap: true
-          fillMode: Image.PreserveAspectFit
-          visible: status === Image.Ready
-        }
+          required property var modelData
 
-        Text {
-          anchors.centerIn: parent
-          visible: icon.status !== Image.Ready
-          // Generic "application" glyph rather than a broken-image marker: the
-          // item works, only its artwork is missing.
-          text: "\udb80\udd0b"
-          font.family: Style.fontFamily
-          font.pixelSize: Style.fontSizeSmall
-          color: Colours.bar.textMuted
+          horizontalPadding: Style.paddingSmall
+
+          // Passive items are, by SNI convention, ones the app considers not worth
+          // showing. Hiding them keeps the tray to what is actually relevant.
+          visible: item.modelData.status !== Status.Passive
+
+          onClicked: {
+            if (item.modelData.onlyMenu) {
+              // Activation is a no-op on these by definition; the menu is the
+              // interaction, so open it on any click.
+              if (item.modelData.hasMenu)
+                menuPopup.openFor(item, item.modelData.menu);
+              return;
+            }
+            item.modelData.activate();
+          }
+          onRightClicked: {
+            if (item.modelData.hasMenu)
+              menuPopup.openFor(item, item.modelData.menu);
+          }
+          onMiddleClicked: item.modelData.secondaryActivate()
+
+          // Icon, with a glyph fallback: a missing icon would otherwise leave an
+          // invisible but clickable gap. See the header comment for why themed
+          // icons resolve at all.
+          Item {
+            width: root.iconSize
+            height: root.iconSize
+
+            Image {
+              id: icon
+              anchors.fill: parent
+              source: item.modelData.icon
+
+              // Request a concrete size. Without sourceSize, Image asks the
+              // provider for its default 100x100, which fails for themed icons
+              // that only ship 16/22/24/32 variants even when the theme is found.
+              sourceSize: Qt.size(32, 32)
+
+              // Tray icons often arrive at a mismatched size; smoothing avoids the
+              // aliasing from scaling a 22px pixmap down to 18px.
+              smooth: true
+              mipmap: true
+              fillMode: Image.PreserveAspectFit
+              visible: status === Image.Ready
+            }
+
+            Text {
+              anchors.centerIn: parent
+              visible: icon.status !== Image.Ready
+              // Generic "application" glyph rather than a broken-image marker: the
+              // item works, only its artwork is missing.
+              text: "\udb80\udd0b"
+              font.family: Style.fontFamily
+              font.pixelSize: Style.fontSizeSmall
+              color: Colours.bar.textMuted
+            }
+          }
         }
       }
+    }
+  }
+
+  // One popup shared by every item; openFor() retargets it, so clicking a
+  // second icon moves the menu rather than stacking copies.
+  MenuPopup {
+    id: menuPopup
+    output: root.screen
+  }
+
+  BarButton {
+    id: toggle
+
+    visible: root.collapsible
+    horizontalPadding: Style.paddingSmall
+
+    onClicked: {
+      if (root.pinned) {
+        // Close NOW, even though the pointer is still hovering us.
+        root.pinned = false;
+        root.suppressHover = true;
+      } else {
+        root.pinned = true;
+      }
+    }
+
+    Text {
+      // md-chevron-right when expanded (clicking slides the icons back into
+      // it), md-chevron-left when collapsed (they slide out to the left).
+      text: root.expanded ? "󰅂" : "󰅁"
+      font.family: Style.fontFamily
+      font.pixelSize: Style.fontSizeSmall
+      color: Colours.bar.textMuted
     }
   }
 }

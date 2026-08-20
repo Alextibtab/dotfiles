@@ -10,15 +10,18 @@
       "_comment": "activeWindow is registered but unplaced; add { \"id\": \"activeWindow\" } to any section to bring it back.",
       "left": [
         { "id": "workspaces" },
-        { "id": "media", "maxWidth": 320 }
+        { "id": "gitSwitcher" },
+        { "id": "opencodeUsage" }
       ],
       "center": [
-        { "id": "clock", "format": "ddd d MMM  HH:mm" }
+        { "id": "clock", "format": "ddd d MMM - HH:mm" },
+        { "id": "weather" }
       ],
       "right": [
-        { "id": "tray", "iconSize": 18 },
+        { "id": "tray", "iconSize": 18, "collapsible": true },
         { "id": "volume", "step": 0.05 },
-        { "id": "network", "showLabel": true, "maxLabelWidth": 160 },
+        { "id": "network" },
+        { "id": "display" },
         { "id": "session" }
       ]
     }
@@ -36,6 +39,6 @@
     "_comment": "'dynamic' follows ~/.cache/hellwal/quickshell.json and recolours live on wallpaper change. Any other value loads theme/<name>.json - shipped: mocha, gruvbox.",
     "name": "dynamic",
     "font": "SpaceMono Nerd Font",
-    "fontSize": 13
+    "fontSize": 16
   }
 }

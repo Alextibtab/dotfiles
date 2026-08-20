@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Read/write the weather widget's configured location.
+#
+# Why this exists: the quickshell shell has no way to write a file, so the
+# location edit flow in the weather popup shells out to this script (same
+# pattern as net-status, display-scale, etc.). It owns the state file at
+# ~/.config/quickshell/weather.json, which the shell watches live.
+#
+# File shape (JSON, one line):
+#   {"name":"Berlin","latitude":52.52,"longitude":13.41}   explicit coordinates
+#   {"name":"Berlin"}                                       name only (wttr lookup)
+#   {}                                                      unset -> IP auto-detect
+#
+# Usage:
+#   weather-location                      print the current state
+#   weather-location --set "Name"         set a name-only location
+#   weather-location --set "Name" lat,lon set a location with coordinates
+#   weather-location --clear              reset to IP auto-detect
+
+set -uo pipefail
+
+file="${WEATHER_LOCATION_FILE:-$HOME/.config/quickshell/weather.json}"
+cmd="${1:-}"
+
+json_escape() { printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
+
+case "$cmd" in
+  --set)
+    name="${2:-}"
+    coords="${3:-}"
+    if [[ "$coords" == *,* ]]; then
+      lat="${coords%,*}"
+      lon="${coords#*,}"
+      printf '{"name":"%s","latitude":%s,"longitude":%s}\n' "$(json_escape "$name")" "$lat" "$lon" > "$file"
+    else
+      printf '{"name":"%s"}\n' "$(json_escape "$name")" > "$file"
+    fi
+    ;;
+  --clear)
+    printf '{}\n' > "$file"
+    ;;
+  *)
+    cat "$file" 2>/dev/null || printf '{}\n'
+    ;;
+esac

@@ -9,7 +9,7 @@ font-family = SpaceMono Nerd Font Mono
 font-family-bold = SpaceMono Nerd Font Mono
 font-family-italic = SpaceMono Nerd Font Mono
 font-family-bold-italic = SpaceMono Nerd Font Mono
-font-size = 22
+font-size = 16
 font-feature = -calt
 
 background-opacity = 0.75

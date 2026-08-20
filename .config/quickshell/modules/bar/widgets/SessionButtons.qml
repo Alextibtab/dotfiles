@@ -48,9 +48,7 @@ Row {
       text: "\u23fb"   // power symbol, as in the previous waybar config
       font.family: Style.fontFamily
       font.pixelSize: Style.fontSize
-      // Power is destructive; tint it so it is distinguishable from the
-      // neighbouring glyphs at a glance.
-      color: Colours.urgent
+      color: Colours.bar.text
     }
   }
 }

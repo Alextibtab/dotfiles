@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Sync the current wallpaper and hellwal colours to the SDDM greeter's shared
+# directory so the login screen always matches what was set before logging off.
+#
+# Intended to be called from theme-reload (hellwal's -s hook), but safe to run
+# standalone. Reads the active wallpaper from waypaper's config.
+
+set -uo pipefail
+
+SDDM_DIR="/var/cache/sddm"
+WAYPAPER_CONFIG="$HOME/.config/waypaper/config.ini"
+GENERATED="$HOME/.cache/hellwal/sddm.conf"
+THEME="$SDDM_DIR/theme.conf"
+
+if [[ ! -d "$SDDM_DIR" ]]; then
+  echo "sddm-sync: $SDDM_DIR does not exist, skipping" >&2
+  exit 1
+fi
+
+# ---- current wallpaper ---------------------------------------------------
+wp="$(grep -E '^wallpaper[[:space:]]*=' "$WAYPAPER_CONFIG" 2>/dev/null | head -1 | cut -d'=' -f2- | xargs)"
+wp="${wp/#\~/$HOME}"
+
+if [[ -z "$wp" || ! -f "$wp" ]]; then
+  echo "sddm-sync: no readable wallpaper in $WAYPAPER_CONFIG, keeping previous" >&2
+  exit 1
+fi
+
+# Copy preserving the extension so the greeter never has to guess the format.
+ext="${wp##*.}"
+case "$ext" in
+  jpg|jpeg|png|webp|gif|bmp|JPG|JPEG|PNG|WEBP|GIF|BMP) : ;;
+  *) ext="jpg" ;;
+esac
+bg="$SDDM_DIR/background.$ext"
+
+if ! cp -f "$wp" "$bg"; then
+  echo "sddm-sync: failed to copy wallpaper" >&2
+  exit 1
+fi
+
+# ---- colours -------------------------------------------------------------
+if [[ -f "$GENERATED" ]]; then
+  rm -f "$THEME"
+  cp -f "$GENERATED" "$THEME"
+  sed -i "s|^BgSource=.*|BgSource=\"$bg\"|" "$THEME"
+else
+  echo "sddm-sync: no $GENERATED yet, skipping theme.conf" >&2
+fi
+
+chmod 644 "$bg" "$THEME" 2>/dev/null || true
+echo "sddm-sync: synced $bg and $THEME"
