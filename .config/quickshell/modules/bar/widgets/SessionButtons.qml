@@ -6,13 +6,12 @@ import qs.components
 // Lock and power buttons.
 //
 // Both shell out for now, matching what the waybar buttons did:
-//   lock  -> loginctl lock-session
+//   lock  -> hyprlock
 //   power -> wlogout
 //
-// loginctl rather than invoking hyprlock directly: it routes through systemd so
-// the session is properly marked locked, which also means a future idle daemon
-// and this button take the same path. hyprlock itself is wired up as the
-// session's lock handler.
+// hyprlock directly rather than loginctl lock-session: nothing registers a
+// lock handler with the session, so loginctl only marked it locked without
+// ever launching hyprlock.
 //
 // Both are placeholders. The lock screen becomes a Quickshell WlSessionLock in
 // a later phase, and the power menu becomes an in-shell panel, at which point
@@ -21,7 +20,7 @@ import qs.components
 Row {
   id: root
 
-  property string lockCommand: "loginctl lock-session"
+  property string lockCommand: "hyprlock"
   property string powerCommand: "wlogout"
   property bool showLock: true
   property bool showPower: true

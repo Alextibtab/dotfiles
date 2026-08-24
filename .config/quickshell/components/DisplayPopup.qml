@@ -124,8 +124,8 @@ PanelWindow {
       // hangs off the bar's inner edge (above it for a bottom bar).
       x: Math.max(4, Math.min(root.anchorX + root.anchorW - implicitWidth, panelRoot.width - implicitWidth - 4))
       y: root.barAtBottom
-          ? Math.max(4, panelRoot.height - root.barHeight - implicitHeight)
-          : root.barHeight
+          ? Math.max(4, panelRoot.height - root.barHeight - implicitHeight - Style.popupGap)
+          : root.barHeight + Style.popupGap
 
       // Swallows clicks on the card padding so they cannot fall through to the
       // catcher and close the panel.
@@ -422,7 +422,7 @@ PanelWindow {
 
     color: pill.active
         ? Qt.alpha(Colours.accentAlt, 0.25)
-        : (pillArea.containsMouse ? Qt.alpha(Colours.accentAlt, 0.12) : "transparent")
+        : (pillArea.containsMouse ? Colours.hover : "transparent")
     border.color: pill.active ? Colours.accentAlt : Qt.alpha(Colours.accentAlt, 0.3)
     border.width: 1
 

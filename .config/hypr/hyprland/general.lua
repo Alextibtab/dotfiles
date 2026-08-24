@@ -109,6 +109,11 @@ hl.config({
 	misc = {
 		force_default_wallpaper = -1,
 		disable_hyprland_logo = false,
+		-- A crashed lock daemon (hyprlock dies when monitors power off and
+		-- back on, common on NVIDIA) otherwise leaves the session locked with
+		-- no way to recover except a TTY. With this set, a fresh hyprlock can
+		-- take over the stale lock in-GUI.
+		allow_session_lock_restore = true,
 	},
 })
 

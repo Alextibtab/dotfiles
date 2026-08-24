@@ -14,14 +14,17 @@
         { "id": "opencodeUsage" }
       ],
       "center": [
+        { "id": "japaneseReviews" },
+        { "id": "systemUpdates" },
         { "id": "clock", "format": "ddd d MMM - HH:mm" },
-        { "id": "weather" }
+        { "id": "weather" },
+        { "id": "quake" }
       ],
       "right": [
         { "id": "tray", "iconSize": 18, "collapsible": true },
+        { "id": "display" },
         { "id": "volume", "step": 0.05 },
         { "id": "network" },
-        { "id": "display" },
         { "id": "session" }
       ]
     }
@@ -40,5 +43,10 @@
     "name": "dynamic",
     "font": "SpaceMono Nerd Font",
     "fontSize": 16
+  },
+
+  "japaneseReviews": {
+    "_comment": "Review tracker for WaniKani/Bunpro/Anki. API tokens live in services/secrets.json (not this file); Anki counts need the AnkiConnect addon. The layout entry can override refreshIntervalSec, e.g. { \"id\": \"japaneseReviews\", \"refreshIntervalSec\": 120 }.",
+    "refreshIntervalSec": 300
   }
 }

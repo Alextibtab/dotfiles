@@ -187,7 +187,7 @@ Item {
               anchors.fill: parent
               radius: Style.radiusSmall
               color: hoverArea.containsMouse && row.modelData.enabled
-                  ? Qt.alpha(Colours.accentAlt, 0.18)
+                  ? Colours.hover
                   : "transparent"
 
               implicitWidth: Style.padding * 2 + gutter.width + Style.spacingSmall

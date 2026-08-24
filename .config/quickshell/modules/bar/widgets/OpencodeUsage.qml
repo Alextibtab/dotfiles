@@ -76,6 +76,10 @@ BarButton {
     readonly property bool barAtBottom: (Config.bar.position || "top") === "bottom"
     readonly property int barHeight: Config.bar.height || 38
 
+    // Reserved width on the card's right edge so the scrollbar has its own
+    // column instead of sitting on top of the content.
+    readonly property real scrollbarGutter: 10
+
     screen: panel.output
 
     anchors {
@@ -146,13 +150,13 @@ BarButton {
         border.width: 1
         radius: Style.radius
 
-        implicitWidth: Style.padding * 2 + 360
+        implicitWidth: Style.padding * 2 + 360 + panel.scrollbarGutter
         implicitHeight: Math.min(560, column.implicitHeight + Style.padding * 2)
 
         x: Math.max(4, Math.min(panel.anchorX + panel.anchorW - implicitWidth, panelRoot.width - implicitWidth - 4))
         y: panel.barAtBottom
-            ? Math.max(4, panelRoot.height - panel.barHeight - implicitHeight)
-            : panel.barHeight
+            ? Math.max(4, panelRoot.height - panel.barHeight - implicitHeight - Style.popupGap)
+            : panel.barHeight + Style.popupGap
 
         MouseArea {
           anchors.fill: parent
@@ -164,6 +168,7 @@ BarButton {
           id: flick
           anchors.fill: parent
           anchors.margins: Style.padding
+          anchors.rightMargin: Style.padding + panel.scrollbarGutter
           clip: true
           contentWidth: width
           contentHeight: column.implicitHeight
@@ -212,7 +217,7 @@ BarButton {
               width: refreshLabel.implicitWidth + Style.padding * 2
               height: 22
               radius: Style.radiusSmall
-              color: refreshHover.containsMouse ? Qt.alpha(Colours.accentAlt, 0.15) : "transparent"
+              color: refreshHover.containsMouse ? Colours.hover : "transparent"
               border.color: Qt.alpha(Colours.accentAlt, 0.4)
               border.width: 1
 
@@ -225,12 +230,10 @@ BarButton {
                 color: Colours.popup.text
               }
 
-              HoverHandler {
-                id: refreshHover
-              }
-
               MouseArea {
+                id: refreshHover
                 anchors.fill: parent
+                hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
                 onClicked: OpencodeStats.refresh()
               }
@@ -460,7 +463,8 @@ BarButton {
         Rectangle {
           anchors.top: flick.top
           anchors.bottom: flick.bottom
-          anchors.right: flick.right
+          anchors.right: parent.right
+          anchors.rightMargin: Style.padding
           width: 4
           radius: 2
           color: Qt.alpha(Colours.popup.text, 0.1)

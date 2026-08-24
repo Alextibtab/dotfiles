@@ -4,6 +4,7 @@ import Quickshell.Hyprland
 import Quickshell.Wayland
 import qs.config
 import qs.services
+import qs.theme
 
 // Host window for DBus menus (tray right-click menus): a full-screen,
 // transparent, input-grabbing surface. components/MenuLevel.qml renders the
@@ -132,8 +133,8 @@ PanelWindow {
       // bar). Bindings re-clamp as the async D-Bus content changes the size.
       x: Math.max(4, Math.min(root.anchorX + root.anchorW - implicitWidth, menuRoot.width - implicitWidth - 4))
       y: root.barAtBottom
-          ? Math.max(4, menuRoot.height - root.barHeight - implicitHeight)
-          : root.barHeight
+          ? Math.max(4, menuRoot.height - root.barHeight - implicitHeight - Style.popupGap)
+          : root.barHeight + Style.popupGap
     }
   }
 }

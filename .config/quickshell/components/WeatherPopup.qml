@@ -130,8 +130,8 @@ PanelWindow {
       // hangs off the bar's inner edge (above it for a bottom bar).
       x: Math.max(4, Math.min(root.anchorX + root.anchorW - implicitWidth, panelRoot.width - implicitWidth - 4))
       y: root.barAtBottom
-          ? Math.max(4, panelRoot.height - root.barHeight - implicitHeight)
-          : root.barHeight
+          ? Math.max(4, panelRoot.height - root.barHeight - implicitHeight - Style.popupGap)
+          : root.barHeight + Style.popupGap
 
       // Swallows clicks on the card padding so they cannot fall through to
       // the catcher and close the panel.
@@ -252,7 +252,7 @@ PanelWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 radius: Style.radiusSmall
                 color: !Weather.savingLocation && clearArea.containsMouse
-                    ? Qt.alpha(Colours.accentAlt, 0.25) : "transparent"
+                    ? Colours.hover : "transparent"
 
                 Text {
                   anchors.centerIn: parent
@@ -405,7 +405,7 @@ PanelWindow {
               height: suggestionRow.implicitHeight + Style.spacing
               radius: Style.radiusSmall
               color: index === Weather.suggestionIndex
-                  ? Qt.alpha(Colours.accentAlt, 0.18) : "transparent"
+                  ? Colours.hover : "transparent"
 
               Row {
                 id: suggestionRow

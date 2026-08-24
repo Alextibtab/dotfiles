@@ -35,6 +35,11 @@ if pgrep -x alacritty >/dev/null 2>&1 && [[ -f ~/.config/alacritty/alacritty.tom
   touch ~/.config/alacritty/alacritty.toml && echo "theme-reload: alacritty touched"
 fi
 
+# qt6ct (Qt6 apps, incl. the xdg-desktop-portal-hyprland share picker) reads
+# its stylesheet (~/.cache/hellwal/qt6ct.qss) at startup. The picker is
+# spawned fresh for every share request, so it picks up the new QSS on its
+# own; no poke needed. Persistent Qt6 apps would need a restart to restyle.
+
 # Push the current wallpaper + hellwal colours to the SDDM greeter's shared
 # dir, so the login screen always matches the last wallpaper set this session.
 if [[ -x ~/.local/bin/sddm-sync ]]; then

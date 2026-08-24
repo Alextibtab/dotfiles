@@ -23,6 +23,10 @@ Singleton {
   readonly property int paddingSmall: 4
   readonly property int padding: 8
 
+  // Gap between the bar and a panel/menu opened from a bar button, so the
+  // popup does not sit flush against the bar's inner edge.
+  readonly property int popupGap: 12
+
   // ---- shape -----------------------------------------------------------
   readonly property int radiusSmall: 4
   readonly property int radius: 8

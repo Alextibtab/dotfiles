@@ -123,6 +123,11 @@ Singleton {
   readonly property color accentAlt: root.ensureContrast(root.rawAccentAlt, root.background, root.minContrast, root.foreground)
   readonly property color muted: root.ensureContrast(root.rawMuted, root.background, root.minContrast, root.foreground)
 
+  // Unified hover fill for any interactive element (bar buttons, popup
+  // buttons, pills, rows). One alpha everywhere so every clickable thing
+  // reads the same on hover.
+  readonly property color hover: Qt.alpha(root.accentAlt, 0.15)
+
   // Static themes may override urgent; the hellwal template does not emit it.
   // Guarded too, so a theme cannot make an alert invisible.
   readonly property color urgent: root.ensureContrast(root.rawUrgent, root.background, root.minContrast, root.foreground)
@@ -142,7 +147,7 @@ Singleton {
     readonly property color occupied: root.accent
     readonly property color empty: root.muted
     readonly property color urgent: root.urgent
-    readonly property color hover: Qt.alpha(root.accentAlt, 0.25)
+    readonly property color hover: root.hover
   }
 
   readonly property QtObject popup: QtObject {

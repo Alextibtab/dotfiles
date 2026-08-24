@@ -63,9 +63,12 @@ Scope {
         "display": displayComponent,
         "tray": trayComponent,
         "weather": weatherComponent,
+        "quake": quakeComponent,
         "session": sessionComponent,
         "gitSwitcher": gitSwitcherComponent,
-        "opencodeUsage": opencodeUsageComponent
+        "opencodeUsage": opencodeUsageComponent,
+        "systemUpdates": systemUpdatesComponent,
+        "japaneseReviews": japaneseReviewsComponent
       })
 
       Component {
@@ -77,7 +80,10 @@ Scope {
 
       Component {
         id: clockComponent
-        Clock {}
+        Clock {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
       }
 
       Component {
@@ -89,7 +95,10 @@ Scope {
 
       Component {
         id: volumeComponent
-        Volume {}
+        Volume {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
       }
 
       Component {
@@ -126,6 +135,14 @@ Scope {
       }
 
       Component {
+        id: quakeComponent
+        QuakeWidget {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
+      }
+
+      Component {
         id: sessionComponent
         SessionButtons {}
       }
@@ -141,6 +158,22 @@ Scope {
       Component {
         id: opencodeUsageComponent
         OpencodeUsage {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
+      }
+
+      Component {
+        id: systemUpdatesComponent
+        SystemUpdates {
+          screen: panel.screen
+          monitorName: panel.monitorName
+        }
+      }
+
+      Component {
+        id: japaneseReviewsComponent
+        JapaneseReviews {
           screen: panel.screen
           monitorName: panel.monitorName
         }

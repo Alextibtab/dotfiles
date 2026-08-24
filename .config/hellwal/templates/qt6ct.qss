@@ -1,0 +1,126 @@
+/* Qt6 stylesheet for xdg-desktop-portal-hyprland's share picker.
+ * Rendered by hellwal from ~/.config/hellwal/templates/qt6ct.qss into
+ * ~/.cache/hellwal/qt6ct.qss, applied globally via qt6ct
+ * (Interface/stylesheets in ~/.config/qt6ct/qt6ct.conf).
+ *
+ * Palette mirrors the quickshell roles: background/foreground/accent
+ * (color1)/accentAlt (color3), with color0/color8 as raised surfaces. */
+
+QWidget {
+    background-color: #%%background.hex%%;
+    color: #%%foreground.hex%%;
+    font-family: "Roboto", "Inter", "SF Pro Display", sans-serif;
+    font-size: 13px;
+    selection-background-color: #%%color1.hex%%;
+    selection-color: #%%background.hex%%;
+}
+
+QMainWindow, QDialog {
+    background-color: #%%background.hex%%;
+}
+
+/* ---- tabs ------------------------------------------------------------ */
+QTabWidget::pane {
+    border: 1px solid #%%color8.hex%%;
+    border-radius: 8px;
+    top: -1px;
+    background-color: #%%background.hex%%;
+}
+
+QTabBar::tab {
+    background-color: #%%color0.hex%%;
+    color: #%%foreground.hex%%;
+    border: 1px solid #%%color8.hex%%;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #%%color1.hex%%;
+    color: #%%background.hex%%;
+    font-weight: bold;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #%%color8.hex%%;
+}
+
+/* ---- buttons (ElidedButton inherits QPushButton) --------------------- */
+QPushButton {
+    background-color: #%%color0.hex%%;
+    color: #%%foreground.hex%%;
+    border: 1px solid #%%color8.hex%%;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #%%color8.hex%%;
+    border-color: #%%color1.hex%%;
+}
+
+QPushButton:pressed {
+    background-color: #%%color1.hex%%;
+    color: #%%background.hex%%;
+}
+
+QPushButton:focus {
+    border-color: #%%color3.hex%%;
+}
+
+/* ---- checkbox ("allow screen recording" toggle) ---------------------- */
+QCheckBox {
+    color: #%%foreground.hex%%;
+    spacing: 6px;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #%%color8.hex%%;
+    border-radius: 4px;
+    background-color: #%%color0.hex%%;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #%%color1.hex%%;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #%%color1.hex%%;
+    border-color: #%%color3.hex%%;
+}
+
+/* ---- scroll areas ----------------------------------------------------- */
+QScrollArea {
+    border: none;
+    background-color: transparent;
+}
+
+QScrollBar:vertical {
+    background-color: #%%background.hex%%;
+    width: 10px;
+    margin: 2px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #%%color8.hex%%;
+    border-radius: 5px;
+    min-height: 24px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #%%color1.hex%%;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: transparent;
+}

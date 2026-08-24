@@ -46,7 +46,7 @@ BarButton {
       text: Weather.label
       font.family: Style.fontFamily
       font.pixelSize: Style.fontSize
-      color: Colours.bar.text
+      color: Colours.bar.textMuted
     }
 
     Text {
@@ -54,7 +54,7 @@ BarButton {
       text: Weather.reportTempNum + "°"
       font.family: Style.fontFamily
       font.pixelSize: Style.fontSize
-      color: Colours.bar.textMuted
+      color: Colours.bar.text
     }
   }
 

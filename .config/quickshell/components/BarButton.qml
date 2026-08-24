@@ -35,7 +35,7 @@ Rectangle {
   implicitHeight: Math.max(20, (Config.bar.height || 38) - 8)
 
   radius: Style.radiusSmall
-  color: root.hovered ? Qt.alpha(Colours.accentAlt, 0.18) : "transparent"
+  color: root.hovered ? Colours.hover : "transparent"
 
   Behavior on color {
     ColorAnimation {

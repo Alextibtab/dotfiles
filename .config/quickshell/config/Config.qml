@@ -42,7 +42,8 @@ Singleton {
       showEmpty: true,
       localNumbering: true
     },
-    theme: { name: "dynamic", font: "monospace", fontSize: 13 }
+    theme: { name: "dynamic", font: "monospace", fontSize: 13 },
+    japaneseReviews: { refreshIntervalSec: 300 }
   })
 
   property var defaults: builtin
@@ -54,6 +55,7 @@ Singleton {
   readonly property var bar: values.bar || builtin.bar
   readonly property var workspaces: values.workspaces || builtin.workspaces
   readonly property var theme: values.theme || builtin.theme
+  readonly property var japaneseReviews: values.japaneseReviews || builtin.japaneseReviews
 
   function isObject(v) {
     return v !== null && typeof v === "object" && !Array.isArray(v);

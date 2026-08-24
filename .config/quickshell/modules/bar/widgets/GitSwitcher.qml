@@ -232,8 +232,8 @@ BarButton {
 
         x: Math.max(4, Math.min(panel.anchorX + panel.anchorW - implicitWidth, panelRoot.width - implicitWidth - 4))
         y: panel.barAtBottom
-            ? Math.max(4, panelRoot.height - panel.barHeight - implicitHeight)
-            : panel.barHeight
+            ? Math.max(4, panelRoot.height - panel.barHeight - implicitHeight - Style.popupGap)
+            : panel.barHeight + Style.popupGap
 
         MouseArea {
           anchors.fill: parent
@@ -314,12 +314,10 @@ BarButton {
                 }
               }
 
-              HoverHandler {
-                id: emailToggleHover
-              }
-
               MouseArea {
+                id: emailToggleHover
                 anchors.fill: parent
+                hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
                 onClicked: root.showEmails = !root.showEmails
               }
@@ -474,7 +472,7 @@ BarButton {
     radius: Style.radiusSmall
     color: btn.active
         ? Qt.alpha(Colours.accentAlt, 0.25)
-        : (btnHover.containsMouse ? Qt.alpha(Colours.accentAlt, 0.12) : "transparent")
+        : (btnHover.containsMouse ? Colours.hover : "transparent")
     border.color: btn.active ? Qt.alpha(Colours.accentAlt, 0.5) : Colours.popup.border
     border.width: 1
 
@@ -517,12 +515,10 @@ BarButton {
       }
     }
 
-    HoverHandler {
-      id: btnHover
-    }
-
     MouseArea {
+      id: btnHover
       anchors.fill: parent
+      hoverEnabled: true
       cursorShape: Qt.PointingHandCursor
       onClicked: btn.clicked()
     }

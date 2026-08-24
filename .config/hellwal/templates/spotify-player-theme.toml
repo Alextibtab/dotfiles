@@ -1,0 +1,29 @@
+# hellwal-generated spotify-player theme (hex colors from the wallpaper)
+# >>> spotify-player hellwal theme <<<
+[[themes]]
+name = "Dynamic"
+[themes.palette]
+background = "#%%background.hex%%"
+foreground = "#%%foreground.hex%%"
+black = "#%%color0.hex%%"
+red = "#%%color1.hex%%"
+green = "#%%color2.hex%%"
+yellow = "#%%color3.hex%%"
+blue = "#%%color4.hex%%"
+magenta = "#%%color5.hex%%"
+cyan = "#%%color6.hex%%"
+white = "#%%color7.hex%%"
+bright_black = "#%%color8.hex%%"
+bright_red = "#%%color9.hex%%"
+bright_green = "#%%color10.hex%%"
+bright_yellow = "#%%color11.hex%%"
+bright_blue = "#%%color12.hex%%"
+bright_magenta = "#%%color13.hex%%"
+bright_cyan = "#%%color14.hex%%"
+bright_white = "#%%color15.hex%%"
+[themes.component_style]
+# amplitude-keyed colors for the audio visualization bars (quiet -> mid -> loud)
+# The spotify-player-theme script derives distinct colors from the wallpaper
+# accent (palette `blue`) so the gradient stays visible on monochrome wallpapers.
+visualization = { low = "#%%color4.hex%%", mid = "#%%color4.hex%%", high = "#%%color4.hex%%" }
+# <<< spotify-player hellwal theme >>>
