@@ -321,8 +321,23 @@ PanelWindow {
     property int valueIndex: 0
     property color foreground: Colours.popup.text
     property bool dragging: false
+    // Hold preview while the helper updates shell.json and the value returns
+    // through FileView and Config.
     property int previewIndex: -1
-    property int knobIndex: slider.dragging && slider.previewIndex >= 0 ? slider.previewIndex : slider.valueIndex
+    property int knobIndex: slider.previewIndex >= 0 ? slider.previewIndex : slider.valueIndex
+
+    onValueIndexChanged: {
+      if (!slider.dragging && slider.previewIndex === slider.valueIndex) {
+        slider.previewIndex = -1;
+        commitHold.stop();
+      }
+    }
+
+    Timer {
+      id: commitHold
+      interval: 4000
+      onTriggered: slider.previewIndex = -1
+    }
 
     signal changed(int index)
     signal committed(int index)
@@ -394,15 +409,25 @@ PanelWindow {
       }
       onReleased: {
         slider.dragging = false;
+        if (slider.previewIndex < 0)
+          return;
+        if (slider.previewIndex === slider.valueIndex) {
+          slider.previewIndex = -1;
+          return;
+        }
+        commitHold.restart();
+        slider.committed(slider.previewIndex);
+      }
+      onCanceled: {
+        slider.dragging = false;
         slider.previewIndex = -1;
-        slider.committed(slider.valueIndex);
+        commitHold.stop();
       }
 
       function setFromX(x) {
         const f = Math.max(0, Math.min(1, (x - slider.knobSize / 2) / slider.trackWidth));
         const idx = Math.min(slider.stops - 1, Math.round(f * (slider.stops - 1)));
         slider.previewIndex = idx;
-        slider.valueIndex = idx;
         slider.changed(idx);
       }
     }

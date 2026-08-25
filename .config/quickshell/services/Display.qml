@@ -119,7 +119,7 @@ Singleton {
       return a;
     }
     const g = gcd(Math.round(w * 120), Math.round(h * 120));
-    let k = Math.round(s * 120);
+    let k = Math.max(1, Math.round(s * 120));
     if (k > g)
       k = g;
     while (g % k !== 0)

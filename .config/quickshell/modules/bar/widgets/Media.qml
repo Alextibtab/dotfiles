@@ -25,7 +25,7 @@ BarButton {
   onClicked: Player.toggle()
   onRightClicked: Player.next()
   onMiddleClicked: Player.previous()
-  onScrolled: delta => delta > 0 ? Player.previous() : Player.next()
+  onScrolled: delta => delta === 0 ? undefined : (delta > 0 ? Player.previous() : Player.next())
 
   Row {
     spacing: Style.spacingSmall

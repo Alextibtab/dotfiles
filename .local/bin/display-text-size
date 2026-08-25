@@ -39,22 +39,23 @@ current_shell_px() {
 
 set_shell_px() {
   local size="$1"
-  mkdir -p "$(dirname "$SHELL_JSON")"
+  mkdir -p "$(dirname "$SHELL_JSON")" || return 1
   local tmp
-  tmp="$(mktemp)"
+  tmp="$(mktemp "$(dirname "$SHELL_JSON")/.display-text-size.XXXXXX")" || return 1
   if [[ -f $SHELL_JSON ]]; then
-    jq --argjson s "$size" '.theme.fontSize = $s' "$SHELL_JSON" >"$tmp"
+    jq --argjson s "$size" '.theme.fontSize = $s' "$SHELL_JSON" >"$tmp" || { rm -f "$tmp"; return 1; }
   else
-    jq -n --argjson s "$size" '{ version: 1, theme: { fontSize: $s } }' >"$tmp"
+    jq -n --argjson s "$size" '{ version: 1, theme: { fontSize: $s } }' >"$tmp" || { rm -f "$tmp"; return 1; }
   fi
-  mv "$tmp" "$SHELL_JSON"
+  chmod 644 "$tmp" || { rm -f "$tmp"; return 1; }
+  mv "$tmp" "$SHELL_JSON" || { rm -f "$tmp"; return 1; }
 }
 
 reset_shell_px() {
   [[ -f $SHELL_JSON ]] || return 0
   local tmp
-  tmp="$(mktemp)"
-  jq 'del(.theme.fontSize)' "$SHELL_JSON" >"$tmp" && mv "$tmp" "$SHELL_JSON"
+  tmp="$(mktemp "$(dirname "$SHELL_JSON")/.display-text-size.XXXXXX")" || return 1
+  jq 'del(.theme.fontSize)' "$SHELL_JSON" >"$tmp" && chmod 644 "$tmp" && mv "$tmp" "$SHELL_JSON" || { rm -f "$tmp"; return 1; }
 }
 
 # ---- GTK text-scaling-factor -------------------------------------------
@@ -123,6 +124,9 @@ term_pt_for() {
 
 set_terminal_size() {
   local pt="$1"
+
+  [[ -n $pt ]] || return 0
+  [[ $pt =~ ^[0-9]+([.][0-9]+)?$ ]] || return 0
 
   if [[ -f ~/.config/ghostty/config ]]; then
     if grep -q '^font-size = ' ~/.config/ghostty/config; then

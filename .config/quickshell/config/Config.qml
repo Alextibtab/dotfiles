@@ -46,16 +46,33 @@ Singleton {
     japaneseReviews: { refreshIntervalSec: 300 }
   })
 
-  property var defaults: builtin
   property var values: builtin
 
-  // Convenience accessors. Everything downstream reads these rather than
-  // digging into `values`, so a missing key degrades to the builtin instead
-  // of throwing somewhere deep in a delegate.
-  readonly property var bar: values.bar || builtin.bar
-  readonly property var workspaces: values.workspaces || builtin.workspaces
-  readonly property var theme: values.theme || builtin.theme
-  readonly property var japaneseReviews: values.japaneseReviews || builtin.japaneseReviews
+  // Cache each public subtree. Rebuild creates fresh objects, but downstream
+  // bindings should only react when that subtree's contents actually change.
+  property var _bar: builtin.bar
+  property var _workspaces: builtin.workspaces
+  property var _theme: builtin.theme
+  property var _japaneseReviews: builtin.japaneseReviews
+  property var _layoutLeft: []
+  property var _layoutCenter: []
+  property var _layoutRight: []
+
+  property string _barKey: ""
+  property string _workspacesKey: ""
+  property string _themeKey: ""
+  property string _japaneseReviewsKey: ""
+  property string _layoutLeftKey: ""
+  property string _layoutCenterKey: ""
+  property string _layoutRightKey: ""
+
+  readonly property var bar: root._bar
+  readonly property var workspaces: root._workspaces
+  readonly property var theme: root._theme
+  readonly property var japaneseReviews: root._japaneseReviews
+  readonly property var layoutLeft: root._layoutLeft
+  readonly property var layoutCenter: root._layoutCenter
+  readonly property var layoutRight: root._layoutRight
 
   function isObject(v) {
     return v !== null && typeof v === "object" && !Array.isArray(v);
@@ -103,8 +120,28 @@ Singleton {
   function rebuild() {
     const d = parse(defaultsFile.text(), "defaults.json") || builtin;
     const u = parse(userFile.text(), "shell.json");
-    root.defaults = d;
-    root.values = u ? merge(d, u) : d;
+    const next = u ? merge(d, u) : d;
+    root.values = next;
+
+    const nextBar = next.bar || builtin.bar;
+    const nextLayout = nextBar.layout || {};
+
+    root.adopt("bar", nextBar);
+    root.adopt("workspaces", next.workspaces || builtin.workspaces);
+    root.adopt("theme", next.theme || builtin.theme);
+    root.adopt("japaneseReviews", next.japaneseReviews || builtin.japaneseReviews);
+    root.adopt("layoutLeft", nextLayout.left || []);
+    root.adopt("layoutCenter", nextLayout.center || []);
+    root.adopt("layoutRight", nextLayout.right || []);
+  }
+
+  function adopt(name, next) {
+    const keyProp = "_" + name + "Key";
+    const key = JSON.stringify(next === undefined ? null : next);
+    if (root[keyProp] === key)
+      return;
+    root[keyProp] = key;
+    root["_" + name] = next;
   }
 
   // blockLoading makes the initial read synchronous. Without it the shell

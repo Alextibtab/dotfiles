@@ -400,7 +400,14 @@ Singleton {
   Process {
     id: locationSaveProc
     onExited: function (exitCode) {
-      if (exitCode !== 0 || !root.savingLocation) return
+      if (!root.savingLocation) return
+
+      if (exitCode !== 0) {
+        console.warn("weather: weather-location exited", exitCode)
+        root.savingLocation = false
+        root.savingLocationQueryStarted = false
+        return
+      }
 
       // FileView handles changed locations. Explicitly refresh here too so
       // saving the already-active location cannot strand the spinner.

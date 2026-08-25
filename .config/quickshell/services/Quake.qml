@@ -229,17 +229,14 @@ Singleton {
     var url = Model.eventPageUrl(event)
     var body = text.body
     if (url) body = body ? body + "\n" + url : url
-    alertProc.running = false
-    alertProc.command = ["notify-send", "-a", "quake", "-u", "critical", text.headline]
-    if (body) alertProc.command.push(body)
-    alertProc.running = true
+    var command = ["notify-send", "-a", "quake", "-u", "critical", text.headline]
+    if (body) command.push(body)
+    Quickshell.execDetached(command)
     root.playAlertSound()
   }
 
   function playAlertSound() {
-    soundProc.running = false
-    soundProc.command = ["pw-play", Model.ALERT_SOUND]
-    soundProc.running = true
+    Quickshell.execDetached(["pw-play", Model.ALERT_SOUND])
   }
 
   // ---- timers ------------------------------------------------------------
@@ -285,9 +282,6 @@ Singleton {
       }
     }
   }
-
-  Process { id: alertProc }
-  Process { id: soundProc }
 
   Component.onCompleted: {
     root.initialized = true

@@ -294,7 +294,7 @@ PanelWindow {
               Behavior on width {
                 NumberAnimation {
                   duration: Style.animNormal
-                  easing: Style.animEasing
+                   easing.type: Style.animEasing
                 }
               }
             }

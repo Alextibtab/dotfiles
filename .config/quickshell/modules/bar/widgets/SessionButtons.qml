@@ -29,7 +29,7 @@ Row {
 
   BarButton {
     visible: root.showLock
-    onClicked: Quickshell.execDetached(["sh", "-c", root.lockCommand])
+    onClicked: Quickshell.execDetached([root.lockCommand])
 
     Text {
       text: "\uf023"   // padlock
@@ -41,7 +41,7 @@ Row {
 
   BarButton {
     visible: root.showPower
-    onClicked: Quickshell.execDetached(["sh", "-c", root.powerCommand])
+    onClicked: Quickshell.execDetached([root.powerCommand])
 
     Text {
       text: "\u23fb"   // power symbol, as in the previous waybar config

@@ -48,18 +48,19 @@ clean_scale() {
 # makes runtime scaling usable. Other fields are left untouched.
 persist_scale() {
   local name="$1" val="$2"
-  [[ -f $MONITOR_FILE ]] || return 0
+  [[ -f $MONITOR_FILE ]] || return 1
   local tmp
-  tmp="$(mktemp)"
+  tmp="$(mktemp "$(dirname "$MONITOR_FILE")/.display-scale.XXXXXX")" || return 1
   awk -v name="$name" -v val="$val" '
     /^[[:space:]]*hl\.monitor\(/ { inmon = 1; cur = "" }
-    /^[[:space:]]*\)/ { inmon = 0 }
+    /^[[:space:]]*\}\)/ { inmon = 0 }
     inmon && match($0, /output[[:space:]]*=[[:space:]]*"[^"]*"/) {
       s = substr($0, RSTART, RLENGTH)
       if (match(s, /"[^"]*"/)) cur = substr(s, RSTART + 1, RLENGTH - 2)
     }
     inmon && cur == name && /scale[[:space:]]*=/ {
       sub(/scale[[:space:]]*=[[:space:]]*[^,]*/, "scale = " val)
+      found = 1
       print
       next
     }
@@ -69,8 +70,19 @@ persist_scale() {
       next
     }
     { print }
+    END { if (!found) exit 3 }
   ' "$MONITOR_FILE" >"$tmp"
-  mv "$tmp" "$MONITOR_FILE"
+  local rc=$?
+  if ((rc != 0)); then
+    rm -f "$tmp"
+    return "$rc"
+  fi
+  if [[ ! -s $tmp ]]; then
+    rm -f "$tmp"
+    return 1
+  fi
+  chmod 644 "$tmp" || { rm -f "$tmp"; return 1; }
+  mv "$tmp" "$MONITOR_FILE" || { rm -f "$tmp"; return 1; }
 }
 
 set_scale() {
@@ -91,6 +103,15 @@ set_scale() {
   new="$(clean_scale "$requested" "$w" "$h")"
 
   persist_scale "$name" "$new"
+  local persist_rc=$?
+  if ((persist_rc != 0)); then
+    if ((persist_rc == 3)); then
+      echo "display-scale: no scale key for output=\"$name\" in $MONITOR_FILE" >&2
+    else
+      echo "display-scale: failed to update $MONITOR_FILE" >&2
+    fi
+    exit 1
+  fi
   hyprctl reload >/dev/null 2>&1
   echo "$new"
 }

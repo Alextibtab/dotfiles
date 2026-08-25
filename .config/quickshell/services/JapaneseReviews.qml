@@ -43,9 +43,10 @@ Singleton {
     }
 
     stderr: StdioCollector {
+      id: stderrCollector
       waitForEnd: true
-      onStreamFinished: function(text) {
-        const t = String(text || "").trim();
+      onStreamFinished: {
+        const t = String(stderrCollector.text || "").trim();
         if (t !== "")
           console.warn("japanese-reviews:", t);
       }

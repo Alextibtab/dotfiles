@@ -9,7 +9,7 @@ import "widgets"
 
 // The bar, one instance per connected monitor.
 //
-// Layout is data-driven from Config.bar.layout: each section is an array of
+// Layout is data-driven from Config.layoutLeft/Center/Right: each section is an array of
 // { "id": ..., ...settings } entries, resolved against the widget registry
 // below. Adding a widget in phase 4 means adding one Component here and one
 // entry in defaults.json, with no change to this file's structure.
@@ -187,7 +187,7 @@ Scope {
         spacing: Style.spacing
 
         Repeater {
-          model: (Config.bar.layout && Config.bar.layout.left) || []
+          model: Config.layoutLeft
           delegate: WidgetLoader {
             registry: panel.registry
           }
@@ -201,7 +201,7 @@ Scope {
         spacing: Style.spacing
 
         Repeater {
-          model: (Config.bar.layout && Config.bar.layout.right) || []
+          model: Config.layoutRight
           delegate: WidgetLoader {
             registry: panel.registry
           }
@@ -229,7 +229,7 @@ Scope {
         width: Math.min(implicitWidth, freeSpace)
 
         Repeater {
-          model: (Config.bar.layout && Config.bar.layout.center) || []
+          model: Config.layoutCenter
           delegate: WidgetLoader {
             registry: panel.registry
           }

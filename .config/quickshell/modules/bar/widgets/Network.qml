@@ -8,7 +8,7 @@ import qs.components
 //
 //   click   force an immediate refresh rather than waiting for the poll
 //
-// Glyphs follow the previous waybar config: \uf1eb wifi, \U000f0297 ethernet.
+// Glyphs: U+F1EB wifi, U+F0997 wifi-off, U+F0297 ethernet (Nerd Font).
 BarButton {
   id: root
 
@@ -17,9 +17,9 @@ BarButton {
   Text {
     text: {
       if (!Net.connected)
-        return "\U000f0997";      // wifi-off
+        return "\udb82\udd97";   // wifi-off, U+F0997
       if (Net.kind === "wired")
-        return "\U000f0297";      // ethernet
+        return "\udb80\ude97";   // ethernet, U+F0297
       return "\uf1eb";            // wifi
     }
     font.family: Style.fontFamily

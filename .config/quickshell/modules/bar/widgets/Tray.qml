@@ -71,6 +71,7 @@ Row {
 
   HoverHandler {
     id: trayHover
+    onHoveredChanged: if (!trayHover.hovered) collapseTimer.restart()
   }
 
   Timer {

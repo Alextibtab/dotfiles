@@ -118,7 +118,8 @@ BarButton {
 
   Process {
     id: identityProc
-    command: ["bash", "-c", 'git config --global user.name; git config --global user.email']
+    // Keep name on line 0 and email on line 1, including when either key is unset.
+    command: ["bash", "-c", 'printf "%s\\n" "$(git config --global user.name)" "$(git config --global user.email)"']
     stdout: StdioCollector {
       id: identityOut
       waitForEnd: true
