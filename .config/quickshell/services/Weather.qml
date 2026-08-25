@@ -13,9 +13,9 @@ import "WeatherModel.js" as Model
 //   - wttr.in for the auto-detected area name and as the no-coordinates
 //     fallback.
 //
-// The configured location lives in ~/.config/quickshell/weather.json, written
-// by ~/.local/bin/weather-location and watched live so hand edits take effect
-// too. An empty object (or missing file) means auto-detect from the IP.
+// The configured location lives in weather.json and is written through the
+// FileView below, so updates are atomic and hand edits still take effect. An
+// empty object (or missing file) means auto-detect from the IP.
 //
 // The bar widget feeds two settings in from its layout entry: `unit`
 // ("metric"/"imperial"/empty-for-auto) and `refreshMinutes`.
@@ -27,7 +27,7 @@ Singleton {
   property int refreshMinutes: 15
 
   // ---- location ----------------------------------------------------------
-  property string locationStatePath: Quickshell.env("HOME") + "/.config/quickshell/weather.json"
+  property string locationStatePath: Quickshell.shellPath("weather.json")
   property var configuredLocationState: ({ name: "", latitude: null, longitude: null })
 
   readonly property string configuredLocation: root.configuredLocationState.name
@@ -175,21 +175,30 @@ Singleton {
   FileView {
     id: locationFile
     path: root.locationStatePath
+    blockLoading: true
+    atomicWrites: true
     watchChanges: true
     printErrors: false
     onFileChanged: reload()
     onLoaded: root.configuredLocationState = Model.parseLocationFile(text())
     onLoadFailed: root.configuredLocationState = Model.parseLocationFile("")
-  }
-
-  // The first read can race shell startup, leaving a stored location
-  // unhonored until the next file write. One delayed reload self-corrects;
-  // if the first read was fine it's a no-op, since identical state doesn't
-  // change locationQuery and so triggers no refetch.
-  Timer {
-    interval: 1500
-    running: true
-    onTriggered: locationFile.reload()
+    onSaved: {
+      if (!root.savingLocation)
+        return
+      root.savingLocationQueryStarted = true
+      root.forecastRetries = 0
+      root.dailyForecastRetries = 0
+      forecastProc.running = false
+      dailyForecastProc.running = false
+      Qt.callLater(root.refresh)
+    }
+    onSaveFailed: error => {
+      if (!root.savingLocation)
+        return
+      console.warn("weather: failed to save location", error)
+      root.savingLocation = false
+      root.savingLocationQueryStarted = false
+    }
   }
 
   // Keep the previous report visible while the new location loads. The
@@ -264,15 +273,15 @@ Singleton {
   }
 
   function persistLocation(name, latitude, longitude) {
-    var command = [Quickshell.env("HOME") + "/.local/bin/weather-location"]
-    if (name && latitude !== null && longitude !== null)
-      command = command.concat(["--set", name, latitude + "," + longitude])
-    else if (name)
-      command = command.concat(["--set", name])
-    else
-      command = command.concat(["--clear"])
-    locationSaveProc.command = command
-    locationSaveProc.running = true
+    var state = {}
+    if (name) {
+      state.name = name
+      if (latitude !== null && longitude !== null) {
+        state.latitude = latitude
+        state.longitude = longitude
+      }
+    }
+    locationFile.setText(JSON.stringify(state))
   }
 
   // ---- geocoding ---------------------------------------------------------
@@ -394,29 +403,6 @@ Singleton {
         root.suggestionIndex = 0
         if (root.geocodePendingQuery !== root.geocodeActiveQuery) Qt.callLater(root.startGeocode)
       }
-    }
-  }
-
-  Process {
-    id: locationSaveProc
-    onExited: function (exitCode) {
-      if (!root.savingLocation) return
-
-      if (exitCode !== 0) {
-        console.warn("weather: weather-location exited", exitCode)
-        root.savingLocation = false
-        root.savingLocationQueryStarted = false
-        return
-      }
-
-      // FileView handles changed locations. Explicitly refresh here too so
-      // saving the already-active location cannot strand the spinner.
-      root.savingLocationQueryStarted = true
-      root.forecastRetries = 0
-      root.dailyForecastRetries = 0
-      forecastProc.running = false
-      dailyForecastProc.running = false
-      Qt.callLater(root.refresh)
     }
   }
 

@@ -4,7 +4,7 @@
 // Weather.qml and this file trivially testable.
 
 // weather.json holds {"name": ..., "latitude": ..., "longitude": ...} (see
-// ~/.local/bin/weather-location, which owns the format). Missing, blank, or
+// the Weather service's FileView, which owns the format). Missing, blank, or
 // unparseable means the location is auto-detected from the IP address.
 function parseLocationFile(raw) {
   var unset = { name: "", latitude: null, longitude: null }

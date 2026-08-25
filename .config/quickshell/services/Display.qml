@@ -1,15 +1,14 @@
 pragma Singleton
 
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
 import QtQuick
 import qs.config
 
 // Display state and controls for the display panel.
 //
-// Monitor state comes from the ~/.local/bin/display-state helper (hyprctl has
-// no D-Bus API and the monitor list here is only what the compositor exposes),
-// polled every few seconds while the shell is up.
+// Monitor state comes from Quickshell's event-backed Hyprland monitor model.
 //
 // Text size is the shell config itself: Config watches shell.json, so the
 // display-text-size helper writing theme.fontSize reflows the whole shell
@@ -17,10 +16,8 @@ import qs.config
 Singleton {
   id: root
 
-  property var data: ({})
-
-  readonly property var displays: data.displays || []
-  readonly property string focusedMonitor: data.focusedMonitor || ""
+  readonly property var displays: Hyprland.monitors ? Hyprland.monitors.values : []
+  readonly property string focusedMonitor: Hyprland.focusedMonitor ? Hyprland.focusedMonitor.name : ""
 
   // Look up one display entry by output name; null if absent (e.g. before the
   // first poll lands, or during hotplug).
@@ -47,34 +44,6 @@ Singleton {
   readonly property string binDir: root.home + "/.local/bin"
 
   Process {
-    id: stateProc
-    command: [root.binDir + "/display-state"]
-
-    stdout: StdioCollector {
-      // streamFinished rather than dataChanged: the script emits one JSON
-      // object and exits; parsing a partial line would throw.
-      onStreamFinished: {
-        const t = String(text || "").trim();
-        if (!t)
-          return;
-        try {
-          root.data = JSON.parse(t);
-        } catch (e) {
-          console.warn("display: could not parse display-state:", e);
-        }
-      }
-    }
-  }
-
-  Timer {
-    interval: 4000
-    running: true
-    repeat: true
-    triggeredOnStart: true
-    onTriggered: stateProc.running = true
-  }
-
-  Process {
     id: setProc
     command: []
     stdout: StdioCollector { waitForEnd: true }
@@ -85,7 +54,7 @@ Singleton {
   }
 
   function refresh() {
-    stateProc.running = true;
+    Hyprland.refreshMonitors()
   }
 
   function setTextSize(px) {
